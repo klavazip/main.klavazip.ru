@@ -1,0 +1,24 @@
+.catalog-section-info {
+    margin-bottom:15px;  
+}
+.catalog-section-title{
+    padding-bottom:10px;
+}
+.catalog-section-title a {
+    color:#000 !important;
+    font-size:14px;
+    text-decoration:none;
+}
+.catalog-section-description {
+    margin-top:-10px;
+}
+.catalog-section-separator {}
+
+.catalog-section-childs{
+    padding-bottom:5px;
+}
+
+.catalog-section-info .delimetr{
+    margin:0 5px;
+    color:#b1b1b1;
+}

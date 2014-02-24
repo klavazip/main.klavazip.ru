@@ -1,0 +1,79 @@
+.catalog-price {
+	 color:red;
+}
+div.catalog-section table td {
+	padding-right:10px;
+	padding-top:10px;
+}
+
+div.sorting span.catalog_num_show_goods {
+    display:block;
+    color: #808080;
+    padding: 3px 5px;
+    border-bottom: 1px solid #eee;
+    cursor:pointer;
+}
+div.sorting span.catalog_num_show_goods:hover {
+    background:#f2f2f2;
+    color:#333;
+}
+div.cat-item-pic {
+    width:166px !important;
+    height: 94px;
+    overflow:hidden;
+}
+
+
+.bxmaker-catalog-sorting {
+    position: relative;
+    float: right;
+    top: 7px;
+    font-size: 11px;
+    color: #808080;
+    margin-right: 10px;
+}
+.fake-select {
+    border: 1px solid #ccc;
+    background: #fff;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -moz-box-shadow: 0 1px 1px #888 inset;
+    -webkit-box-shadow: 0 1px 1px #888 inset;
+    box-shadow: 0 1px 1px #888 inset;
+    padding: 2px 20px 0px 10px;
+    color: #333;
+    font-size: 12px;
+    display: inline-block;
+    position: relative;
+}
+
+.fake-select-popup span {
+    text-decoration: none;
+    display: block;
+    color: #808080;
+    padding: 3px 5px;
+    border-bottom: 1px solid #eee;
+    cursor:pointer;
+}
+.fake-select-popup span:hover {
+    background: #f2f2f2;
+    color: #333;
+}
+
+.section-analogi-box-hidden {
+    display:none;
+}
+
+.section_analogi_mini_info > p.analogi-label {
+    margin-bottom:0;padding-bottom:0;
+}
+
+div.catalog-section .section_analogi_mini_info  table td {
+       margin:0;
+       padding: 2px;
+}
+div.catalog-section .section_analogi_mini_info  table td .price {
+    width:80px;
+    display:block;
+}

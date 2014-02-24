@@ -1,0 +1,109 @@
+
+
+.order-error-block{
+	
+	position: relative; 
+	
+}
+
+.order-error-block input{
+	border: 1px #FC8989 solid !important;
+}
+
+.order-error-block .order-error
+{
+	display: block;
+}
+
+.order-error{
+	display: none;	
+	background: #FC8989;
+	color: #FFFFFF; 
+	font-size: 11px; 
+	padding: 6px; 
+	position: absolute; 
+	top: 39px;
+	width: 208px;
+}
+
+
+.order-selected-block{
+	
+ 	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #DEDEDE;
+    box-shadow: 0 1px 4px 0 #C6C3C3;
+    height: auto;
+    margin: 0;
+    overflow: auto;
+    position: absolute;
+    width: 418px;
+    z-index: 10;
+
+	
+}
+
+.order-selected-block a{
+	
+	display: block;
+	padding: 10px;
+	font-size: 12px;
+	position: relative;
+}
+
+.order-selected-block a span{
+ color: #A49B9B;
+    display: block;
+    font-size: 10px;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+.order-selected-block a:hover{
+	background-color: #FC8989;
+	color: #FFF;
+}
+
+.order-selected-block a:hover span{
+	color: #FFF;
+}
+ 
+.blockInputform .ajax-load
+{
+	background: url("/bitrix/templates/klavazip.main/img/ajax_load25.gif") no-repeat;
+	display: block;
+    height: 25px;
+    position: absolute;
+    right: 16px;
+    top: 8px;
+    width: 25px;
+    z-index: 100;
+}
+
+
+.final-order-step{
+	
+	padding: 10px 30px 30px 30px;
+	
+}
+
+
+.final-order-step a{
+	
+	color: #E69B9B;
+	text-decoration: underline;
+	font-weight: bold;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+

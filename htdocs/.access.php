@@ -1,0 +1,15 @@
+<?
+$PERM["bxmservice"]["*"]="D";
+$PERM["bxmservice"]["5"]="X";
+$PERM["content_edit"]["*"]="D";
+$PERM["desktop_app"]["*"]="R";
+$PERM["temporary"]["*"]="D";
+$PERM["test-ordering.php"]["*"]="R";
+$PERM["test-ordering.php"]["G5"]="X";
+$PERM["personal"]["6"]="W";
+$PERM["catalog"]["6"]="W";
+$PERM["news"]["6"]="W";
+$PERM["about"]["6"]="W";
+$PERM["index.php"]["6"]="W";
+$PERM["/"]["*"]="R";
+?>

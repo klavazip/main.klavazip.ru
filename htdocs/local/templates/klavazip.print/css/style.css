@@ -1,0 +1,171 @@
+body{ margin:0px; padding:0px; font-family:Tahoma,Arial,Times New Roman;background:url(../img/box_main.jpg) repeat; position:relative; font-size:11px;}
+body.print{ margin:0px; padding:0px; font-family:Tahoma,Arial,Times New Roman;background:#FFFFFF; position:relative; min-height:100%; font-size:11px;}
+/*MAIN*/
+.fL{ float:left}
+.fR{ float:right}
+.clear{clear:both}
+.im{margin:0px}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, 
+form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer,
+header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; outline:none; }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-width: 0px; padding: 0px; margin: 0px;}
+html{height:100%}
+input, textarea {font: 12px "OpenSans-CondensedLight", Arial, sans-serif; color: #333;}
+input[type="button"], input[type="submit"], button {cursor: pointer}
+td{margin: 0px; padding: 0px;}
+form{padding: 0px; margin: 0px;}
+a{ outline:none;color: #000100; -moz-transition: color 0.1s linear; -o-transition: color 0.0s linear; -ms-transition: color 0.0s linear; -webkit-transition: color 0.0s linear; transition: color 0.0s linear; text-decoration:none;}
+
+
+
+.printpage{
+	padding:0 20px 0 20px;
+	width:960px;
+	margin:0 auto;}
+.headerPrint{
+	width:960px;
+	border-bottom:3px solid #000000;
+	position:relative;
+	height:141px;}
+.logoPrint{
+	position:absolute;
+	left:0px; top:20px;}
+.headerPrintAddress{
+	position:absolute;
+	left:220px; top:32px;}
+.headerPrintAddress p{
+	font:12px Arial;
+	color:#000000;
+	padding:0 0 0 0;}
+.headerPrintAddress p.tel{
+	font:bold 24px Arial;
+	color:#000000;
+	padding:6px 0 7px 0;}
+.headerPrintRight{
+	position:absolute;
+	left:540px; top:29px;
+	width:355px;}
+.headerPrintRight p{
+	font:12px/20px Arial;
+	color:#000000;
+	padding:0 0 0 0;}
+.headerPrintRight p span{
+	display:block;
+	font:bold 12px/20px Arial;
+	color:#000000;
+	padding:0 0 10px 0;}
+	
+.printCard{
+	padding:0 0 51px 0;}
+.printCard h1{
+	font:bold 30px Arial;
+	color:#000000;
+	padding:13px 0 13px 0;
+	border-bottom:1px solid #000000;}
+.printCardLeft{
+	float:left;
+	padding:11px 0 0 0;
+	width:500px;}
+.printStars{
+	padding:0 0 0 0;}
+.printStars a{
+	float:left;
+	width:16px; height:15px;
+	margin:0 3px 0 1px;
+	background:url(../img/star_print.png) no-repeat left top; }
+.printStars a.active{
+	background:url(../img/star_print.png) no-repeat left bottom;}
+.printStars p{
+	float:left;
+	padding:0 0 0 30px;
+	width:280px;
+	font:12px Arial;
+	color:#1a1a1a;}
+.printCardLeft img{
+	display:block;
+	margin:10px 0 0 1px;}
+.printCardLeft p.mainDescription{
+	padding:13px 0 0 0;
+	font:14px/26px Arial;
+	color:#1a1a1a;}
+.printCardRight{
+	float:right;
+	padding:33px 0 0 0;
+	width:420px;}
+.printCardRight p.oldPrice{
+	padding:0 0 0 0;
+	font:14px Arial;
+	color:#000000;
+	text-decoration:line-through;}
+.printCardRight p.price{
+	padding:0 0 9px 0;
+	font:bold 32px/34px  Arial;
+	color:#000000;}
+.printCardRight p.present{
+	padding:0 0 17px 20px;
+	font:14px  Arial;
+	color:#000000;
+	background:url(../img/marker_present.png) no-repeat left 2px;
+	border-bottom:1px solid #000000;}
+.printCardRight p.descriptionText{
+	padding:10px 0 10px 0;
+	font:14px/30px  Arial;
+	color:#000000;
+	border-bottom:1px solid #000000;}
+	
+.linesDescription{
+	padding:21px 0 0 0;}
+.linesDescription h4{
+	padding:0 0 15px 0;
+	font:bold 16px  Arial;
+	color:#000000;
+	border-bottom:1px solid #cccccc;}
+.oneLineDescriptionPrint{
+	font:13px/20px  Arial;
+	color:#000000;
+	border-bottom:1px solid #cccccc;
+	padding:9px 0 10px 0;}
+.oneLineDescriptionPrint p{
+	float:left;
+	padding:0 0 0 0;
+	width:150px;
+	font:13px/20px  Arial;
+	color:#000000;}
+.oneLineDescriptionPrint p+p{
+	padding-left:40px;
+	width:203px;
+	font:13px/20px  Arial;
+	color:#000000;}
+	
+.boxFooterPrint{
+	border-top:2px solid #000000;
+	min-width:1000px;}
+.footerPrint{
+	width:960px;
+	margin:0 auto;
+	height:124px;
+	position:relative;}
+.footerPrint p{
+	float:left;
+	padding:17px 15px 0 0;
+	width:185px;
+	font:12px/30px Arial;
+	color:#000000;}
+.footerPrint p+p{
+	width:385px;
+	padding-right:15px;}
+.footerPrint p+p+p{
+	width:241px;
+	padding-right:15px;}
+.footerPrint p+p+p+p{
+	float:left;
+	padding-right:0px; padding-top:22px;
+	width:100px;
+	font:12px/20px Arial;
+	color:#000000;}

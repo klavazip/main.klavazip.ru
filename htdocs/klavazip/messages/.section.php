@@ -1,0 +1,6 @@
+<?
+$sSectionName = "Сообщения";
+$arDirProperties = Array(
+
+);
+?>

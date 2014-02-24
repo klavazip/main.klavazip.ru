@@ -1,0 +1,67 @@
+/*
+ * jQuery FlexSlider v1.0 (Release)
+ * http://flex.madebymufffin.com
+ *
+ * Copyright 2011, Tyler Smith
+ * Free to use under the MIT license.
+ * http://www.opensource.org/licenses/mit-license.php
+ */
+
+/* Необходимые стили для FlexSlider
+*********************************/ 
+.flexslider {width: 100%; margin: 0; padding: 0; position:relative;}
+.flexslider .slides li {width:732px; height:292px; list-style-type:none;} /* Скрываем слайды доя загрузки JS. Избегаем дергания изображений */
+.flexslider .slides img {max-width: 100%; display: block;
+	position:relative;
+	border-radius: 4px; moz-border-radius: 4px; webkit-border-radius: 4px;
+	behavior: url(css/PIE.htc);}
+
+
+/* Тема по умолчанию для FlexSlider
+*********************************/
+.flexslider {width:732px; height:292px;}
+.flexslider .slides  li {position: relative;}
+/* Предполагаемый контейнер для устнановок анимации "slides".*/
+.flexslider-container {position: relative;}
+
+
+/* Стиль заголовков */
+.flex-caption {width:940px; height:111px; background:url(../img/slider_text.png) no-repeat left top; position:absolute; left:0px; bottom:25px; }
+.flex-caption p{
+	font:31px 'PTSans';
+	color:#e0dfdf;
+	padding:17px 40px 0 19px;}
+.flex-caption p+p{
+	font:15px 'PTSans';
+	color:#e0e0df;
+	padding:11px 40px 0 19px;}
+	
+
+
+/* Навигация */
+.flex-direction-nav{ display:block;}
+.flex-direction-nav li{ list-style-type:none;}
+.flex-direction-nav li a { width: 40px; height: 40px; margin: 0 0 0 0; top:253px; display: block; position:absolute; cursor: pointer; text-indent: -9999px;} /* set negative margin-top equal to half the height on the directional-nav for perfect vertical centering */
+.flex-direction-nav li a.flex-next {background:url(../img/slider_right.png) no-repeat left top; right: -1px;}
+.flex-direction-nav li a.flex-prev {background:url(../img/slider_left.png) no-repeat left top; right: 40px;}
+.flex-direction-nav li a.flex-next:hover, .flex-direction-nav li a.flex-prev:hover{ background-position:left bottom;}
+
+
+
+/* Управление */
+.flex-control-nav {position:absolute;
+	left:327px; bottom:-34px;
+	height:9px;
+	z-index:1000;} /* set negative margin-left equal to half the width on the control-nav for perfect centering */
+.flex-control-nav li {margin: 0 0 0 0; float: left; list-style-type:none;}
+.flex-control-nav li a { float:left;
+	text-indent:-9999px;
+	margin-right:21px;
+	list-style-type:none;
+	background:url(../img/slider_nav.png) no-repeat left top;
+	display:block;
+	width:9px; height:9px;
+	cursor:pointer;
+	font:0px Arial;}
+.flex-control-nav li a:hover {background:url(../img/slider_nav.png) no-repeat left bottom;}
+.flex-control-nav li a.flex-active {background:url(../img/slider_nav.png) no-repeat left bottom; cursor: default;}

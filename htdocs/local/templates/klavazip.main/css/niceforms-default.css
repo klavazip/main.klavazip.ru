@@ -1,0 +1,85 @@
+/*##########################################
+Name: Default styling for Niceforms v.1.0
+Author: Lucian Slatineanu
+URL: http://www.badboy.ro/
+##########################################*/
+
+/*General styles - NOT really related to the forms*/
+
+
+/*Forms defaults - change as needed*/
+
+
+
+/*Transparent items*/
+/*Checkboxes*/
+.checkbox {
+	float:left;
+	vertical-align: middle;
+	width:16px;
+	height:16px;
+	margin:0 0 0 0;
+	background: url(../img/box_checkbox.png) no-repeat left top;
+	cursor: pointer;
+}
+.checkbox.checked {
+	background: url(../img/box_checkbox.png) no-repeat left bottom;
+}
+
+.tableHistoryOrder .checkbox{
+	float:left;
+	vertical-align: middle;
+	width:13px;
+	height:13px;
+	margin:2px 0 0 0;
+	background: url(../img/checkbox_table.png) no-repeat left top;
+	cursor: pointer;
+}
+.tableHistoryOrder .checkbox.checked{
+	background: url(../img/checkbox_table.png) no-repeat left bottom;
+}
+
+.preOrders .checkbox{
+	float:left;
+	vertical-align: middle;
+	width:13px;
+	height:13px;
+	margin:2px 0 0 0;
+	background: url(../img/checkbox_table.png) no-repeat left top;
+	cursor: pointer;
+}
+.preOrders .checkbox.checked{
+	background: url(../img/checkbox_table.png) no-repeat left bottom;
+}
+.lineCheckDoc .checkbox {
+	float:left;
+	vertical-align: middle;
+	width:13px;
+	height:13px;
+	margin:2px 0 0 0;
+	background: url(../img/checkbox_table.png) no-repeat left top;
+	cursor: pointer;
+}
+.lineCheckDoc .checkbox.checked {
+	background: url(../img/checkbox_table.png) no-repeat left bottom;
+}
+
+/*Radio buttons*/
+.radio {
+	float:left;
+	vertical-align: middle;
+	width:15px;
+	height:15px;
+	margin:2px 0 0 0;
+	background: url(../img/box_radio.png) no-repeat left top;
+	cursor: pointer;
+}
+.radio.checked {
+	background: url(../img/box_radio.png) no-repeat left bottom;
+}
+
+
+
+
+
+

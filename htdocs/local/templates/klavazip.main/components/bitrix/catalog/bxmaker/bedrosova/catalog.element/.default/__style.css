@@ -1,0 +1,20 @@
+.catalog-price {
+	 color:red;
+}
+.catalog-item-compare-link-box ,
+.catalog-item-wishlist-link-box  {
+    display:block;
+    border:none !important;
+}
+.catalog-item-compare-link-box .link,
+.catalog-item-wishlist-link-box .link {
+    color: #464e58;
+    border-bottom: 1px dashed;
+    cursor:pointer;
+    width: auto !important;
+}
+.catalog-item-compare-link-box .link:hover,
+.catalog-item-wishlist-link-box .link:hover {
+    border-bottom: 1px solid #fff;
+}
+

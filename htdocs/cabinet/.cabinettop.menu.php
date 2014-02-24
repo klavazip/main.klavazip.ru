@@ -1,0 +1,33 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Активность", 
+		"/cabinet/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	/*
+	Array(
+		"Сообщения", 
+		"/cabinet/messages/", 
+		Array(), 
+		Array(), 
+		"" 
+	),*/
+	Array(
+		"Профиль", 
+		"/cabinet/profile/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Скачать прайс", 
+		"/upload/price.xlsx", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+);
+?>

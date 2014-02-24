@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Главная", 
+		"/klavazip/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Сообщения", 
+		"/klavazip/messages/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Служебные", 
+		"/klavazip/tools/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Каталог", 
+		"/klavazip/catalog/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+			"Интеграция 1С",
+			"/klavazip/1c/",
+			Array(),
+			Array(),
+			""
+	)
+);
+?>

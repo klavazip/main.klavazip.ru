@@ -1,0 +1,214 @@
+@charset "utf-8";
+/*
+	styles for select
+*/
+.cusel,
+.cuselFrameRight,
+.jScrollPaneDrag,
+.jScrollArrowUp,
+.jScrollArrowDown {
+	border:1px solid #d6d6d6;
+    background:#FFFFFF url(../img/box_input_2.jpg) repeat-x left top;
+    height:38px; width:398px;
+    padding:0 0 0 0;
+    margin:0 0 0 0;
+    font:16px Arial;
+    color:#1a1a1a;
+	text-align:left;
+	position:relative;
+	border-radius: 3px; moz-border-radius: 3px; webkit-border-radius: 3px;
+	behavior: url(css/PIE.htc);
+}
+.cusel { /* общий вид селекта включая стрелку справа */
+	height: 38px;
+	font-size: 16px;
+	color:#1a1a1a;
+}
+
+
+
+
+.cuselFrameRight { /* левая чсть селект. обыно скругление и левая граница */
+	position: absolute;
+	top: 0;
+	right: 0px;
+	height: 38px;
+	width: 18px;	
+	background: url("../img/select_right.png") no-repeat;
+	background-position: left 18px;
+	border:none;
+	
+}
+
+
+.se418 {
+	width: 418px;	
+}
+.se218 {
+	width: 218px;	
+}
+
+
+
+
+
+.cuselText { /* контейнер для отображенного текста селект */
+	height: 20px;
+	padding: 9px 10px 0 10px; /* подбираем отступы и высоту для видимого текста в селекте */
+	cursor: pointer;
+	overflow: hidden;
+	width:90.5%;
+	color:#1a1a1a;
+	position: relative;
+	font: 16px Arial, "Helvetica CY", "Nimbus Sans L", sans-serif; /* шрифты */
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+* html .cuselText { /* высота блока для текста для ие6 */
+	height: 21px;
+}
+.cusel span { /* оформление оптиона */
+	display: block;
+	cursor: pointer;
+	_width:92.9%;
+	padding: 6px 10px 6px 10px; /* паддинг справа - это отступ текста от ползунка */
+	zoom: 1;
+	margin:0 1px 0 1px;
+	background-color:#FFFFFF;
+	text-decoration:none;
+	font: 14px Arial, "Helvetica CY", "Nimbus Sans L", sans-serif; /* шрифты */
+	color:#1a1a1a;
+}
+.cusel span:hover,
+.cusel .cuselOptHover.hover { /* реакция оптиона на наведение */
+	background-color:#f3f3f3;
+}
+
+
+
+.cusel .cuselActive { /* оформление активного оптиона в списке */
+	background-color:#f3f3f3;
+	text-decoration:none;
+	cursor: default;
+	
+}
+
+
+/*
+	styles for focus and hover
+*/
+/*.cusel:hover,
+.cusel:hover .cuselFrameRight,
+.cusel:focus,
+.cusel:focus .cuselFrameRight,
+.cuselFocus,
+.cuselFocus .cuselFrameRight {
+	background: url(../img/bg_select_1.png) no-repeat right top;
+}*/
+
+.cuselOpen {
+z-index: 999;
+
+
+}
+
+
+/*
+	styles for disabled select
+*/
+.classDisCusel,
+.classDisCusel .cuselFrameRight {
+	background: url("../images/box_select.jpg") no-repeat;
+	cursor: default;
+	color: #ccc;
+}
+.classDisCusel .cuselText {
+	cursor: default;
+}
+
+
+
+
+/*
+	styles for scrollbar
+*/
+.cusel .cusel-scroll-wrap { /* контейнер для блока с прокруткой */
+	position: absolute;
+	left: -1px;
+	top: 100%;
+	background: #d6d6d6; /* фон выпадающего списка */
+	min-width: 100%;
+	width: 101%;
+	border-bottom: 1px solid #d6d6d6;
+	padding-bottom:0px;
+	
+	
+}
+
+
+
+.cusel .jScrollPaneContainer {
+	position: relative;
+	z-index: 3000;
+	border: 1px solid #d6d6d6; /* границы выпадающего спиcка */
+	border-top:none;
+	overflow:hidden;
+	padding-bottom:1px;
+}
+
+.cusel .jScrollPaneTrack { /* трек для ползунка прокрутки */
+	height: 100%;
+	width: 11px !important;
+	background-color:#FFFFFF;
+	border:1px solid #FFFFFF;
+	position: absolute;
+	top: 0;
+	right: 1px;
+	
+}
+.cusel .jScrollPaneDrag { /* ползунок */
+	position: absolute;
+	background: url("../images/box_scroll.jpg") no-repeat;
+	cursor: pointer;
+	width: 13px !important;
+	height: 37px !important;
+	right: -1px;
+	
+}
+
+.cusel .jScrollPaneDragTop {
+	position: absolute;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+}
+.cusel .jScrollPaneDragBottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+}
+.cusel .jScrollArrowUp { /* стрелка вверх */
+	position: absolute;
+	top: 0;
+	right: 2px;
+	width: 13px;
+	height: 0px;
+	background:none;
+	cursor: pointer;
+	overflow: hidden;
+}
+.cusel .jScrollArrowDown { /* стрелка вниз */
+	width: 13px;
+	height:0px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 3px;
+	background:none;
+	cursor: pointer;
+	overflow: hidden;
+}
