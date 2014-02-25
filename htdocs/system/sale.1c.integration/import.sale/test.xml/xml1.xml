@@ -1,0 +1,412 @@
+<Array xmlns="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="Проведен">
+					<Value xsi:type="xs:boolean">true</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:DocumentRef.ЗаказКлиента">1d3f8df6-9325-11e3-b9cb-3085a9a61e12</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:boolean">false</Value>
+				</Property>
+				<Property name="Дата">
+					<Value xsi:type="xs:dateTime">2014-02-11T18:02:17</Value>
+				</Property>
+				<Property name="Номер">
+					<Value xsi:type="xs:string">0000-000661</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="Партнер">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">d31ef060-9322-11e3-b9cb-3085a9a61e12</Value>
+				</Property>
+				<Property name="Контрагент">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Контрагенты">839c2dc0-9324-11e3-b9cb-3085a9a61e12</Value>
+				</Property>
+				<Property name="СуммаДокумента">
+					<Value xsi:type="xs:decimal">6100</Value>
+				</Property>
+				<Property name="ДополнительнаяИнформация">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Статус">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:EnumRef.СтатусыЗаказовКлиентов">Согласован</Value>
+				</Property>
+				<Property name="ДатаСогласования">
+					<Value xsi:type="xs:dateTime">2014-02-11T00:00:00</Value>
+				</Property>
+				<Property name="Согласован">
+					<Value xsi:type="xs:boolean">true</Value>
+				</Property>
+				<Property name="Комментарий">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="аВремяДоставкиС">
+					<Value xsi:type="xs:dateTime">0001-01-01T10:00:00</Value>
+				</Property>
+				<Property name="аВремяДоставкиПо">
+					<Value xsi:type="xs:dateTime">0001-01-01T18:00:00</Value>
+				</Property>
+				<Property name="аПредполагаемаяДатаДоставки">
+					<Value xsi:type="xs:dateTime">2014-02-12T00:00:00</Value>
+				</Property>
+				<Property name="аУведомлениеОтправлено">
+					<Value xsi:type="xs:boolean">false</Value>
+				</Property>
+				<Property name="аПунктВыдачи">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.аПунктыВыдачи">00000000-0000-0000-0000-000000000000</Value>
+				</Property>
+				<Property name="kz_ТоварДоставлен">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Номенклатура">344af4f2-5241-11e3-ba0b-3085a9a61e12</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:DocumentRef.ЗаказКлиента">1d3f8df6-9325-11e3-b9cb-3085a9a61e12</Value>
+				</Property>
+				<Property name="Состояние">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:EnumRef.СостоянияЗаказовКлиентов">ГотовКОбеспечению</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Товары">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Номенклатура">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.Номенклатура">81bcb6cf-65aa-11e3-b271-3085a9a61e12</Value>
+					</Property>
+					<Property name="Количество">
+						<Value xsi:type="xs:decimal">1</Value>
+					</Property>
+					<Property name="Цена">
+						<Value xsi:type="xs:decimal">1000</Value>
+					</Property>
+					<Property name="Сумма">
+						<Value xsi:type="xs:decimal">1000</Value>
+					</Property>
+					<Property name="СтавкаНДС">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:EnumRef.СтавкиНДС">НДС18</Value>
+					</Property>
+					<Property name="СуммаНДС">
+						<Value xsi:type="xs:decimal">152.54</Value>
+					</Property>
+					<Property name="ПроцентРучнойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="СуммаРучнойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="ПроцентАвтоматическойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="СуммаАвтоматическойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="Отменено">
+						<Value xsi:type="xs:boolean">true</Value>
+					</Property>
+					<Property name="ПричинаОтмены">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.ПричиныОтменыЗаказовКлиентов">00000000-0000-0000-0000-000000000000</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Номенклатура">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.Номенклатура">99da034c-247b-11e3-940b-d43d7ed6c74b</Value>
+					</Property>
+					<Property name="Количество">
+						<Value xsi:type="xs:decimal">1</Value>
+					</Property>
+					<Property name="Цена">
+						<Value xsi:type="xs:decimal">5950</Value>
+					</Property>
+					<Property name="Сумма">
+						<Value xsi:type="xs:decimal">5950</Value>
+					</Property>
+					<Property name="СтавкаНДС">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:EnumRef.СтавкиНДС">НДС18</Value>
+					</Property>
+					<Property name="СуммаНДС">
+						<Value xsi:type="xs:decimal">907.63</Value>
+					</Property>
+					<Property name="ПроцентРучнойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="СуммаРучнойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="ПроцентАвтоматическойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="СуммаАвтоматическойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="Отменено">
+						<Value xsi:type="xs:boolean">false</Value>
+					</Property>
+					<Property name="ПричинаОтмены">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.ПричиныОтменыЗаказовКлиентов">00000000-0000-0000-0000-000000000000</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Номенклатура">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.Номенклатура">344af4f2-5241-11e3-ba0b-3085a9a61e12</Value>
+					</Property>
+					<Property name="Количество">
+						<Value xsi:type="xs:decimal">1</Value>
+					</Property>
+					<Property name="Цена">
+						<Value xsi:type="xs:decimal">150</Value>
+					</Property>
+					<Property name="Сумма">
+						<Value xsi:type="xs:decimal">150</Value>
+					</Property>
+					<Property name="СтавкаНДС">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:EnumRef.СтавкиНДС">НДС18</Value>
+					</Property>
+					<Property name="СуммаНДС">
+						<Value xsi:type="xs:decimal">22.88</Value>
+					</Property>
+					<Property name="ПроцентРучнойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="СуммаРучнойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="ПроцентАвтоматическойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="СуммаАвтоматическойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="Отменено">
+						<Value xsi:type="xs:boolean">false</Value>
+					</Property>
+					<Property name="ПричинаОтмены">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.ПричиныОтменыЗаказовКлиентов">00000000-0000-0000-0000-000000000000</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="ДополнительныеРеквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="ДатаЗаказа">
+						<Value xsi:type="xs:dateTime">2014-01-29T15:19:26</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="НомерЗаказа">
+						<Value xsi:type="xs:string">13198</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="МетодОплат">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.МетодыОплаты">78aac66f-7ff0-11e2-9a17-3085a9a61d96</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="Проведен">
+					<Value xsi:type="xs:boolean">true</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:DocumentRef.ЗаказКлиента">5ca521fa-9325-11e3-b9cb-3085a9a61e12</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:boolean">false</Value>
+				</Property>
+				<Property name="Дата">
+					<Value xsi:type="xs:dateTime">2014-02-11T18:04:03</Value>
+				</Property>
+				<Property name="Номер">
+					<Value xsi:type="xs:string">0000-000662</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="Партнер">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">d31ef060-9322-11e3-b9cb-3085a9a61e12</Value>
+				</Property>
+				<Property name="Контрагент">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Контрагенты">d31ef061-9322-11e3-b9cb-3085a9a61e12</Value>
+				</Property>
+				<Property name="СуммаДокумента">
+					<Value xsi:type="xs:decimal">5130</Value>
+				</Property>
+				<Property name="ДополнительнаяИнформация">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Статус">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:EnumRef.СтатусыЗаказовКлиентов">Согласован</Value>
+				</Property>
+				<Property name="ДатаСогласования">
+					<Value xsi:type="xs:dateTime">2014-02-11T00:00:00</Value>
+				</Property>
+				<Property name="Согласован">
+					<Value xsi:type="xs:boolean">true</Value>
+				</Property>
+				<Property name="Комментарий">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="аВремяДоставкиС">
+					<Value xsi:type="xs:dateTime">0001-01-01T10:00:00</Value>
+				</Property>
+				<Property name="аВремяДоставкиПо">
+					<Value xsi:type="xs:dateTime">0001-01-01T18:00:00</Value>
+				</Property>
+				<Property name="аПредполагаемаяДатаДоставки">
+					<Value xsi:type="xs:dateTime">2014-02-12T00:00:00</Value>
+				</Property>
+				<Property name="аУведомлениеОтправлено">
+					<Value xsi:type="xs:boolean">false</Value>
+				</Property>
+				<Property name="аПунктВыдачи">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.аПунктыВыдачи">00000000-0000-0000-0000-000000000000</Value>
+				</Property>
+				<Property name="kz_ТоварДоставлен">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Номенклатура">4bc30372-5241-11e3-ba0b-3085a9a61e12</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:DocumentRef.ЗаказКлиента">5ca521fa-9325-11e3-b9cb-3085a9a61e12</Value>
+				</Property>
+				<Property name="Состояние">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:EnumRef.СостоянияЗаказовКлиентов">ГотовКОбеспечению</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Товары">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Номенклатура">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.Номенклатура">e774769f-247f-11e3-940b-d43d7ed6c74b</Value>
+					</Property>
+					<Property name="Количество">
+						<Value xsi:type="xs:decimal">1</Value>
+					</Property>
+					<Property name="Цена">
+						<Value xsi:type="xs:decimal">4880</Value>
+					</Property>
+					<Property name="Сумма">
+						<Value xsi:type="xs:decimal">4880</Value>
+					</Property>
+					<Property name="СтавкаНДС">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:EnumRef.СтавкиНДС">НДС18</Value>
+					</Property>
+					<Property name="СуммаНДС">
+						<Value xsi:type="xs:decimal">744.41</Value>
+					</Property>
+					<Property name="ПроцентРучнойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="СуммаРучнойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="ПроцентАвтоматическойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="СуммаАвтоматическойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="Отменено">
+						<Value xsi:type="xs:boolean">false</Value>
+					</Property>
+					<Property name="ПричинаОтмены">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.ПричиныОтменыЗаказовКлиентов">00000000-0000-0000-0000-000000000000</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Номенклатура">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.Номенклатура">bbc6e8a3-365c-11e3-942b-d43d7ed6c74b</Value>
+					</Property>
+					<Property name="Количество">
+						<Value xsi:type="xs:decimal">1</Value>
+					</Property>
+					<Property name="Цена">
+						<Value xsi:type="xs:decimal">2000</Value>
+					</Property>
+					<Property name="Сумма">
+						<Value xsi:type="xs:decimal">2000</Value>
+					</Property>
+					<Property name="СтавкаНДС">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:EnumRef.СтавкиНДС">НДС18</Value>
+					</Property>
+					<Property name="СуммаНДС">
+						<Value xsi:type="xs:decimal">305.08</Value>
+					</Property>
+					<Property name="ПроцентРучнойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="СуммаРучнойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="ПроцентАвтоматическойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="СуммаАвтоматическойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="Отменено">
+						<Value xsi:type="xs:boolean">true</Value>
+					</Property>
+					<Property name="ПричинаОтмены">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.ПричиныОтменыЗаказовКлиентов">00000000-0000-0000-0000-000000000000</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Номенклатура">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.Номенклатура">4bc30372-5241-11e3-ba0b-3085a9a61e12</Value>
+					</Property>
+					<Property name="Количество">
+						<Value xsi:type="xs:decimal">1</Value>
+					</Property>
+					<Property name="Цена">
+						<Value xsi:type="xs:decimal">250</Value>
+					</Property>
+					<Property name="Сумма">
+						<Value xsi:type="xs:decimal">250</Value>
+					</Property>
+					<Property name="СтавкаНДС">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:EnumRef.СтавкиНДС">НДС18</Value>
+					</Property>
+					<Property name="СуммаНДС">
+						<Value xsi:type="xs:decimal">38.14</Value>
+					</Property>
+					<Property name="ПроцентРучнойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="СуммаРучнойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="ПроцентАвтоматическойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="СуммаАвтоматическойСкидки">
+						<Value xsi:type="xs:decimal">0</Value>
+					</Property>
+					<Property name="Отменено">
+						<Value xsi:type="xs:boolean">false</Value>
+					</Property>
+					<Property name="ПричинаОтмены">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.ПричиныОтменыЗаказовКлиентов">00000000-0000-0000-0000-000000000000</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="ДополнительныеРеквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="МетодОплат">
+						<Value xmlns:d7p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d7p1:CatalogRef.МетодыОплаты">78aac66e-7ff0-11e2-9a17-3085a9a61d96</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+	</Value>
+</Array>

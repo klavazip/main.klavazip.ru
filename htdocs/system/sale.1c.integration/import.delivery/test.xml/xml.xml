@@ -1,0 +1,1282 @@
+<Array xmlns="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Транспортная компания "Байкал-Сервис"</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00071</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Транспортная компания "Байкал-Сервис"</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00000670</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Транспортная компания "Байкал-Сервис"</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+				<Property name="АдресСайтаДляПроверкиТТН">
+					<Value xsi:type="xs:string">http://www.baikalsr.ru/vidgets/tracking/</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Самовывоз из пункта выдачи с наложенным платежом</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00100</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Самовывоз из пункта выдачи с наложенным платежом</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00000674</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Самовывоз из пункта выдачи с наложенным платежом</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Почта России 1-ый класс с наложенным платежом</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00102</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Почта России 1-ый класс с наложенным платежом</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00000769</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Почта России 1-ый класс с наложенным платежом</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+				<Property name="АдресСайтаДляПроверкиТТН">
+					<Value xsi:type="xs:string">http://www.russianpost.ru/tracking/</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Почта России 1-ый класс без наложенного платежа</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00101</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Почта России 1-ый класс без наложенного платежа</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00000771</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Почта России 1-ый класс без наложенного платежа</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+				<Property name="АдресСайтаДляПроверкиТТН">
+					<Value xsi:type="xs:string">http://www.russianpost.ru/tracking/</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">PickPoint с наложенным платежом</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00094</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">PickPoint с наложенным платежом</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00000772</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">PickPoint с наложенным платежом</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">ТК "ПЭК" до города</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00091</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">ТК "ПЭК" до города</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00161920</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">ТК "ПЭК" до города</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+				<Property name="АдресСайтаДляПроверкиТТН">
+					<Value xsi:type="xs:string">https://kabinet.pecom.ru/status/</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Самовывоз IM-Logistics Санкт-Петербург без наложенного платежа</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00096</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Самовывоз IM-Logistics Санкт-Петербург без наложенного платежа</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00155053</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Самовывоз IM-Logistics Санкт-Петербург без наложенного платежа</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="КодУслуги">
+					<Value xsi:type="xs:string">C24</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Самовывоз IM-Logistics Регион без наложенного платежа</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00095</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Самовывоз IM-Logistics Регион без наложенного платежа</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00010057</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Самовывоз IM-Logistics Регион без наложенного платежа</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="КодУслуги">
+					<Value xsi:type="xs:string">C24</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Транспортная компания "ПЭК"</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00093</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Транспортная компания "ПЭК"</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00163762</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Транспортная компания "ПЭК"</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+				<Property name="АдресСайтаДляПроверкиТТН">
+					<Value xsi:type="xs:string">https://kabinet.pecom.ru/status/</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка IM-Logistics без наложеннного платежа</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00046</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка IM-Logistics без наложеннного платежа</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00010026</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка IM-Logistics без наложеннного платежа</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="КодУслуги">
+					<Value xsi:type="xs:string">24</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">PickPoint без наложенного платежа</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00103</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">PickPoint без наложенного платежа</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00010027</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">PickPoint без наложенного платежа</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Самовывоз Алгоритм Санкт-Петербург с наложенным платежом </Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00022</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Самовывоз Алгоритм Санкт-Петербург с наложенным платежом </Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00160711</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Самовывоз Алгоритм Санкт-Петербург с наложенным платежом </Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Самовывоз Алгоритм Санкт-Петербург без наложенного платежа </Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00023</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Самовывоз Алгоритм Санкт-Петербург без наложенного платежа </Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00160712</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Самовывоз Алгоритм Санкт-Петербург без наложенного платежа </Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка Алгоритм Москва без наложенного платежа </Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00024</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка Алгоритм Москва без наложенного платежа </Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00160818</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка Алгоритм Москва без наложенного платежа </Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка Алгоритм Москва с наложенным платежом </Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00025</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка Алгоритм Москва с наложенным платежом </Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00160819</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка Алгоритм Москва с наложенным платежом </Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка Алгоритм Санкт-Петербург с наложенным платежом </Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00026</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка Алгоритм Санкт-Петербург с наложенным платежом </Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00160820</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка Алгоритм Санкт-Петербург с наложенным платежом </Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка Алгоритм Санкт-Петербург без наложенного платежа </Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00027</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка Алгоритм Санкт-Петербург без наложенного платежа </Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00160822</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка Алгоритм Санкт-Петербург без наложенного платежа </Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьером ООО "Клава"</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00063</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьером ООО "Клава"</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00160836</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьером ООО "Клава"</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка "СДЭК" с наложенным платежом</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00074</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка "СДЭК" с наложенным платежом</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00161275</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка "СДЭК" с наложенным платежом</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+				<Property name="АдресСайтаДляПроверкиТТН">
+					<Value xsi:type="xs:string">http://www.edostavka.ru/nakladnoy/</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Самовывоз "СДЭК" с наложенным платежом</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00075</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Самовывоз "СДЭК" с наложенным платежом</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00161276</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Самовывоз "СДЭК" с наложенным платежом</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+				<Property name="АдресСайтаДляПроверкиТТН">
+					<Value xsi:type="xs:string">http://www.edostavka.ru/nakladnoy/</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка "СДЭК" без наложенного платежа</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00076</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка "СДЭК" без наложенного платежа</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00161277</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка "СДЭК" без наложенного платежа</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+				<Property name="АдресСайтаДляПроверкиТТН">
+					<Value xsi:type="xs:string">http://www.edostavka.ru/nakladnoy/</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Самовывоз "СДЭК" без наложенного платежа</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00077</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Самовывоз "СДЭК" без наложенного платежа</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00161278</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Самовывоз "СДЭК" без наложенного платежа</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+				<Property name="АдресСайтаДляПроверкиТТН">
+					<Value xsi:type="xs:string">http://www.edostavka.ru/nakladnoy/</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Major Express</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00104</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Major Express</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00000856</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Major Express</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка Грастин Москва без наложенного платежа</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00113</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка Грастин Москва без наложенного платежа</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00163818</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка Грастин Москва без наложенного платежа</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка Грастин Санкт-Петербург без наложенного платежа</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00114</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка Грастин Санкт-Петербург без наложенного платежа</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00163819</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка Грастин Санкт-Петербург без наложенного платежа</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Самовывоз Грастин Санкт-Петрбург без наложенного платежа</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00115</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Самовывоз Грастин Санкт-Петрбург без наложенного платежа</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00163820</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Самовывоз Грастин Санкт-Петрбург без наложенного платежа</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка Грастин Москва с наложенным платежом</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00116</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка Грастин Москва с наложенным платежом</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00163821</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка Грастин Москва с наложенным платежом</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка Грастин Санкт-Петербург с наложенным платежом</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00117</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка Грастин Санкт-Петербург с наложенным платежом</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00163822</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка Грастин Санкт-Петербург с наложенным платежом</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Самовывоз Грастин Санкт-Петрбург с наложенным платежом</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00118</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Самовывоз Грастин Санкт-Петрбург с наложенным платежом</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00163823</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Самовывоз Грастин Санкт-Петрбург с наложенным платежом</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Самовывоз IM-Logistics Санкт-Петербург с наложенным платежом</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00099</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Самовывоз IM-Logistics Санкт-Петербург с наложенным платежом</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00011166</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Самовывоз IM-Logistics Санкт-Петербург с наложенным платежом</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="КодУслуги">
+					<Value xsi:type="xs:string">С24КО</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка IM-Logistics с наложенным платежом</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00097</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка IM-Logistics с наложенным платежом</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00000906</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка IM-Logistics с наложенным платежом</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="КодУслуги">
+					<Value xsi:type="xs:string">24КО</Value>
+				</Property>
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка "DPD" с наложенным платежом</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00089</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка "DPD" с наложенным платежом</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00161861</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка "DPD" с наложенным платежом</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="УслугаСНаложеннымПлатежом">
+					<Value xsi:type="xs:string">Да</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+				<Property name="АдресСайтаДляПроверкиТТН">
+					<Value xsi:type="xs:string">http://dpd.ru/ols/trace2/extended.do2</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Курьерская доставка "DPD" без наложенного платежа </Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00090</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Курьерская доставка "DPD" без наложенного платежа </Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00161862</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Курьерская доставка "DPD" без наложенного платежа </Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+				<Property name="АдресСайтаДляПроверкиТТН">
+					<Value xsi:type="xs:string">http://dpd.ru/ols/trace2/extended.do2</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Самовывоз IM-Logistics Регион с наложенным платежом</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00098</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Самовывоз IM-Logistics Регион с наложенным платежом</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00010055</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Самовывоз IM-Logistics Регион с наложенным платежом</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="КодУслуги">
+					<Value xsi:type="xs:string">С24КО</Value>
+				</Property>
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">С наложенным платежом</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Самовывоз из пункта выдачи без наложенного платежа</Value>
+				</Property>
+				<Property name="Артикул">
+					<Value xsi:type="xs:string">03.01.00045</Value>
+				</Property>
+				<Property name="Описание">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Наименование">
+					<Value xsi:type="xs:string">Самовывоз из пункта выдачи без наложенного платежа</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00010056</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xsi:type="xs:string">Самовывоз из пункта выдачи без наложенного платежа</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ТипПлатежа">
+					<Value xsi:type="xs:string">Без наложенного платежа</Value>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+</Array>

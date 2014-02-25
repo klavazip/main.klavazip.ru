@@ -1,0 +1,940 @@
+<Array xmlns="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ДатаРегистрации">
+					<Value xsi:type="xs:string">14.08.2013 0:00:00</Value>
+				</Property>
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Арбузов Андрей Евгеньевич</Value>
+				</Property>
+				<Property name="ЮрФизЛицо">
+					<Value xsi:type="xs:string">Частное лицо</Value>
+				</Property>
+				<Property name="Пол">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ДатаРождения">
+					<Value xsi:type="xs:string">01.01.0001 0:00:00</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00013726</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">eae7d21c-04b8-11e3-8061-3085a9a61d96</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="ЛогинВходаНаСайт">
+						<Value xsi:type="xs:string">andrianecn@mail.ru</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="МассивКонтактов">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Адрес</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">453833, Башкортостан Респ, Сибай г, Кирова ул, дом № 50, квартира 3</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string">РОССИЯ</Value>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string">Башкортостан Респ</Value>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string">Сибай</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Телефон</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">+79273151317;+79273151317</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Email</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">andrianecn@mail.ru</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ДатаРегистрации">
+					<Value xsi:type="xs:string">14.08.2013 0:00:00</Value>
+				</Property>
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Руденко Дмитрий Анатольевич</Value>
+				</Property>
+				<Property name="ЮрФизЛицо">
+					<Value xsi:type="xs:string">Частное лицо</Value>
+				</Property>
+				<Property name="Пол">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ДатаРождения">
+					<Value xsi:type="xs:string">01.01.0001 0:00:00</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00013727</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">eae7d222-04b8-11e3-8061-3085a9a61d96</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="ЛогинВходаНаСайт">
+						<Value xsi:type="xs:string">dementr777@mail.ru</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="МассивКонтактов">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Адрес</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">462363, Оренбургская обл, Новотроицк г, Советская ул, дом № 95, квартира 141</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string">РОССИЯ</Value>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string">Оренбургская обл</Value>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string">Новотроицк</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Телефон</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">+79033697517;+79033697517</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Email</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">dementr777@mail.ru</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ДатаРегистрации">
+					<Value xsi:type="xs:string">14.08.2013 0:00:00</Value>
+				</Property>
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Хижняков Павел Сергеевич</Value>
+				</Property>
+				<Property name="ЮрФизЛицо">
+					<Value xsi:type="xs:string">Частное лицо</Value>
+				</Property>
+				<Property name="Пол">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ДатаРождения">
+					<Value xsi:type="xs:string">01.01.0001 0:00:00</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00013729</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">b61db098-04bb-11e3-8061-3085a9a61d96</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="ЛогинВходаНаСайт">
+						<Value xsi:type="xs:string">mazaiizh@gmail.com</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="МассивКонтактов">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Адрес</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">426061, Удмуртская Респ, Ижевск г, Ворошилова ул, дом № 4, квартира 90</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string">РОССИЯ</Value>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string">Удмуртская Респ</Value>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string">Ижевск</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Телефон</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">;+79127494525</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Email</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">mazaiizh@gmail.com</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ДатаРегистрации">
+					<Value xsi:type="xs:string">14.08.2013 0:00:00</Value>
+				</Property>
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Никитин Сергей Сергеевич</Value>
+				</Property>
+				<Property name="ЮрФизЛицо">
+					<Value xsi:type="xs:string">Частное лицо</Value>
+				</Property>
+				<Property name="Пол">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ДатаРождения">
+					<Value xsi:type="xs:string">01.01.0001 0:00:00</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00013730</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">abf3c097-04be-11e3-8061-3085a9a61d96</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="ВидКлиента">
+						<Value xsi:type="xs:string">Физические лица</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="ЛогинВходаНаСайт">
+						<Value xsi:type="xs:string">berdenok@ya.ru</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="МассивКонтактов">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Адрес</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">119019, Москва г, Ленивка ул</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string">РОССИЯ</Value>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string">Москва г</Value>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Телефон</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">89162200387</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Email</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">berdenok@ya.ru</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ДатаРегистрации">
+					<Value xsi:type="xs:string">14.08.2013 0:00:00</Value>
+				</Property>
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Китаев Александр Сергеевич</Value>
+				</Property>
+				<Property name="ЮрФизЛицо">
+					<Value xsi:type="xs:string">Частное лицо</Value>
+				</Property>
+				<Property name="Пол">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ДатаРождения">
+					<Value xsi:type="xs:string">01.01.0001 0:00:00</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00013731</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">75effd2e-04c0-11e3-8061-3085a9a61d96</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="ВидКлиента">
+						<Value xsi:type="xs:string">Физические лица</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="ЛогинВходаНаСайт">
+						<Value xsi:type="xs:string">kalmar-81.81@mail.ru</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="МассивКонтактов">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Адрес</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">394011, Воронежская обл, Воронеж г, Дачный пр-кт, дом № 212</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string">РОССИЯ</Value>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string">Воронежская обл</Value>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string">Воронеж</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Телефон</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">89304026446</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Email</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">kalmar-81.81@mail.ru</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ДатаРегистрации">
+					<Value xsi:type="xs:string">14.08.2013 0:00:00</Value>
+				</Property>
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Бут Екатерина Александровна</Value>
+				</Property>
+				<Property name="ЮрФизЛицо">
+					<Value xsi:type="xs:string">Частное лицо</Value>
+				</Property>
+				<Property name="Пол">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ДатаРождения">
+					<Value xsi:type="xs:string">01.01.0001 0:00:00</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00013732</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">49a92695-04c2-11e3-8061-3085a9a61d96</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="ЛогинВходаНаСайт">
+						<Value xsi:type="xs:string">katerina_booth@mail.ru</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="МассивКонтактов">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Адрес</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">119019, Москва г, Ленивка ул</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string">РОССИЯ</Value>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string">Москва г</Value>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Телефон</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">89269178261</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Email</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">katerina_booth@mail.ru</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ДатаРегистрации">
+					<Value xsi:type="xs:string">14.08.2013 0:00:00</Value>
+				</Property>
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Сирота Сергей Викторович</Value>
+				</Property>
+				<Property name="ЮрФизЛицо">
+					<Value xsi:type="xs:string">Частное лицо</Value>
+				</Property>
+				<Property name="Пол">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ДатаРождения">
+					<Value xsi:type="xs:string">01.01.0001 0:00:00</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00013735</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">69154449-04c5-11e3-8061-3085a9a61d96</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="ЛогинВходаНаСайт">
+						<Value xsi:type="xs:string">batynka1@mail.ru</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="МассивКонтактов">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Адрес</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">628400, Ханты-Мансийский Автономный округ - Югра АО, Сургут г</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string">РОССИЯ</Value>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string">Ханты-Мансийский Автономный округ - Югра АО</Value>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string">Сургут</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Телефон</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">89324400452</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Email</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">batynka1@mail.ru</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ДатаРегистрации">
+					<Value xsi:type="xs:string">14.08.2013 0:00:00</Value>
+				</Property>
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">Яковлев Константин Александрович</Value>
+				</Property>
+				<Property name="ЮрФизЛицо">
+					<Value xsi:type="xs:string">Частное лицо</Value>
+				</Property>
+				<Property name="Пол">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ДатаРождения">
+					<Value xsi:type="xs:string">01.01.0001 0:00:00</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00013737</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">68c73c9d-04c6-11e3-8061-3085a9a61d96</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="ВидКлиента">
+						<Value xsi:type="xs:string">Физические лица</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="ЛогинВходаНаСайт">
+						<Value xsi:type="xs:string">barcik.k@mail.ru</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="МассивКонтактов">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Адрес</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">190031, Санкт-Петербург г, Гражданская ул</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string">РОССИЯ</Value>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string">Санкт-Петербург г</Value>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Телефон</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">79522253472</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Email</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">barcik.k@mail.ru</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ДатаРегистрации">
+					<Value xsi:type="xs:string">14.08.2013 0:00:00</Value>
+				</Property>
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">МАЙОРОВ СЕРГЕЙ ПАВЛОВИЧ</Value>
+				</Property>
+				<Property name="ЮрФизЛицо">
+					<Value xsi:type="xs:string">Частное лицо</Value>
+				</Property>
+				<Property name="Пол">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ДатаРождения">
+					<Value xsi:type="xs:string">01.01.0001 0:00:00</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00013738</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">e32adf0b-04c6-11e3-8061-3085a9a61d96</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="ЛогинВходаНаСайт">
+						<Value xsi:type="xs:string">89605370487@mail.ru</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="МассивКонтактов">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Адрес</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">152025, Ярославская обл, Переславль-Залесский г, Менделеева ул, дом № 44, квартира 45</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string">РОССИЯ</Value>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string">Ярославская обл</Value>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string">Переславль-Залесский</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Телефон</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">+79605370487;+796053704877</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Email</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">89605370487@mail.ru</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="СтандартныеРеквизиты">
+			<Value xsi:type="Structure">
+				<Property name="ДатаРегистрации">
+					<Value xsi:type="xs:string">14.08.2013 0:00:00</Value>
+				</Property>
+				<Property name="НаименованиеПолное">
+					<Value xsi:type="xs:string">iMan</Value>
+				</Property>
+				<Property name="ЮрФизЛицо">
+					<Value xsi:type="xs:string">Компания</Value>
+				</Property>
+				<Property name="Пол">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ДатаРождения">
+					<Value xsi:type="xs:string">01.01.0001 0:00:00</Value>
+				</Property>
+				<Property name="Код">
+					<Value xsi:type="xs:string">00-00013740</Value>
+				</Property>
+				<Property name="ПометкаУдаления">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="Ссылка">
+					<Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">f1aaedc5-04c9-11e3-8061-3085a9a61d96</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="ЛогинВходаНаСайт">
+						<Value xsi:type="xs:string">iman@iman.ru</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="МассивКонтактов">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Адрес</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">Москва г</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string">РОССИЯ</Value>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string">Москва г</Value>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Вид">
+						<Value xsi:type="xs:string">Email</Value>
+					</Property>
+					<Property name="Представление">
+						<Value xsi:type="xs:string">iman@iman.ru</Value>
+					</Property>
+					<Property name="Страна">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Регион">
+						<Value xsi:type="xs:string"/>
+					</Property>
+					<Property name="Город">
+						<Value xsi:type="xs:string"/>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+	</Value>
+</Array>

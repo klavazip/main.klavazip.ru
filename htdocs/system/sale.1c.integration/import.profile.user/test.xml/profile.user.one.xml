@@ -1,0 +1,189 @@
+<Array xmlns="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">ИП  Рамиль Юналиев</Value>
+		</Property>
+		<Property name="ИНН">
+			<Value xsi:type="xs:string">1913420459</Value>
+		</Property>
+		<Property name="Партнер">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.Партнеры">be83f4f0-5820-11e3-9df4-3085a9a61e12</Value>
+		</Property>
+		<Property name="КодПоОКПО">
+			<Value xsi:type="xs:string"/>
+		</Property>
+		<Property name="КПП">
+			<Value xsi:type="xs:string"/>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.Контрагенты">6e31bffc-5be7-11e3-8f8a-3085a9a61e12</Value>
+		</Property>
+		<Property name="ЮрФизЛицо">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:EnumRef.ЮрФизЛицо">ЮрЛицо</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="Фамилия">
+						<Value xsi:type="xs:string">
+							Юналиев	
+						</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Имя">
+						<Value xsi:type="xs:string">
+							Рамиль
+						</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="Отчество">
+						<Value xsi:type="xs:string">
+							Рамазанович
+						</Value>
+					</Property>
+				</Value>
+				<Value xsi:type="Structure">
+					<Property name="АдресСлужбыДоставки">
+						<Value xsi:type="xs:string">
+							Некий адрес
+						</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="ЮрАдрес">
+			<Value xsi:type="Structure">
+				<Property name="Страна">
+					<Value xsi:type="xs:string">Россия</Value>
+				</Property>
+				<Property name="Город">
+					<Value xsi:type="xs:string">Абагурт</Value>
+				</Property>
+				<Property name="СубъектРФ">
+					<Value xsi:type="xs:string">Саха /Якутия/ республика</Value>
+				</Property>
+				<Property name="Индекс">
+					<Value xsi:type="xs:string">427643</Value>
+				</Property>
+				<Property name="Район">
+					<Value xsi:type="xs:string">Абдулинский район</Value>
+				</Property>
+				<Property name="Дом">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="Корпус">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="Кв">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="Улица">
+					<Value xsi:type="xs:string">Заречная</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="ФактическийАдрес">
+			<Value xsi:type="Structure">
+				<Property name="Страна">
+					<Value xsi:type="xs:string">Россия</Value>
+				</Property>
+				<Property name="Город">
+					<Value xsi:type="xs:string">Абагурт</Value>
+				</Property>
+				<Property name="СубъектРФ">
+					<Value xsi:type="xs:string">Ставропольский край</Value>
+				</Property>
+				<Property name="Индекс">
+					<Value xsi:type="xs:string">357502</Value>
+				</Property>
+				<Property name="Район">
+					<Value xsi:type="xs:string">Минераловодский район</Value>
+				</Property>
+				<Property name="Дом">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="Корпус">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Кв">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Улица">
+					<Value xsi:type="xs:string">40 лет Октября</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="НомерТелефона">
+			<Value xsi:type="xs:string">+79620156656;+79620156656</Value>
+		</Property>
+		<Property name="АдресПочты">
+			<Value xsi:type="xs:string">remitmaster@gmail.com</Value>
+		</Property>
+		<Property name="СчетаБанка">
+			<Value xsi:type="Structure">
+				<Property name="НомерСчета">
+					<Value xsi:type="xs:string">4256781532589256</Value>
+				</Property>
+				<Property name="Банк">
+					<Value xsi:type="xs:string">ОАО "СБЕРБАНК РОССИИ"</Value>
+				</Property>
+				<Property name="БанкДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ТекстКорреспондента">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ТекстНазначения">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ВалютаДенежныхСредств">
+					<Value xsi:type="xs:string">RUB</Value>
+				</Property>
+				<Property name="БИКБанка">
+					<Value xsi:type="xs:string">044525225</Value>
+				</Property>
+				<Property name="РучноеИзменениеРеквизитовБанка">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="НаименованиеБанка">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="КоррСчетБанка">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ГородБанка">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="АдресБанка">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ТелефоныБанка">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="БИКБанкаДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="РучноеИзменениеРеквизитовБанкаДляРасчетов">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="НаименованиеБанкаДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="КоррСчетБанкаДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ГородБанкаДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="АдресБанкаДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ТелефоныБанкаДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+</Array>

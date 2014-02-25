@@ -1,0 +1,212 @@
+<Array xmlns="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Наличные курьеру</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000001</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">5597681c-af44-11e1-91ab-f46d048dedda</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Кредитная карта</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000002</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">5597681d-af44-11e1-91ab-f46d048dedda</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Оплата в платежной системе Web Money</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000003</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">2c301670-af45-11e1-91ab-f46d048dedda</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Оплата в платежной системе Яндекс.Деньги</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000004</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">2c301671-af45-11e1-91ab-f46d048dedda</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Сбербанк</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000005</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">2c301672-af45-11e1-91ab-f46d048dedda</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Банковский перевод</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000006</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">2c301673-af45-11e1-91ab-f46d048dedda</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Единый кошелек</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000008</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">2c301675-af45-11e1-91ab-f46d048dedda</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Оплата по счету</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000009</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">2c301676-af45-11e1-91ab-f46d048dedda</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Квитанция (счет) на оплату</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000010</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">78aac669-7ff0-11e2-9a17-3085a9a61d96</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Оплата наличными при получении заказа</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000011</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">78aac66a-7ff0-11e2-9a17-3085a9a61d96</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Пластиковые карты</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000012</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">78aac66b-7ff0-11e2-9a17-3085a9a61d96</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">QIWI кошелек</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000013</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">78aac66c-7ff0-11e2-9a17-3085a9a61d96</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Яндекс Деньги</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000014</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">78aac66d-7ff0-11e2-9a17-3085a9a61d96</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">WebMoney</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000015</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">78aac66e-7ff0-11e2-9a17-3085a9a61d96</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Переводы Евросеть</Value>
+		</Property>
+		<Property name="Код">
+			<Value xsi:type="xs:string">000000016</Value>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.МетодыОплаты">78aac66f-7ff0-11e2-9a17-3085a9a61d96</Value>
+		</Property>
+		<Property name="ПометкаУдаления">
+			<Value xsi:type="xs:boolean">false</Value>
+		</Property>
+	</Value>
+</Array>

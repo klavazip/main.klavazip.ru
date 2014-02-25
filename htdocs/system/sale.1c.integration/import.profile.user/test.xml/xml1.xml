@@ -1,0 +1,280 @@
+<Array xmlns="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Фамилия Имя Отчетсво</Value>
+		</Property>
+		<Property name="ИНН">
+			<Value xsi:type="xs:string"/>
+		</Property>
+		<Property name="Партнер">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.Партнеры">d31ef060-9322-11e3-b9cb-3085a9a61e12</Value>
+		</Property>
+		<Property name="КодПоОКПО">
+			<Value xsi:type="xs:string"/>
+		</Property>
+		<Property name="КПП">
+			<Value xsi:type="xs:string"/>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.Контрагенты">d31ef061-9322-11e3-b9cb-3085a9a61e12</Value>
+		</Property>
+		<Property name="ЮрФизЛицо">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:EnumRef.ЮрФизЛицо">ФизЛицо</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array"/>
+		</Property>
+		<Property name="ФактическийАдрес">
+			<Value xsi:type="Structure">
+				<Property name="ВнутригРайон">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="Город">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Местоположение">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="НаселПункт">
+					<Value xsi:type="xs:string">Анисимовская (Явенгское МО) д</Value>
+				</Property>
+				<Property name="Округ">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="СубъектРФ">
+					<Value xsi:type="xs:string">Вологодская обл</Value>
+				</Property>
+				<Property name="Улица">
+					<Value xsi:type="xs:string">Улица</Value>
+				</Property>
+				<Property name="Район">
+					<Value xsi:type="xs:string">Вожегодский р-н</Value>
+				</Property>
+				<Property name="Кв">
+					<Value xsi:type="xs:string">4</Value>
+				</Property>
+				<Property name="Дом">
+					<Value xsi:type="xs:string">3</Value>
+				</Property>
+				<Property name="Индекс">
+					<Value xsi:type="xs:string">162180</Value>
+				</Property>
+				<Property name="Представление">
+					<Value xsi:type="xs:string">162180, Вологодская обл, Вожегодский р-н, Анисимовская (Явенгское МО) д, Улица, дом № 3, квартира 4</Value>
+				</Property>
+				<Property name="Комментарий">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Страна">
+					<Value xsi:type="xs:string">РОССИЯ</Value>
+				</Property>
+				<Property name="ПредставлениеОсновное">
+					<Value xsi:type="xs:string">162180, Вологодская обл, Вожегодский р-н, Анисимовская (Явенгское МО) д, Улица, дом № 3, квартира 4</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="НомерТелефона">
+			<Value xsi:type="xs:string">+111 (1111) 11212, доб. 111</Value>
+		</Property>
+		<Property name="СчетаБанка">
+			<Value xsi:type="Structure">
+				<Property name="НомерСчета">
+					<Value xsi:type="xs:string">11111111111111111111</Value>
+				</Property>
+				<Property name="Банк">
+					<Value xsi:type="xs:string">БАНК "КРЕДИТ-МОСКВА" С-ПЕТЕРБУРГСКИЙ ФИЛ</Value>
+				</Property>
+				<Property name="БанкДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ТекстКорреспондента">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ТекстНазначения">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ВалютаДенежныхСредств">
+					<Value xsi:type="xs:string">RUB</Value>
+				</Property>
+				<Property name="БИКБанка">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="РучноеИзменениеРеквизитовБанка">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="НаименованиеБанка">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="КоррСчетБанка">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ГородБанка">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="АдресБанка">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ТелефоныБанка">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="БИКБанкаДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="РучноеИзменениеРеквизитовБанкаДляРасчетов">
+					<Value xsi:type="xs:string">Нет</Value>
+				</Property>
+				<Property name="НаименованиеБанкаДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="КоррСчетБанкаДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ГородБанкаДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="АдресБанкаДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="ТелефоныБанкаДляРасчетов">
+					<Value xsi:type="xs:string"/>
+				</Property>
+			</Value>
+		</Property>
+	</Value>
+	<Value xsi:type="Structure">
+		<Property name="Наименование">
+			<Value xsi:type="xs:string">Фамилия Имя Отчетсво (2)</Value>
+		</Property>
+		<Property name="ИНН">
+			<Value xsi:type="xs:string"/>
+		</Property>
+		<Property name="Партнер">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.Партнеры">d31ef060-9322-11e3-b9cb-3085a9a61e12</Value>
+		</Property>
+		<Property name="КодПоОКПО">
+			<Value xsi:type="xs:string"/>
+		</Property>
+		<Property name="КПП">
+			<Value xsi:type="xs:string"/>
+		</Property>
+		<Property name="Ссылка">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:CatalogRef.Контрагенты">839c2dc0-9324-11e3-b9cb-3085a9a61e12</Value>
+		</Property>
+		<Property name="ЮрФизЛицо">
+			<Value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d4p1:EnumRef.ЮрФизЛицо">ФизЛицо</Value>
+		</Property>
+		<Property name="Реквизиты">
+			<Value xsi:type="Array">
+				<Value xsi:type="Structure">
+					<Property name="АдресСлужбыДоставки">
+						<Value xsi:type="xs:string">416370, Астраханская обл, Икрянинский р-н, Бекетовка с, Набережная ул, дом № 33, квартира 4</Value>
+					</Property>
+				</Value>
+			</Value>
+		</Property>
+		<Property name="ФактическийАдрес">
+			<Value xsi:type="Structure">
+				<Property name="ВнутригРайон">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="Город">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Местоположение">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="НаселПункт">
+					<Value xsi:type="xs:string">Бекетовка с</Value>
+				</Property>
+				<Property name="Округ">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="СубъектРФ">
+					<Value xsi:type="xs:string">Астраханская обл</Value>
+				</Property>
+				<Property name="Улица">
+					<Value xsi:type="xs:string">Набережная ул</Value>
+				</Property>
+				<Property name="Район">
+					<Value xsi:type="xs:string">Икрянинский р-н</Value>
+				</Property>
+				<Property name="Кв">
+					<Value xsi:type="xs:string">4</Value>
+				</Property>
+				<Property name="Дом">
+					<Value xsi:type="xs:string">33</Value>
+				</Property>
+				<Property name="Индекс">
+					<Value xsi:type="xs:string">416370</Value>
+				</Property>
+				<Property name="Представление">
+					<Value xsi:type="xs:string">416370, Астраханская обл, Икрянинский р-н, Бекетовка с, Набережная ул, дом № 33, квартира 4</Value>
+				</Property>
+				<Property name="Комментарий">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Страна">
+					<Value xsi:type="xs:string">РОССИЯ</Value>
+				</Property>
+				<Property name="ПредставлениеОсновное">
+					<Value xsi:type="xs:string">416370, Астраханская обл, Икрянинский р-н, Бекетовка с, Набережная ул, дом № 33, квартира 4</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="ЮрАдрес">
+			<Value xsi:type="Structure">
+				<Property name="ВнутригРайон">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="Город">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Местоположение">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="НаселПункт">
+					<Value xsi:type="xs:string">Амуро Балтийск с</Value>
+				</Property>
+				<Property name="Округ">
+					<Value xsi:nil="true"/>
+				</Property>
+				<Property name="СубъектРФ">
+					<Value xsi:type="xs:string">Амурская обл</Value>
+				</Property>
+				<Property name="Улица">
+					<Value xsi:type="xs:string">Улица тест</Value>
+				</Property>
+				<Property name="Район">
+					<Value xsi:type="xs:string">Зейский р-н</Value>
+				</Property>
+				<Property name="Кв">
+					<Value xsi:type="xs:string">55</Value>
+				</Property>
+				<Property name="Дом">
+					<Value xsi:type="xs:string">44</Value>
+				</Property>
+				<Property name="Индекс">
+					<Value xsi:type="xs:string">676201</Value>
+				</Property>
+				<Property name="Представление">
+					<Value xsi:type="xs:string">676201, Амурская обл, Зейский р-н, Амуро Балтийск с, Улица тест, дом № 44, квартира 55</Value>
+				</Property>
+				<Property name="Комментарий">
+					<Value xsi:type="xs:string"/>
+				</Property>
+				<Property name="Страна">
+					<Value xsi:type="xs:string">РОССИЯ</Value>
+				</Property>
+				<Property name="ПредставлениеОсновное">
+					<Value xsi:type="xs:string">676201, Амурская обл, Зейский р-н, Амуро Балтийск с, Улица тест, дом № 44, квартира 55</Value>
+				</Property>
+			</Value>
+		</Property>
+		<Property name="НомерТелефона">
+			<Value xsi:type="xs:string">+44 (44) 4444444</Value>
+		</Property>
+		<Property name="СчетаБанка">
+			<Value xsi:type="Structure"/>
+		</Property>
+	</Value>
+</Array>
