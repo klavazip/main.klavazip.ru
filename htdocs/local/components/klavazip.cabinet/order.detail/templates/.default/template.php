@@ -73,7 +73,7 @@ else
 			<div class="clear"></div>
 			<div class="orderInfBottom">
 				<? 
-				if($arResult['ORDER']['STATUS_ID'] == 'D' && $arResult['ORDER']['PAY_SYSTEM']['ID'] !== 'X')
+				if($arResult['ORDER']['STATUS_ID'] == 'D' && $$arResult['ORDER']['STATUS_ID'] !== 'X')
 				{
 					?><a class="buttonReturn" onclick="klava.cabinet.loadOrderReturnPage(<?=$arResult['ORDER']['ID']?>); return false;" href="#">Отправить заявку на возврат</a><?	
 				}
@@ -89,7 +89,7 @@ else
 				?><a class="linkTurn" onclick="klava.cabinet.submitRepeatOrder(); return false;" href="#">Повторить заказ</a><?
 				
 				
-				if($arResult['ORDER']['STATUS_ID'] == 'N' && $arResult['ORDER']['PAY_SYSTEM']['ID'] != 31 && $arResult['ORDER']['PAY_SYSTEM']['ID'] !== 'X')
+				if($arResult['ORDER']['STATUS_ID'] == 'N' && $arResult['ORDER']['PAY_SYSTEM']['ID'] != 31 && $arResult['ORDER']['STATUS_ID'] !== 'X')
 				{
 					if($arResult['ORDER']['PAY_SYSTEM']['ID'] == 8)
 					{
@@ -103,7 +103,7 @@ else
 
 				}
 				
-				if($arResult['ORDER']['PAY_SYSTEM']['ID'] !== 'X' && $arResult['ORDER']['PAY_SYSTEM']['ID'] !== 'D')
+				if($arResult['ORDER']['STATUS_ID'] !== 'X' && $arResult['ORDER']['STATUS_ID'] !== 'D')
 				{
 					?><a class="buttonReturn" href="<?=$APPLICATION->GetCurPageParam("status=x");?>">Отменить заказ</a><?
 				}	
