@@ -15,7 +15,7 @@ else
 				switch ($arResult['ORDER']['STATUS_ID'])
 				{
 					case 'N':?><div class="status_3 active"></div><div class="status_4"></div><div class="status_1"></div><div class="status_2"></div><div class="status_5"></div><div class="clear"></div><div class="statusText_3">Подтвержден</div><?break;
-					case 'O':?><div class="status_3"></div><div class="status_4"></div><div class="status_1"></div><div class="status_2"></div><div class="status_5 active"></div><div class="clear"></div><div class="statusText_5">Отменен</div><? break;
+					case 'X':?><div class="status_3"></div><div class="status_4"></div><div class="status_1"></div><div class="status_2"></div><div class="status_5 active"></div><div class="clear"></div><div class="statusText_5">Отменен</div><? break;
 					case 'P':?><div class="status_3 disabled"></div><div class="status_4 active"></div><div class="status_1"></div><div class="status_2"></div><div class="status_5"></div><div class="clear"></div><div class="statusText_4">Оплачен</div><? break;
 					case 'F':?><div class="status_3 disabled"></div><div class="status_4 disabled"></div><div class="status_1 active"></div><div class="status_2"></div><div class="status_5"></div><div class="clear"></div><div class="statusText_1">Отправлен</div><? break;
 					case 'D':?><div class="status_3 disabled"></div><div class="status_4 disabled"></div><div class="status_1 disabled"></div><div class="status_2 active"></div><div class="status_5"></div><div class="clear"></div><div class="statusText_2">Доставлен</div><?break;
@@ -73,7 +73,7 @@ else
 			<div class="clear"></div>
 			<div class="orderInfBottom">
 				<? 
-				if($arResult['ORDER']['STATUS_ID'] == 'D')
+				if($arResult['ORDER']['STATUS_ID'] == 'D' && $arResult['ORDER']['PAY_SYSTEM']['ID'] !== 'X')
 				{
 					?><a class="buttonReturn" onclick="klava.cabinet.loadOrderReturnPage(<?=$arResult['ORDER']['ID']?>); return false;" href="#">Отправить заявку на возврат</a><?	
 				}
@@ -84,11 +84,12 @@ else
 					?><a class="linkCancel" href="#">Отменить заказ</a><?
 					*/
 				}
-				?>
-				<a class="linkTurn" onclick="klava.cabinet.submitRepeatOrder(); return false;" href="#">Повторить заказ</a>
-				<? 
 				
-				if($arResult['ORDER']['STATUS_ID'] == 'N' && $arResult['ORDER']['PAY_SYSTEM']['ID'] != 31)
+				
+				?><a class="linkTurn" onclick="klava.cabinet.submitRepeatOrder(); return false;" href="#">Повторить заказ</a><?
+				
+				
+				if($arResult['ORDER']['STATUS_ID'] == 'N' && $arResult['ORDER']['PAY_SYSTEM']['ID'] != 31 && $arResult['ORDER']['PAY_SYSTEM']['ID'] !== 'X')
 				{
 					if($arResult['ORDER']['PAY_SYSTEM']['ID'] == 8)
 					{
@@ -99,8 +100,15 @@ else
 						$s_PaymentPatch = '/personal/order/payment/?ORDER_ID='.$arResult['ORDER']['ID'];
 					}	
 					?><a class="linkPay" target="_blank" href="<?=$s_PaymentPatch?>">Оплатить заказ</a><?
+
 				}
+				
+				if($arResult['ORDER']['PAY_SYSTEM']['ID'] !== 'X' && $arResult['ORDER']['PAY_SYSTEM']['ID'] !== 'D')
+				{
+					?><a class="buttonReturn" href="<?=$APPLICATION->GetCurPageParam("status=x");?>">Отменить заказ</a><?
+				}	
 				?>
+				
 				<div class="clear"></div>
 			</div>
 		</div>										

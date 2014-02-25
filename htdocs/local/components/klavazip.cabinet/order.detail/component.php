@@ -239,8 +239,15 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST')
 	}
 }
 
-
-
+if(isset($_GET['status']))
+{
+	$s_StatusCode = strtoupper($_GET['status']);
+	if(in_array($s_StatusCode, array('X')) && $i_OrderID > 0)
+	{
+		CSaleOrder::Update($i_OrderID, array('STATUS_ID' => $s_StatusCode));
+		LocalRedirect($APPLICATION->GetCurPageParam("", array('status')));
+	}	
+}	
 
 
 
