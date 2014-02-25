@@ -2,7 +2,7 @@
 
 $arResult['COMMENT_COUN'] = KlavaCatalogProductComment::getCommentCount($arResult['ID']);
 
-if( intval($arResult['CATALOG_QUANTITY']) == 0 )
+if( intval($arResult['CATALOG_QUANTITY']) <= 0 )
 {
 	foreach ($arResult['PROPERTIES']['CML2_TRAITS']['DESCRIPTION'] as $key => $s_Value)
 	{
