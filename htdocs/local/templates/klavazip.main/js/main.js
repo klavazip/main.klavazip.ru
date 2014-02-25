@@ -820,7 +820,7 @@ var klava = {
 			       
 			       break;
 			       
-			       case (code == 'COMPANY_2_OGRN' || code == 'COMPANY_3_OGRN'): 
+			       case (code == 'COMPANY_2_OGRN'): 
 			    	   
 			    	   if( inputJq.val() == '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _' )
 			    	   {
@@ -833,6 +833,23 @@ var klava = {
 			    	   else if( inputJq.val().length != 13 )
 			    	   {
 			    		   arError.push( { code : code, text : 'Поле должно состоять из 13 цифр' } );
+			    	   }
+			       
+			       break;
+			       
+			       case (code == 'COMPANY_3_OGRN'): 
+			    	   
+			    	   if( inputJq.val() == '_ _ _ _ _ _ _ _ _ _ _ _ _ _ _' )
+			    	   {
+			    		   arError.push( { code : code, text : 'Поле обязательно для заполнения' } );
+			    	   }
+			    	   else if( ! klava.regpattern.patNum.test( inputJq.val()) )
+			    	   {
+			    		   arError.push( { code : code, text : 'Поле должно состоять только из цифр' } );
+			    	   } 
+			    	   else if( inputJq.val().length != 15 )
+			    	   {
+			    		   arError.push( { code : code, text : 'Поле должно состоять из 15 цифр' } );
 			    	   }
 			       
 			       break;
