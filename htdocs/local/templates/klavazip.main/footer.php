@@ -43,8 +43,8 @@
 		<div class="boxFooter"> 
 			<div id="footer">
 				<div class="footerIcons">
-					<a title="Группа в Facebook" href="http://www.facebook.com/groups/346072022080941/" target="_blank"><img src="<?=SITE_TEMPLATE_PATH?>/img/icon_footer_1.png" alt="" /></a>
-					<a title="Группа в Контакте" href="http://vkontakte.ru/club20242050" target="_blank"><img src="<?=SITE_TEMPLATE_PATH?>/img/icon_footer_2.png" alt="" /></a>
+					<a title="Группа в Facebook" href="http://www.facebook.com/groups/346072022080941/" target="_blank"><img src="<?=SITE_TEMPLATE_PATH?>/img/icon_footer_2.png" alt="" /></a>
+					<a title="Группа в Контакте" href="http://vkontakte.ru/club20242050" target="_blank"><img src="<?=SITE_TEMPLATE_PATH?>/img/icon_footer_1.png" alt="" /></a>
 					<a title="Наш в Twitter" href="https://twitter.com/#!/KlavaZip" target="_blank"><img src="<?=SITE_TEMPLATE_PATH?>/img/icon_footer_3.png" alt="" /></a>
 				</div>
 				
