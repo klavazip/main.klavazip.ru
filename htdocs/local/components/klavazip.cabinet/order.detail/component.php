@@ -244,7 +244,7 @@ if(isset($_GET['status']))
 	$s_StatusCode = strtoupper($_GET['status']);
 	if(in_array($s_StatusCode, array('X')) && $i_OrderID > 0)
 	{
-		CSaleOrder::Update($i_OrderID, array('STATUS_ID' => $s_StatusCode));
+		CSaleOrder::Update($i_OrderID, array('STATUS_ID' => $s_StatusCode, 'CANCELED' => 'Y'));
 		LocalRedirect($APPLICATION->GetCurPageParam("", array('status')));
 	}	
 }	
