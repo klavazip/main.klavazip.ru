@@ -1,5 +1,8 @@
 <? 
 
+require_once('constant.php');
+
+
 # Переводим с запуска с крона в ручной запуск
 if( ! isset($_SERVER['HTTP_USER_AGENT'])  ) die();
 
@@ -22,6 +25,8 @@ if($b_Debug)
 }
 	
 $ar_Action = KlavaIntegrationMain::getAction();
+
+//echo '<pre>', print_r($ar_Action).'</pre>';
 
 ($b_Debug) ? arraytofile(array('action' => $ar_Action), $s_LogPatch.'очередь.txt') : '';
 
