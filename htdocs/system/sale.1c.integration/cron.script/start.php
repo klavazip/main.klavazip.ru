@@ -1,6 +1,6 @@
 <? 
 
-require_once('constant.php');
+require_once('const.php');
 
 
 # Переводим с запуска с крона в ручной запуск
