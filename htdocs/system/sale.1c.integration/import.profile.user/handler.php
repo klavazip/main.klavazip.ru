@@ -8,7 +8,7 @@ require_once( '../../lib/class.KlavaUserProfile.php' );
 
 $s_LogDir = $_SERVER['DOCUMENT_ROOT'].'/system/sale.1c.integration/import.profile.user/logs/';
 
-$b_Debug = true;
+$b_Debug = INTEGRATION_DEBUG_LOG;
 
 if($b_Debug)
 {
@@ -18,8 +18,8 @@ if($b_Debug)
 }	
 
 # !!!
-($b_Debug) ? arraytofile($_POST, $s_LogPatch.'POST.txt', "post") : '';
-($b_Debug) ? arraytofile($_FILES, $s_LogPatch.'FILES.txt', "file") : '';
+($b_Debug) ? arraytofile($_POST, $s_LogPatch.'массив_POST.txt', "post") : '';
+($b_Debug) ? arraytofile($_FILES, $s_LogPatch.'массив_FILES.txt', "file") : '';
 # !!!
 
 
@@ -29,7 +29,7 @@ if($b_Debug)
 if( $data = KlavaIntegrationMain::xml() )
 {
 	# !!!
-	($b_Debug) ? arraytofile(array('data' => $data), $s_LogPatch.'data.xml', "data") : '';
+	($b_Debug) ? arraytofile(array('data' => $data), $s_LogPatch.'полученный_xml_файл_из_1с.xml', "data") : '';
 	# !!!
 	
 	$ar_XML = XML2Array::createArray($data);
@@ -77,11 +77,8 @@ if( $data = KlavaIntegrationMain::xml() )
 	}
 			
 	# !!!
-	($b_Debug) ? arraytofile($ar_UserResult, $s_LogPatch.'ar_UserResult.xml', "ar_UserResult") : '';
+	($b_Debug) ? arraytofile($ar_UserResult, $s_LogPatch.'массив_поле_разбора_xml_ar_UserResult.xml', "ar_UserResult") : '';
 	# !!!
-	
-	//echo '<pre>', print_r($ar_UserResult).'</pre>'; 
-			
 	
 	
 	foreach ($ar_UserResult as $ar_Value)
@@ -141,10 +138,10 @@ if( $data = KlavaIntegrationMain::xml() )
 								$s_FIO .= $ar_Value['Реквизиты']['Фамилия'];
 							
 							if(strlen($ar_Value['Реквизиты']['Имя']) > 0)
-								$s_FIO .= $ar_Value['Реквизиты']['Имя'];
+								$s_FIO .= ' '.$ar_Value['Реквизиты']['Имя'];
 							
 							if(strlen($ar_Value['Реквизиты']['Отчество']) > 0)
-								$s_FIO .= $ar_Value['Реквизиты']['Отчество'];
+								$s_FIO .= ' '.$ar_Value['Реквизиты']['Отчество'];
 							
 							if(strlen($s_FIO) == 0 && strlen($ar_Value['Наименование']) > 0)
 								$s_FIO = $ar_Value['Наименование'];
@@ -156,7 +153,6 @@ if( $data = KlavaIntegrationMain::xml() )
 						default: # Для 2 и 3
 								
 							$ar_IntegratValue['INN'] = $ar_Value['ИНН'];
-								
 							$ar_IntegratValue['OGRN'] = $ar_Value['КодПоОКПО'];
 							$ar_IntegratValue['RASCHET_SCHET'] = $ar_Value['СчетаБанка']['НомерСчета'];
 							$ar_IntegratValue['COMPANY_NAME'] = $ar_Value['Наименование'];
@@ -178,7 +174,7 @@ if( $data = KlavaIntegrationMain::xml() )
 					}
 	
 					# !!!
-					($b_Debug) ? arraytofile($ar_IntegratValue, $s_LogPatch.'ar_ProeprtyValue.txt', "ar_IntegratValue") : '';
+					($b_Debug) ? arraytofile($ar_IntegratValue, $s_LogPatch.'массив_свойств_профиля_ar_IntegratValue.txt', "ar_IntegratValue") : '';
 					# !!!
 								
 					
@@ -193,7 +189,7 @@ if( $data = KlavaIntegrationMain::xml() )
 					if( $i_ProfileID = KlavaUserProfile::getProfileID($ar_Value['Ссылка']) )
 					{
 						# !!!
-						($b_Debug) ? arraytofile(array('action' => 'update'), $s_LogPatch.'action.txt', "") : '';
+						($b_Debug) ? arraytofile(array('action' => 'add'), $s_LogPatch.'действие_над_элементом_[ДОБАВЛЕНИЕ]', "") : '';
 						# !!!
 						
 						if ($ar_Profile = CSaleOrderUserProps::GetByID($i_ProfileID))
@@ -205,12 +201,18 @@ if( $data = KlavaIntegrationMain::xml() )
 							$rs_PropertyValue = CSaleOrderUserPropsValue::GetList(($b=""), ($o=""), array("USER_PROPS_ID" => $i_ProfileID));
 							while ($ar_PropertyValue = $rs_PropertyValue->Fetch())
 							{
+								$value = $ar_IntegratValue[$ar_PropertyValue['CODE']];
+									
+								if($ar_PropertyValue['CODE'] == 'PROFILE_ID')
+									$value = $i_ProfileID;
+								
+								
 								CSaleOrderUserPropsValue::Update(
 									$ar_PropertyValue['ID'], 
 									array(
-										'USER_PROPS_ID' => $i_ProfileID, 
-										'ORDER_PROPS_ID' => $ar_PropertyValue['ORDER_PROPS_ID'], 
-										'VALUE' => $ar_IntegratValue[$ar_PropertyValue['CODE']]
+										'USER_PROPS_ID' 	=> $i_ProfileID, 
+										'ORDER_PROPS_ID' 	=> $ar_PropertyValue['ORDER_PROPS_ID'], 
+										'VALUE' 			=> $value
 									)
 								);
 							}
@@ -225,7 +227,18 @@ if( $data = KlavaIntegrationMain::xml() )
 							# Добавлем свойства
 							foreach ($ar_PropertyParams as $s_Code => $ar_PropParamVal)
 							{
-								CSaleOrderUserPropsValue::Add(array('USER_PROPS_ID' => $i_ProfileID, 'ORDER_PROPS_ID' => $ar_PropParamVal['ID'], 'NAME' => $ar_PropParamVal['NAME'], 'VALUE' => $ar_IntegratValue[$s_Code]));
+								$value = $ar_IntegratValue[$s_Code];
+									
+								if($s_Code == 'PROFILE_ID')
+									$value = $i_NewProfileID;
+								
+								CSaleOrderUserPropsValue::Add(array(
+										'USER_PROPS_ID' 	=> $i_ProfileID, 
+										'ORDER_PROPS_ID' 	=> $ar_PropParamVal['ID'], 
+										'NAME' 				=> $ar_PropParamVal['NAME'], 
+										'VALUE' 			=> $value
+									)
+								);
 							}
 						}
 	
@@ -234,7 +247,7 @@ if( $data = KlavaIntegrationMain::xml() )
 					else
 					{
 						# !!!
-						($b_Debug) ? arraytofile(array('action' => 'add'), $s_LogPatch.'action.txt', "") : '';
+						($b_Debug) ? arraytofile(array('action' => 'update'), $s_LogPatch.'действие_над_элементом_[ОБНОВЛЕНИЕ]', "") : '';
 						# !!!
 						
 						if( strlen($ar_IntegratValue['PHONE']) > 0 || strlen($ar_IntegratValue['EMAIL']) > 0 )
@@ -248,7 +261,18 @@ if( $data = KlavaIntegrationMain::xml() )
 								# К созданному профиля добавлем свойства
 								foreach ($ar_PropertyParams as $s_Code => $ar_PropParamVal)
 								{
-									CSaleOrderUserPropsValue::Add(array('USER_PROPS_ID'  => $i_NewProfileID, 'ORDER_PROPS_ID' => $ar_PropParamVal['ID'], 'NAME' => $ar_PropParamVal['NAME'], 'VALUE' => $ar_IntegratValue[$s_Code]));
+									$value = $ar_IntegratValue[$s_Code];
+									
+									if($s_Code == 'PROFILE_ID')
+										$value = $i_NewProfileID;
+									
+									CSaleOrderUserPropsValue::Add(array(
+										'USER_PROPS_ID' 	=> $i_NewProfileID, 
+										'ORDER_PROPS_ID' 	=> $ar_PropParamVal['ID'], 
+										'NAME' 				=> $ar_PropParamVal['NAME'], 
+										'VALUE' 			=> $value
+										)
+									);
 								}
 	
 								$ar_Status[] = KlavaIntegrationMain::arrayItemStatus($ar_Value['Ссылка'], true);
@@ -281,7 +305,7 @@ if( $data = KlavaIntegrationMain::xml() )
 		}
 
 		# !!!
-		($b_Debug) ? arraytofile($ar_Status, $s_LogPatch.'ar_Status.txt', "ar_Status") : '';
+		($b_Debug) ? arraytofile($ar_Status, $s_LogPatch.'массив_статусов_по_каждому_элементу_ar_Status.txt', "ar_Status") : '';
 		# !!!
 		
 		header('Content-Type: text/xml');

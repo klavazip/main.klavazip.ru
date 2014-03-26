@@ -1,6 +1,14 @@
 <?	if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true) die();?>
 
 
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		klava.order.setProfile(<?=$arResult['USER_PROFILE'][0]['ID']?>);
+	});
+</script>	
+
+
 <div class="boxMain" style="position: relative;">
 	<h1>Оформление заказа</h1>
 	<div class="border_1"></div>
@@ -25,10 +33,48 @@
 	if(isset($arResult['ERROR_ORDER']) && strlen($arResult['ERROR_ORDER']) > 0)
 	{
 		?><div class="error-block"><?=$arResult['ERROR_ORDER']?></div><?
-	}	
+	}
 	?>
 	
+		
+		
+	
 	<form action="/personal/order/" method="post" id="js-order-form">
+	
+	
+			<div class="oneBlockOrderForm">
+				<h4>Профили</h4>								
+				<div class="boxFormTab">																									
+					<div class="blockInputform">
+						<div class="boxSelect_2">
+							<div class="lineForm">									
+								<select id="region" name="USER_PROFILE_ID" onchange="klava.order.setProfile(this.value)" class="se920" tabindex="1">
+									<option value="0">-- Создать новый профиль --</option>
+									<? 
+									foreach ($arResult['USER_PROFILE'] as $k => $ar_Value)
+									{
+										?><option <?=($k == 0) ? 'selected="selected"' : ''?> value="<?=$ar_Value['ID']?>"><?=$ar_Value['NAME']?> [<?=$ar_Value['TYPE']?>]</option><?
+									}	
+									?>																							
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="clear"></div>	
+					<? 
+					$b_VisInp = (count($arResult['USER_PROFILE']) > 0);
+					?>
+					<div class="blockInputform" id="profile_new_name_in" style="position: relative; display: <?=($b_VisInp) ? 'none' : 'block'?>">
+						<input type="text" class="in900" name="NEW_PROFILE_NAME" value="Новый профиль">
+					</div>
+					
+					<div class="clear"></div>		
+						
+				</div>															
+			</div>
+	
+	
+	
 	
 			<h1>Контакные данные</h1>
 			
@@ -144,8 +190,6 @@
 							<div class="order-error">Поле обязательно к заполнению</div>	
 							<span class="placeholder" style="display: <?=(strlen($arResult['USER']['SECOND_NAME']) > 0) ? 'none' : 'block'?>">Введите свое отчество</span>					
 						</div>
-						
-						
 					</div>		
 				</div>
 			</div>
@@ -990,7 +1034,7 @@
 				<div class="oneLineInfStep">
 					<p>Комментарии к заказу</p>
 					<div class="commentStep">
-						<textarea rows="1" cols="1" name="DESCRIPTION"></textarea>
+						<textarea rows="1" cols="1" name="DESCRIPTION" data-code="COMMENT"></textarea>
 						<div class="lineCheckDoc">
 							<input checked="checked" type="checkbox" class="styled check" name="check_1" />
 							<label for="check_1">Я согласен с </label> <a target="_blank" class="order-about-usloviya-link" href="/about/usloviya/">условиями заказа <i></i></a>								

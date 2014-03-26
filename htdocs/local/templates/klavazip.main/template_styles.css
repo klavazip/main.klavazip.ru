@@ -8338,8 +8338,20 @@ URL: http://www.badboy.ro/
 .se218 {
 	width: 218px;	
 }
+.se920 {
+	width: 920px;	
+}
 
+.in900 {
+	width: 900px !important;	
+}
 
+.se920 .cusel-scroll-wrap
+{
+	width: 922px !important;	
+	/*height: 80px;*/
+    overflow: auto;
+}
 
 
 

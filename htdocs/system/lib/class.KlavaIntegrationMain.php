@@ -55,7 +55,6 @@ class KlavaIntegrationMain
 	}
 	
 	
-	
 	public static function xml($s_TestXMl = false)
 	{
 		if( strlen($s_TestXMl) > 0 )
@@ -123,7 +122,7 @@ class KlavaIntegrationMain
 	
 	public static function getAction()
 	{
-		$rs_Element = CIBlockElement::GetList(array(), array('IBLOCK_ID' => self::ACTION_IBLOCK_ID, 'ACTIVE' => 'Y', 'DATE_ACTIVE_FROM' => false), false, false, array('ID', 'CODE', 'PREVIEW_TEXT'));
+		$rs_Element = CIBlockElement::GetList(array('ID' => 'ASC'), array('IBLOCK_ID' => self::ACTION_IBLOCK_ID, 'ACTIVE' => 'Y', 'DATE_ACTIVE_FROM' => false), false, false, array('ID', 'CODE', 'PREVIEW_TEXT'));
 		while($ar_Element = $rs_Element->Fetch())
 		{
 			$ar_Result[] = $ar_Element; 			
@@ -132,11 +131,13 @@ class KlavaIntegrationMain
 		return $ar_Result; 
 	}
 	
+	
 	public static function setStartTimeAction($i_ElementID)
 	{
 		$ob_Element = new CIBlockElement; 
 		$ob_Element->Update($i_ElementID, array('DATE_ACTIVE_FROM' => ConvertTimeStamp(time(), 'FULL')));
 	}
+	
 	
 	public static function setEndTimeAction($i_ElementID)
 	{

@@ -8,6 +8,14 @@ class KlavaSale
 	
 	public static function getOrderID($s_XMlID)
 	{
+		$rs_Order = CSaleOrder::GetList(array(), array('XML_ID' => $s_XMlID));
+		if ($ar_Order = $rs_Order->Fetch())
+		{
+			return $ar_Order['ID'];
+		}
+		else
+			return false;
+		/*
 		$rs_Profile = CIBlockElement::GetList(array(), array('IBLOCK_ID' => self::IBLOCK_ID, 'NAME' => $s_XMlID), false, false, array('CODE', 'NAME'));
 		if( $rs_Profile->SelectedRowsCount() > 0 )
 		{
@@ -16,6 +24,7 @@ class KlavaSale
 		}
 		else 
 			return false;
+		*/	
 	}
 	
 
@@ -41,14 +50,13 @@ class KlavaSale
 	public static function getStatusLetter($ar_Params)
 	{
 		$s_Status = $ar_Params['Реквизиты']['Статус'];
+		
 		$s_Condition = $ar_Params['Реквизиты']['Состояние'];
-		
 		$s_Result = false;
-		
 		switch (true)
 		{
-			case ($s_Status == 'НеСогласован' && $s_Condition == 'Ожидается согласование'):
-				$s_Result = 'N';
+			case ($s_Status == 'НеСогласован' && $s_Condition == 'ОжидаетсяCогласование'):
+				$s_Result = 'N'; 
 				break;
 				
 			case ($s_Status == 'Согласован' && $s_Condition == 'ГотовКОбеспечению'):
@@ -108,34 +116,6 @@ class KlavaSale
 		D 5. Доставлен 					      || Закрыт (как то идентифицировать что заказ не отменен)
 		F 6. Отменен 						  || Закрыт (как то идентифицировать что заказ отменен)
 		*/
-		
-		
-		
-		
-		
-		
-		/*
-		 case ($s_Status == 'НеСогласован' && $s_Condition == 'Ожидается согласование'):
-		$s_Result = 'N';
-		break;
-			
-		case ($s_Status == 'КОбеспечению' && $s_Condition == 'ОжидаетсяПредоплатаДоОтгрузки'):
-		$s_Result = 'P';
-		break;
-		
-		case ($s_Status == 'КОбеспечению' && $s_Condition == 'ГотовКОтгрузке'):
-		$s_Result = 'O';
-		break;
-		
-		case ($s_Status == 'КОтгрузке' && $s_Condition == 'ОжидаетсяОтгрузка'):
-		$s_Result = 'L';
-		break;
-		
-		case ($s_Status == 'КОтгрузке' && $s_Condition == 'ОжидаетсяОтгрузка'):
-		$s_Result = 'S';
-		break;
-		*/
-		
 	}
 
 

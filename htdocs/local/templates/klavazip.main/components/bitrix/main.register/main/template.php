@@ -22,9 +22,9 @@
 	
 	if( intval($arResult['VALUES']['USER_ID']) > 0 )
 	{
+		Klava1CExportUser::addActionAddUser( CUser::GetByID($arResult['VALUES']['USER_ID'])->Fetch() );
 		LocalRedirect('/aut/registration/?registr=Y');
 	}
-	
 	
 	if( $_GET['registr'] == 'Y' )
 	{

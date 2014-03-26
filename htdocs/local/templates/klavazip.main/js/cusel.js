@@ -462,10 +462,13 @@ function cuselShowList(cuselWrap) {
 		var cuselArrows = false;
 		if (cuselMain.prop("class").indexOf("cuselScrollArrows") != -1)
 			cuselArrows = true;
-		if (!cuselWrap.find(".jScrollPaneContainer").eq(0).is("div")) {
+		if (!cuselWrap.find(".jScrollPaneContainer").eq(0).is("div")) 
+		{
+			/*
 			cuselWrap.find("div").eq(0).jScrollPaneCusel({
 				showArrows : cuselArrows
 			});
+			*/
 		}
 
 		/* прокручиваем к текущему оптиону */

@@ -15,9 +15,9 @@ else
 				switch ($arResult['ORDER']['STATUS_ID'])
 				{
 					case 'N':?><div class="status_3 active"></div><div class="status_4"></div><div class="status_1"></div><div class="status_2"></div><div class="status_5"></div><div class="clear"></div><div class="statusText_3">Подтвержден</div><?break;
-					case 'X':?><div class="status_3"></div><div class="status_4"></div><div class="status_1"></div><div class="status_2"></div><div class="status_5 active"></div><div class="clear"></div><div class="statusText_5">Отменен</div><? break;
+					case 'F':?><div class="status_3"></div><div class="status_4"></div><div class="status_1"></div><div class="status_2"></div><div class="status_5 active"></div><div class="clear"></div><div class="statusText_5">Отменен</div><? break;
 					case 'P':?><div class="status_3 disabled"></div><div class="status_4 active"></div><div class="status_1"></div><div class="status_2"></div><div class="status_5"></div><div class="clear"></div><div class="statusText_4">Оплачен</div><? break;
-					case 'F':?><div class="status_3 disabled"></div><div class="status_4 disabled"></div><div class="status_1 active"></div><div class="status_2"></div><div class="status_5"></div><div class="clear"></div><div class="statusText_1">Отправлен</div><? break;
+					case 'L':?><div class="status_3 disabled"></div><div class="status_4 disabled"></div><div class="status_1 active"></div><div class="status_2"></div><div class="status_5"></div><div class="clear"></div><div class="statusText_1">Отправлен</div><? break;
 					case 'D':?><div class="status_3 disabled"></div><div class="status_4 disabled"></div><div class="status_1 disabled"></div><div class="status_2 active"></div><div class="status_5"></div><div class="clear"></div><div class="statusText_2">Доставлен</div><?break;
 				}
 				?>
@@ -27,7 +27,9 @@ else
 				<div class="tableHistoryOrder">
 					<table cellspacing="0" cellpadding="0">
 						<tr class="head">
+							<? /*?>
 							<td><input type="checkbox" id="order-detail-all-checked" class="styled"></td>
+							<? */ ?>
 							<td><p>Фото</p></td>
 							<td><p>Название</p></td>
 							<td><p>Артикул</p></td>
@@ -40,11 +42,13 @@ else
 						{
 							?>
 							<tr>
+								<? /*?>
 								<td>
 									<input type="checkbox" value="<?=$ar_Value['ID']?>" name="SELECT_ELEMENT_ID[]" class="styled js-product-item">
 									<input type="hidden" value="<?=$ar_Value['COUNT']?>" name="COUNT[<?=$ar_Value['ID']?>]" />
 									<input type="hidden" value="<?=$ar_Value['ID']?>" name="ELEMENT_ID[]" />
 								</td>
+								<? */ ?>
 								<td><a target="_blank" href="<?=$ar_Value['DETAIL_PAGE_URL']?>"><img alt="" width="62" src="<?=$ar_Value['IMG']?>"></a></td>
 								<td><a target="_blank" class="name" href="<?=$ar_Value['DETAIL_PAGE_URL']?>"><?=$ar_Value['NAME']?></a></td>
 								<td><p><?=$ar_Value['ARTICUL']?></p></td>
@@ -73,10 +77,12 @@ else
 			<div class="clear"></div>
 			<div class="orderInfBottom">
 				<? 
+				/*
 				if($arResult['ORDER']['STATUS_ID'] == 'D' && $$arResult['ORDER']['STATUS_ID'] !== 'X')
 				{
 					?><a class="buttonReturn" onclick="klava.cabinet.loadOrderReturnPage(<?=$arResult['ORDER']['ID']?>); return false;" href="#">Отправить заявку на возврат</a><?	
 				}
+				*/
 				
 				if($arResult['ORDER']['STATUS_ID'] == 'N')
 				{
@@ -103,9 +109,9 @@ else
 
 				}
 				
-				if($arResult['ORDER']['STATUS_ID'] !== 'X' && $arResult['ORDER']['STATUS_ID'] !== 'D')
+				if($arResult['ORDER']['STATUS_ID'] !== 'F' && $arResult['ORDER']['STATUS_ID'] !== 'D')
 				{
-					?><a class="buttonReturn" href="<?=$APPLICATION->GetCurPageParam("status=x");?>">Отменить заказ</a><?
+					?><a class="buttonReturn" href="<?=$APPLICATION->GetCurPageParam("status=f");?>">Отменить заказ</a><?
 				}	
 				?>
 				

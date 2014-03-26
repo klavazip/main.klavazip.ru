@@ -52,7 +52,151 @@ var klava = {
 			this.hideLinkOrderPage();
 			
 			this.selectUserType(1);
+		},
+		
+		
+		setProfile : function(profileID)
+		{
+			if(profileID == 0)
+			{
+				$('#profile_new_name_in').show();
+				
+				$('input[data-code="USER_PHONE"]').val( '' ); 
+				$('input[data-code="USER_EMAIL"]').val( '' ); 
+				$('input[data-code="LAST_NAME"]').val( '' ); 
+				$('input[data-code="NAME"]').val( '' ); 
+				$('input[data-code="SECOND_NAME"]').val(''); 
+				$('input[data-code="DELIVERY_ADRES_CITY"]').val(''); 
+				$('#order-delevery-list').html('<div class="order-delivery-help">Способы доставки будут доступны после выбора города</div>');
+				
+				$('input[data-code="DELIVERY_ADRES_STREET"]').val('');	
+				$('input[data-code="DELIVERY_ADRES_INDEX"]').val('');	
+				$('input[data-code="DELIVERY_ADRES_HOME"]').val('');	
+				$('input[data-code="DELIVERY_ADRES_KORPUS"]').val('');	
+				$('input[data-code="DELIVERY_ADRES_FLAT"]').val('');
+				
+				klava.order.selectUserType(1);
+				$('#order_user_type_block input[value="1"]').attr('checked', true);
+
+				for( var i = 2; i <= 3; i++ )
+				{
+					if(i == 2)
+						$('input[data-code="COMPANY_2_KPP"]').val('');
+
+					$('input[data-code="COMPANY_' + i + '_NAME"]').val('');
+					$('input[data-code="COMPANY_' + i + '_INN"]').val('');	
+					$('input[data-code="COMPANY_' + i + '_OGRN"]').val('');	
+					$('input[data-code="COMPANY_' + i + '_RASCHET_SCHET"]').val('');	
+					
+					$('input[data-code="COMPANY_BANK_' + i + '_BIK_BANK"]').val('');	
+					$('input[data-code="COMPANY_BANK_' + i + '_KS_BANK"]').val('');
+					$('input[data-code="COMPANY_BANK_' + i + '_NAME_BANK"]').val('');
+					$('input[data-code="COMPANY_BANK_' + i + '_CITY_BANK"]').val('');
+					
+					$('input[data-code="U_ADRES_' + i + '_UCITY"]').val('');
+					$('input[data-code="U_ADRES_' + i + '_USTREET"]').val('');
+					$('input[data-code="U_ADRES_' + i + '_UINDEX"]').val('');
+					$('input[data-code="U_ADRES_' + i + '_UHOME"]').val('');
+					$('input[data-code="U_ADRES_' + i + '_UKORPUS"]').val('');
+					$('input[data-code="U_ADRES_' + i + '_UFLAT"]').val('');
+				}	
+				
+				
+				$('textarea[data-code="COMMENT"]').val('');
+				
+				
+				return;
+			}	
+			else
+				$('#profile_new_name_in').hide();
 			
+			$.ajax({
+    			type    : "POST",
+    			url     : "/ajax/order/selected-profile/",
+    			data    : {id: profileID},
+    			success : function(data)
+    			{
+    				if(!data)
+    					return;
+    				
+    				var jsonObject = eval( '(' + data + ')' );
+    				if( jsonObject.st == 'ok' )
+    				{ 
+    					var params = jsonObject.result;
+    					
+    					$('input[data-code="USER_PHONE"]').val( params.VALUE.PHONE ).keydown(); 
+    					$('input[data-code="USER_EMAIL"]').val( params.VALUE.EMAIL ).focus(); 
+    					$('input[data-code="LAST_NAME"]').val( params.VALUE.LAST_NAME ).focus(); 
+    					$('input[data-code="NAME"]').val( params.VALUE.NAME ).focus(); 
+    					$('input[data-code="SECOND_NAME"]').val( params.VALUE.SECOND_NAME ).focus(); 
+    					$('input[data-code="DELIVERY_ADRES_CITY"]').val( params.VALUE.CITY ).focus(); 
+
+    					/* Выводим доставку по названию города */
+    					$.ajax({
+    						type    : "POST",
+    						url     : "/ajax/order/get-city-name/",
+    						data    : {name : params.VALUE.CITY},
+    						success : function(data)
+    						{
+    							var jsonObject = eval( '(' + data + ')' );
+    							if( jsonObject.st == 'ok' )
+    							{
+    								klava.order.getDelivery(jsonObject.result.id, function(){
+    									
+    									setTimeout(function(){
+        		        					var delivery = $('#order-delevery-list input[value="'+ params.VALUE.DELIVERY_ID +'"]').attr('checked', true);
+        		        					klava.order.selectDelivery(delivery);    					
+    									}, 500);
+    									
+    								});
+    							}
+    							else
+    							{
+    								klava.order.getDelivery(0);
+    							}
+    						}
+    					});
+    					
+    					
+    					$('input[data-code="DELIVERY_ADRES_STREET"]').val( params.VALUE.STREET ).focus();	
+    					$('input[data-code="DELIVERY_ADRES_INDEX"]').val( params.VALUE.INDEX ).focus();	
+    					$('input[data-code="DELIVERY_ADRES_HOME"]').val( params.VALUE.HOME ).focus();	
+    					$('input[data-code="DELIVERY_ADRES_KORPUS"]').val( params.VALUE.KORPUS ).focus();	
+    					$('input[data-code="DELIVERY_ADRES_FLAT"]').val( params.VALUE.FLAT ).focus();	
+    					
+    					var userType = params.PROFILE.PERSON_TYPE_ID;
+    					
+    					$('#order_user_type_block input[value="'+ userType +'"]').attr('checked', true);
+    					klava.order.selectUserType(userType);
+
+    					if( userType == 3 || userType == 2 )
+    					{
+    						if(userType == 2)
+    							$('input[data-code="COMPANY_2_KPP"]').val( params.VALUE.KPP ).focus();
+    						
+    						$('input[data-code="COMPANY_' + userType + '_NAME"]').val( params.VALUE.COMPANY_NAME ).focus();
+    						$('input[data-code="COMPANY_' + userType + '_INN"]').val( params.VALUE.INN ).focus();	
+    						$('input[data-code="COMPANY_' + userType + '_OGRN"]').val( params.VALUE.OGRN ).focus();	
+    						$('input[data-code="COMPANY_' + userType + '_RASCHET_SCHET"]').val( params.VALUE.RASCHET_SCHET ).focus();	
+    						
+    						$('#order_company_' + userType + '_bank_field').show();			
+    						$('input[data-code="COMPANY_BANK_' + userType + '_BIK_BANK"]').val( params.VALUE.BIK_BANK ).focus();	
+    						$('input[data-code="COMPANY_BANK_' + userType + '_KS_BANK"]').val( params.VALUE.KS_BANK ).focus();
+    						$('input[data-code="COMPANY_BANK_' + userType + '_NAME_BANK"]').val( params.VALUE.NAME_BANK ).focus();
+    						$('input[data-code="COMPANY_BANK_' + userType + '_CITY_BANK"]').val( params.VALUE.CITY_BANK ).focus();
+    						
+    						$('input[data-code="U_ADRES_' + userType + '_UCITY"]').val( params.VALUE.UCITY ).focus();
+    						$('input[data-code="U_ADRES_' + userType + '_USTREET"]').val( params.VALUE.USTREET ).focus();
+    						$('input[data-code="U_ADRES_' + userType + '_UINDEX"]').val( params.VALUE.UINDEX ).focus();
+    						$('input[data-code="U_ADRES_' + userType + '_UHOME"]').val( params.VALUE.UHOME ).focus();
+    						$('input[data-code="U_ADRES_' + userType + '_UKORPUS"]').val( params.VALUE.UKORPUS ).focus();
+    						$('input[data-code="U_ADRES_' + userType + '_UFLAT"]').val( params.VALUE.UFLAT ).focus();
+    					}	
+    					
+    					$('textarea[data-code="COMMENT"]').val( params.VALUE.COMMENT );
+    				}	 
+    			}
+    		});
 		},
 		
 		
@@ -91,12 +235,14 @@ var klava = {
 		    };
 		},
 		
+		
 		hideLinkOrderPage : function() {
 			
 			if( location.pathname == "/personal/order/" )
 				$('#js_footer_small_basket_cont').find('.buttonTakeOrder').hide();	
 			
 		},
+		
 		
 		placeholderInit : function() {
 			
@@ -220,9 +366,6 @@ var klava = {
     				}	 
     			}
     		});
-			
-			
-			
 		},
 	
 		
@@ -465,7 +608,7 @@ var klava = {
 		},
 
 		
-		getDelivery : function(cityID) 
+		getDelivery : function(cityID, callback) 
 		{
 			$.ajax({
 				type    : "POST",
@@ -480,6 +623,9 @@ var klava = {
 						klava.order.selectDelivery( $('#order-delevery-list').find('input:checked') );
 						klava.order.paymentVisible();
 						klava.order.deliverytVisible();
+						
+						if(callback !== undefined)
+							callback();
 					}
 				}
 			});
@@ -649,6 +795,7 @@ var klava = {
 				});
 			}	
 		},
+		
 		
 		getBankinfoExt : function(input, id) {
 			
@@ -914,6 +1061,7 @@ var klava = {
 				}
 			});
 		},
+		
 		
 		submitFormBtn : function()
 		{ 

@@ -20,6 +20,22 @@ class KlavaPaymentSystem
 		else 
 			return false;
 	}
+	
+	public static function getPaymentSystemXML_ID($i_ID)
+	{
+		if(intval($i_ID) == 0)
+			return false;
+		
+		
+		$rs_Profile = CIBlockElement::GetList(array(), array('IBLOCK_ID' => self::IBLOCK_ID, 'CODE' => $i_ID), false, false, array('CODE', 'NAME'));
+		if( $rs_Profile->SelectedRowsCount() > 0 )
+		{
+			$ar_Profile = $rs_Profile->Fetch();
+			return $ar_Profile['NAME'];
+		}
+		else 
+			return false;
+	}
 
 	public static function addMatching($s_XmlID, $i_ElementID)
 	{

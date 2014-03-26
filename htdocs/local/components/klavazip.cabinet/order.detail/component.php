@@ -230,8 +230,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST')
 	
 	if(count($ar_ElementID) > 0)
 	{
-		foreach ($ar_ElementID as $i_ElementID)
-		{
+		foreach ($ar_ElementID as $i_ElementID){
 			Add2BasketByProductID( $i_ElementID, $ar_Count[$i_ElementID] );
 		}
 		
@@ -242,9 +241,11 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST')
 if(isset($_GET['status']))
 {
 	$s_StatusCode = strtoupper($_GET['status']);
-	if(in_array($s_StatusCode, array('X')) && $i_OrderID > 0)
+	if(in_array($s_StatusCode, array('F')) && $i_OrderID > 0)
 	{
-		CSaleOrder::Update($i_OrderID, array('STATUS_ID' => $s_StatusCode, 'CANCELED' => 'Y'));
+		CSaleOrder::Update($i_OrderID, array('STATUS_ID' => $s_StatusCode, 'CANCELED' => 'Y', 'STATUS' => 'F'));
+		Klava1CExporOrder::addActionUpdateOrder(CSaleOrder::GetByID($i_OrderID));
+		
 		LocalRedirect($APPLICATION->GetCurPageParam("", array('status')));
 	}	
 }	
@@ -254,5 +255,5 @@ if(isset($_GET['status']))
 $APPLICATION->AddChainItem("История заказов", "/cabinet/");
 $APPLICATION->SetTitle("Заказ №".$i_OrderID);
 
-
+	
 $this->IncludeComponentTemplate();

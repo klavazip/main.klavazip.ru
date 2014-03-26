@@ -2,11 +2,11 @@
 require_once($_SERVER['DOCUMENT_ROOT'].'/bitrix/modules/main/include/prolog_before.php');
 
 require_once( '../../lib/xml_to_array.php' );
-require_once( '../../lib/class.KlavaIntegrationMain.php' );
+
 
 $s_LogDir = $_SERVER['DOCUMENT_ROOT'].'/system/sale.1c.integration/import.user/logs/';
 
-$b_Debug = true;
+$b_Debug = INTEGRATION_DEBUG_LOG;
 
 if($b_Debug)
 {
@@ -17,8 +17,8 @@ if($b_Debug)
 
 
 # !!!
-($b_Debug) ? arraytofile($_POST, $s_LogPatch.'POST.txt', "post") : '';
-($b_Debug) ? arraytofile($_FILES, $s_LogPatch.'FILES.txt', "file") : '';
+($b_Debug) ? arraytofile($_POST, $s_LogPatch.'массив_POST.txt', "post") : '';
+($b_Debug) ? arraytofile($_FILES, $s_LogPatch.'массив_FILES.txt', "file") : '';
 # !!!
 
 
@@ -28,12 +28,12 @@ $ar_Status = array();
 if( $data = KlavaIntegrationMain::xml() )
 {
 	# !!!
-	($b_Debug) ? arraytofile(array('data' => $data), $s_LogPatch.'data.xml', "data") : '';
+	($b_Debug) ? arraytofile(array('data' => $data), $s_LogPatch.'полученный_xml_файл_из_1с.xml', "") : '';
 	# !!!
 	
 	$ar_XML = XML2Array::createArray($data);
 			
-	# Синхронизуем массив при 2 митуациях, когда в xml 1 элемент и несколько
+	# Синхронизуем массив при 2 ситуациях, когда в xml 1 элемент и несколько
 	if(isset($ar_XML['Array']['Value']['Property']))
 	{
 		$ar_XML['Array']['Value'][] = array('@attributes' =>  $ar_XML['Array']['Value']['@attributes'], 'Property' => $ar_XML['Array']['Value']['Property']);
@@ -81,7 +81,7 @@ if( $data = KlavaIntegrationMain::xml() )
 	}	
 	
 	# !!!
-	($b_Debug) ? arraytofile($ar_UserResult, $s_LogPatch.'ar_UserResult.txt', "ar_UserResult") : '';
+	($b_Debug) ? arraytofile($ar_UserResult, $s_LogPatch.'массив_поле_разбора_xml_ar_UserResult.txt', "ar_UserResult") : '';
 	# !!!
 	
 	$ob_User = new CUser;
@@ -102,13 +102,13 @@ if( $data = KlavaIntegrationMain::xml() )
 			'UF_1C_DEL'			=> $ar_ValueUser['ПометкаУдаления']
 		);
 		
-		if($ar_ValueUser['ЮрФизЛицо'] == 'Частное лицо')
+		if($ar_ValueUser['ЮрФизЛицо'] == 'ЧастноеЛицо')
 		{
 			$ar_UserName = explode(' ', $ar_ValueUser['НаименованиеПолное']);
 				
-			$ar_Fields['LAST_NAME'] = $ar_UserName[0];
-			$ar_Fields['NAME'] = $ar_UserName[1];
-			$ar_Fields['SECOND_NAME'] = $ar_UserName[2];
+			$ar_Fields['LAST_NAME'] 	= $ar_UserName[0];
+			$ar_Fields['NAME'] 			= $ar_UserName[1];
+			$ar_Fields['SECOND_NAME'] 	= $ar_UserName[2];
 		}
 		else
 		{
@@ -123,7 +123,7 @@ if( $data = KlavaIntegrationMain::xml() )
 		
 		
 		# !!!
-		($b_Debug) ? arraytofile($ar_Fields, $s_LogPatch.'ar_UserFields.txt', "ar_UserFields") : '';
+		($b_Debug) ? arraytofile($ar_Fields, $s_LogPatch.'массив_параметров_пользователя_ar_UserFields.txt', "ar_UserFields") : '';
 		# !!!
 		
 		# Проверяем нет есть ли такой пользователь, если есть то обновляем, если нет то добавляем
@@ -131,7 +131,7 @@ if( $data = KlavaIntegrationMain::xml() )
 		if($ar_User = $rs_User->Fetch())
 		{
 			# !!!
-			($b_Debug) ? arraytofile(array('action' => 'update'), $s_LogPatch.'action.txt', "action") : '';
+			($b_Debug) ? arraytofile(array('action' => 'update'), $s_LogPatch.'действие_над_элементом_[ОБНОВЛЕНИЕ]', "") : '';
 			# !!!
 			
 			if($ob_User->Update($ar_User['ID'],  $ar_Fields))
@@ -146,9 +146,8 @@ if( $data = KlavaIntegrationMain::xml() )
 		else
 		{
 			# !!!
-			($b_Debug) ? arraytofile(array('action' => 'add'), $s_LogPatch.'action.txt', "action") : '';
+			($b_Debug) ? arraytofile(array('action' => 'add'), $s_LogPatch.'действие_над_элементом_[ДОБАВЛЕНИЕ]', "") : '';
 			# !!!
-			
 			
 			$s_Pass = randString(7);
 			
@@ -171,7 +170,7 @@ if( $data = KlavaIntegrationMain::xml() )
 	}	
 
 	# !!!
-	($b_Debug) ? arraytofile($ar_Status, $s_LogPatch.'ar_Status.txt', "ar_Status") : '';
+	($b_Debug) ? arraytofile($ar_Status, $s_LogPatch.'массив_статусов_по_каждому_элементу_ar_Status.txt', "ar_Status") : '';
 	# !!!
 	
 	header('Content-Type: text/xml');
@@ -180,7 +179,7 @@ if( $data = KlavaIntegrationMain::xml() )
 else
 {
 	# !!!
-	($b_Debug) ? arraytofile(array('data' => 'error'), $s_LogPatch.'error.txt', "error") : '';
+	($b_Debug) ? arraytofile(array('data' => 'error'), $s_LogPatch.'КРИТИЧЕСКАЯ_ОШИБКА.txt', "error") : '';
 	# !!!
 }	
 		

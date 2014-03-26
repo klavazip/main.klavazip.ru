@@ -5,7 +5,10 @@ CModule::IncludeModule("sale");
 CModule::IncludeModule("highloadblock");
 include_once($_SERVER['DOCUMENT_ROOT'].'/local/php_interface/lib.include.php');
 
+# Обработчики и функционал работы по обмену данными между сайтом и 1с
+include_once($_SERVER['DOCUMENT_ROOT'].'/system/sale.1c.integration/include.init.php');
 
+ 
 # Этот код делает 301 редирект. который задается парами ссылок в инфоблоке
 	use Bitrix\Highloadblock as HL;
 	use Bitrix\Main\Entity;
@@ -24,47 +27,47 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/local/php_interface/lib.include.php');
 
 function arraytofile($array, $filename = 0, $arrname, $file = 0)
 {
-$level = 1;
-if($file == 0)
-{
-$level = 0;
-$file = fopen($filename, "a");
-if(!$file)
-{
-return false;
-}
-fwrite($file, date("d.m.Y / H:i:s")." <" . "?\n\$".$arrname." = ");
-//fwrite($file, "<" . "?\n\$".$arrname." = ");
-}
+	$level = 1;
+	if($file == 0)
+	{
+		$level = 0;
+		$file = fopen($filename, "a");
+		if(!$file)
+			return false;
+		
+		fwrite($file, date("d.m.Y / H:i:s")." <" . "?\n\$".$arrname." = ");
+	}
 
-$cnt = count($array);
-$i = 0;
-fwrite($file, "\narray(\n");
-foreach($array as $key => $value)
-{
-if($i++ != 0)
-{
-fwrite($file, ",\n");
-}
-if(is_array($array[$key]))
-{
-fwrite($file, "'$key' => ");
-arraytofile($array[$key], 0,"_array", $file);
-}
-else
-{
-$value = addcslashes($value, "'"."\\\\");
-fwrite($file, str_repeat(' ', ($level + 1) * 2) . "'$key' => '$value'");
-}
-}
-fwrite($file, ")");
+	$cnt = count($array);
+	$i = 0;
+	fwrite($file, "\narray(\n");
+	foreach($array as $key => $value)
+	{
+		if($i++ != 0)
+		{
+			fwrite($file, ",\n");
+		}
+		
+		if(is_array($array[$key]))
+		{
+			fwrite($file, "'$key' => ");
+			arraytofile($array[$key], 0,"_array", $file);
+		}
+		else
+		{
+			$value = addcslashes($value, "'"."\\\\");
+			fwrite($file, str_repeat(' ', ($level + 1) * 2) . "'$key' => '$value'");
+		}
+	}
+	
+	fwrite($file, ")");
 
-if($level == 0)
-{
-fwrite($file, ";\n?".">");
-fclose($file);
-return true;
-}
+	if($level == 0)
+	{
+		fwrite($file, ";\n?".">");
+		fclose($file);
+		return true;
+	}
 }
 
 // ==  НОВЫЙ ФОРМАТ ЗАПИСЕЙ ==
@@ -602,8 +605,8 @@ AddEventHandler("iblock", "OnBeforeIBlockSectionUpdate", array("CSubsections", "
 ////////////////////////////////////////////////////////////////////
 
 //регистрация
-AddEventHandler("main", "OnAfterUserRegister", "OnBeforeUserRegisterHandler");
-
+//AddEventHandler("main", "OnAfterUserRegister", "OnBeforeUserRegisterHandler");
+/*
     function OnBeforeUserRegisterHandler(&$arFields)
     {
 
@@ -657,6 +660,7 @@ AddEventHandler("main", "OnAfterUserRegister", "OnBeforeUserRegisterHandler");
 
 				}
     }
+    */
 
 function getPricesByItemId($id)
 {

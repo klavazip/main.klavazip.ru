@@ -35,7 +35,10 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['buttonBuy']) )
 	{
 		$ob_User = new CUser;
 		if($ob_User->Update($ar_User['ID'], $ar_Update))
+		{
+			Klava1CExportUser::addActionUpdateUser( $ob_User->GetByID($ar_User['ID'])->Fetch() );
 			LocalRedirect('/cabinet/profile/info/');
+		}
 		else
 			$arResult['ERROR'][] = $ob_User->LAST_ERROR;
 	}

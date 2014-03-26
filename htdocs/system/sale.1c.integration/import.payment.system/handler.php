@@ -54,8 +54,6 @@ else
 				$ar_Result[] = $ar_Params;
 			}
 			
-			//arraytofile($ar_Result, $s_LogPatch.'ar_Result', "ar_Result");
-			
 			$ar_Status = array();
 			foreach ($ar_Result as $ar_ResultValue)
 			{
