@@ -184,7 +184,7 @@ class KlavaIntegrationMain
 		}
 		else
 		{
-			CIBlockElement::SetPropertyValueCode($i_ElementID, 'REPORT', $s_StatusText);
+			CIBlockElement::SetPropertyValueCode($i_ElementID, 'ACTIVE' => 'N', 'REPORT', $s_StatusText);
 		}
 		
 		return array($b_Status, $s_StatusText);
