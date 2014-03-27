@@ -52,17 +52,13 @@ class Klava1CExportUser
 
 						$_Del = ($s_Action == 'delete') ? 'true' : 'false';
 						$s_XML .= '<Property name="ПометкаУдаления"><Value xsi:type="xs:boolean">'.$_Del.'</Value></Property>';
-				
 						$s_XML .= '<Property name="IDСайта"><Value xsi:type="xs:string">'.$arFields['ID'].'</Value></Property>';
-				
 						$s_XML .= '<Property name="ДатаРождения"><Value xsi:type="xs:dateTime">0001-01-01T00:00:00</Value></Property>';
 						$s_XML .= '<Property name="Код"><Value xsi:type="xs:string"></Value></Property>';
 						$s_XML .= '<Property name="ДатаРегистрации"><Value xsi:type="xs:dateTime">'.date("Y-m-d\Th:i:s+04:00", strtotime($arFields['DATE_REGISTER'])).'</Value></Property>';
 
-						$s_XML_ID = ($s_Action == 'add') ? '00000000-0000-0000-0000-000000000000' : $arFields['XML_ID'];
-						 
+						$s_XML_ID = ($s_Action == 'add' || strlen($arFields['XML_ID']) == 0) ? '00000000-0000-0000-0000-000000000000' : $arFields['XML_ID'];
 						$s_XML .= '<Property name="Ссылка"><Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:CatalogRef.Партнеры">'.$s_XML_ID.'</Value></Property>';
-						
 
 					$s_XML .= '</Value>';
 				

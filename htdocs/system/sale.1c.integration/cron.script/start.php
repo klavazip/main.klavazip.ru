@@ -4,7 +4,7 @@ require_once('const.php');
 
 
 # Переводим с запуска с крона в ручной запуск
-if( ! isset($_SERVER['HTTP_USER_AGENT'])  ) die();
+//if( ! isset($_SERVER['HTTP_USER_AGENT'])  ) die();
 
 $_SERVER['DOCUMENT_ROOT'] = SITE_DOCUMENT_ROOT;
 
@@ -24,11 +24,11 @@ if($b_Debug)
 	$s_LogPatch = $s_LogDir.$s_DateTime.'/';
 }
 	
-$ar_Action = KlavaIntegrationMain::getAction();
+$ar_Action = KlavaIntegrationMain::getAction(3);
 //echo '<pre>', print_r($ar_Action).'</pre>';
 
 ($b_Debug) ? arraytofile(array('action' => $ar_Action), $s_LogPatch.'очередь.txt') : '';
-
+ 
 if(count($ar_Action) > 0)
 {
 	foreach ($ar_Action as $ar_Value)
@@ -88,7 +88,7 @@ if(count($ar_Action) > 0)
 		 
 		 $r = KlavaIntegrationMain::exportReport($ar_Value['ID'], $ar_Report);
 		
-		 echo '<pre>', print_r($r).'</pre>';
+		 //echo '<pre>', print_r($r).'</pre>'; 
 	}	
 }	
 else

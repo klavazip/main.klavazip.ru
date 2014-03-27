@@ -46,6 +46,8 @@ class Klava1CExportUserProfile
 		}
 		
 		$ar_User = CUser::GetByID($arFields['USER_ID'])->Fetch();
+		if( strlen($ar_User['XML_ID']) == 0)
+			$ar_User['XML_ID'] = '00000000-0000-0000-0000-000000000000';
 		
 		switch ($arFields['PERSON_TYPE_ID'])
 		{
@@ -68,9 +70,14 @@ class Klava1CExportUserProfile
 			}
 		}
 		
-		
-		$s_XML_ID = ($s_Action == 'update') ? KlavaUserProfile::getProfileXMLID($arFields['ID']) : '00000000-0000-0000-0000-000000000000';
-		
+		$s_XML_ID = '00000000-0000-0000-0000-000000000000';
+		if($s_Action == 'update')
+		{
+			$s_ProfXML_ID = KlavaUserProfile::getProfileXMLID($arFields['ID']);
+			if(strlen($s_ProfXML_ID) > 0)
+				$s_XML_ID = $s_ProfXML_ID;
+		}
+		 
 		$ar_Property = self::_getProfileProperty($arFields['ID']);	
 		
 		$s_XML = '<Array xmlns="http://v8.1c.ru/8.1/data/core" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">';
@@ -150,10 +157,13 @@ class Klava1CExportUserProfile
 			$s_XML .= '</Value>';
 		$s_XML .= '</Array>';
 		
-		($b_Debug) ? arraytofile(array('data' => $s_XML), $s_LogPatch.'выгрузка.xml', "data") : '';
+		
 		
 		$client = new SoapClient('http://88.198.65.46:45454/TestBase/ws/Obmen?wsdl', array('login' => "Obmen", 'password' => "Obmen", 'exceptions' => 1));
 		$data = $client->MainFunc(array('data' => $s_XML, 'type' => 'СправочникСсылка.Контрагенты' ))->return;
+		
+		($b_Debug) ? arraytofile(array('data' => $s_XML), $s_LogPatch.'выгрузка.xml') : '';
+		($b_Debug) ? arraytofile(array('data' => $data), $s_LogPatch.'отчет.xml') : '';
 		
 		return $data;
 	}

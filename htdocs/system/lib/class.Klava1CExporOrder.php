@@ -45,7 +45,8 @@ class Klava1CExporOrder
 		
 		# Пользователь 
 		$ar_User = CUser::GetByID($arFields['USER_ID'])->Fetch();
-
+		if( strlen($ar_User['XML_ID']) == 0)
+			$ar_User['XML_ID'] = '00000000-0000-0000-0000-000000000000';
 		
 		# Профиль
 		$rs_Proeprty = CSaleOrderPropsValue::GetOrderProps($arFields['ID']);
@@ -53,7 +54,8 @@ class Klava1CExporOrder
 			$ar_PropertyValue[$ar_Proeprty['CODE']] = $ar_Proeprty['VALUE'];  
 		
 		$s_ProfileXML_ID = KlavaUserProfile::getProfileXMLID($ar_PropertyValue['PROFILE_ID']);
-		
+		if( strlen($s_ProfileXML_ID) == 0)
+			$s_ProfileXML_ID = '00000000-0000-0000-0000-000000000000';
 		
 		/*
 		 * Статусы
@@ -129,7 +131,7 @@ class Klava1CExporOrder
 				
 				$s_XML .= '<Property name="СтандартныеРеквизиты">';
 					$s_XML .= '<Value xsi:type="Structure">';
-						$s_OrderXMLID = ($s_Action == 'add') ? '00000000-0000-0000-0000-000000000000' : $arFields['XML_ID'];
+						$s_OrderXMLID = ($s_Action == 'add' || strlen($arFields['XML_ID']) == 0) ? '00000000-0000-0000-0000-000000000000' : $arFields['XML_ID'];
 						$s_XML .= '<Property name="Ссылка"><Value xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config" xsi:type="d6p1:DocumentRef.ЗаказКлиента">'.$s_OrderXMLID.'</Value></Property>';
 					$s_XML .= '</Value>';
 				$s_XML .= '</Property>';
