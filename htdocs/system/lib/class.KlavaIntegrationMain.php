@@ -124,7 +124,7 @@ class KlavaIntegrationMain
 	{
 		$ar_Nav = false;
 		if(intval($i_Limit) > 0)
-			$ar_Nav = array('nPageSize' => intval($i_Limit))
+			$ar_Nav = array('nPageSize' => intval($i_Limit));
 		
 		$rs_Element = CIBlockElement::GetList(array('ID' => 'ASC'), array('IBLOCK_ID' => self::ACTION_IBLOCK_ID, 'ACTIVE' => 'Y'), false, $ar_Nav, array('ID', 'CODE', 'PREVIEW_TEXT'));
 		while($ar_Element = $rs_Element->Fetch())
@@ -134,40 +134,9 @@ class KlavaIntegrationMain
 		
 		return $ar_Result; 
 	}
-	
-	/*
-	public static function setStartTimeAction($i_ElementID)
-	{
-		$ob_Element = new CIBlockElement; 
-		$ob_Element->Update($i_ElementID, array('DATE_ACTIVE_FROM' => ConvertTimeStamp(time(), 'FULL')));
-	}
+
 	
 	
-	public static function setEndTimeAction($i_ElementID)
-	{
-		$ob_Element = new CIBlockElement;
-		$ob_Element->Update($i_ElementID, array('DATE_ACTIVE_TO' => ConvertTimeStamp(time(), 'FULL'), 'ACTIVE' => 'N'));
-		
-	}
-	*/
-	
-	public static function updateUserField($i_UserID, $ar_Fields)
-	{
-		$ID = intval($i_UserID);
-	
-		if(intval($ID) <= 0 || count($ar_Fields) == 0)
-			return false;
-	
-		global $DB;
-		$res = $DB->Query("UPDATE b_user SET ".$DB->PrepareUpdate("b_user", $ar_Fields)." WHERE ID=".$ID, true);
-		return (!$res) ? false : true;
-	}
-
-
-
-
-
-
 	public static function exportReport($i_ElementID, $ar_Report)
 	{
 		if(!is_array($ar_Report) || count($ar_Report) == 0)
@@ -184,7 +153,9 @@ class KlavaIntegrationMain
 		}
 		else
 		{
-			CIBlockElement::SetPropertyValueCode($i_ElementID, 'ACTIVE' => 'N', 'REPORT', $s_StatusText);
+			$ob_Element = new CIBlockElement;
+			$ob_Element->Update($i_ElementID, array('ACTIVE' => 'N'));
+			CIBlockElement::SetPropertyValueCode($i_ElementID, 'REPORT', $s_StatusText);
 		}
 		
 		return array($b_Status, $s_StatusText);
