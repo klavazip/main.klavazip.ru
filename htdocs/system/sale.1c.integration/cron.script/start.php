@@ -25,7 +25,6 @@ if($b_Debug)
 }
 	
 $ar_Action = KlavaIntegrationMain::getAction();
-
 //echo '<pre>', print_r($ar_Action).'</pre>';
 
 ($b_Debug) ? arraytofile(array('action' => $ar_Action), $s_LogPatch.'очередь.txt') : '';
@@ -34,22 +33,15 @@ if(count($ar_Action) > 0)
 {
 	foreach ($ar_Action as $ar_Value)
 	{
-		KlavaIntegrationMain::setStartTimeAction($ar_Value['ID']);
-
 		$ar_Params = unserialize($ar_Value['PREVIEW_TEXT']);
 		
-		 switch ($ar_Value['CODE'])
-		 {
-		 	
-		 	case 'USER_ADD':
+		switch ($ar_Value['CODE'])
+		{
+
+			case 'USER_ADD':
 		 		
 			 		if(is_array($ar_Params) && count($ar_Params) > 0)
-			 		{
-			 			Klava1CExportUser::add($ar_Params);
-			 			($b_Debug) ? arraytofile(array('action' => 'USER_ADD'), $s_LogPatch.'USER_ADD.txt') : '';
-			 		}
-			 		else
-			 			($b_Debug) ? arraytofile(array('action' => 'ADD_USER'), $s_LogPatch.'error.txt') : '';
+			 			$ar_Report = Klava1CExportUser::add($ar_Params);
 
 			 		break;
 			 		
@@ -57,25 +49,7 @@ if(count($ar_Action) > 0)
 		 	case 'USER_UPDATE':
 		 		
 			 		if(is_array($ar_Params) && count($ar_Params) > 0)
-			 		{
-			 			Klava1CExportUser::update($ar_Params);
-			 			($b_Debug) ? arraytofile(array('action' => 'UPDATE_USER'), $s_LogPatch.'UPDATE_USER.txt') : '';
-			 		}	
-			 		else
-			 			($b_Debug) ? arraytofile(array('action' => 'UPDATE_USER'), $s_LogPatch.'error.txt') : '';
-		 		 
-		 		break;
-
-		 	
-		 	case 'USER_DELETE':
-	
-			 		if(is_array($ar_Params) && count($ar_Params) > 0)
-			 		{
-			 			Klava1CExportUser::delete($ar_Params);
-			 			($b_Debug) ? arraytofile(array('action' => 'DELETE_USER'), $s_LogPatch.'DELETE_USER.txt') : '';
-			 		}
-			 		else
-				 		($b_Debug) ? arraytofile(array('action' => 'USER_DELETE'), $s_LogPatch.'error.txt') : '';
+			 			$ar_Report = Klava1CExportUser::update($ar_Params);
 		 		 
 		 		break;
 		 		
@@ -83,12 +57,7 @@ if(count($ar_Action) > 0)
 		 	case 'USER_PROFILE_ADD':
 	
 		 			if(is_array($ar_Params) && count($ar_Params) > 0)
-		 			{
-		 				Klava1CExportUserProfile::add($ar_Params);
-		 				($b_Debug) ? arraytofile(array('action' => 'USER_PROFILE_ADD'), $s_LogPatch.'USER_PROFILE_ADD.txt') : '';
-		 			}
-		 			else
-		 				($b_Debug) ? arraytofile(array('action' => 'USER_PROFILE_ADD'), $s_LogPatch.'error.txt') : '';
+		 				$ar_Report = Klava1CExportUserProfile::add($ar_Params);
 		 			
 		 		break;
 		 		
@@ -96,12 +65,7 @@ if(count($ar_Action) > 0)
 		 	case 'USER_PROFILE_UPDATE':
 		 			
 		 			if(is_array($ar_Params) && count($ar_Params) > 0)
-		 			{
-		 				Klava1CExportUserProfile::update($ar_Params);
-		 				($b_Debug) ? arraytofile(array('action' => 'USER_PROFILE_UPDATE'), $s_LogPatch.'USER_PROFILE_UPDATE.txt') : '';
-		 			}
-		 			else
-		 				($b_Debug) ? arraytofile(array('action' => 'USER_PROFILE_UPDATE'), $s_LogPatch.'error.txt') : '';
+		 				$ar_Report = Klava1CExportUserProfile::update($ar_Params);
 		 			
 		 		break;
 		 		
@@ -109,12 +73,7 @@ if(count($ar_Action) > 0)
 		 	case 'ORDER_ADD':
 	
 		 			if(is_array($ar_Params) && count($ar_Params) > 0)
-		 			{
-		 				Klava1CExporOrder::add($ar_Params);
-		 				($b_Debug) ? arraytofile(array('action' => 'ORDER_ADD'), $s_LogPatch.'ORDER_ADD.txt') : '';
-		 			}
-		 			else
-		 				($b_Debug) ? arraytofile(array('action' => 'ORDER_ADD'), $s_LogPatch.'error.txt') : '';
+		 				$ar_Report = Klava1CExporOrder::add($ar_Params);
 		 			
 		 		break;
 
@@ -122,17 +81,14 @@ if(count($ar_Action) > 0)
 		 	case 'ORDER_UPDATE':
 	
 		 			if(is_array($ar_Params) && count($ar_Params) > 0)
-		 			{ 
-		 				Klava1CExporOrder::update($ar_Params);
-		 				($b_Debug) ? arraytofile(array('action' => 'ORDER_UPDATE'), $s_LogPatch.'ORDER_UPDATE.txt') : '';
-		 			}
-		 			else
-		 				($b_Debug) ? arraytofile(array('action' => 'ORDER_UPDATE'), $s_LogPatch.'error.txt') : '';
+		 				$ar_Report = Klava1CExporOrder::update($ar_Params);
 		 			
 		 		break;
 		 }
+		 
+		 $r = KlavaIntegrationMain::exportReport($ar_Value['ID'], $ar_Report);
 		
-		KlavaIntegrationMain::setEndTimeAction($ar_Value['ID']);
+		 echo '<pre>', print_r($r).'</pre>';
 	}	
 }	
 else

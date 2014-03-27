@@ -120,9 +120,13 @@ class KlavaIntegrationMain
 	}
 	
 	
-	public static function getAction()
+	public static function getAction($i_Limit = false)
 	{
-		$rs_Element = CIBlockElement::GetList(array('ID' => 'ASC'), array('IBLOCK_ID' => self::ACTION_IBLOCK_ID, 'ACTIVE' => 'Y', 'DATE_ACTIVE_FROM' => false), false, false, array('ID', 'CODE', 'PREVIEW_TEXT'));
+		$ar_Nav = false;
+		if(intval($i_Limit) > 0)
+			$ar_Nav = array('nPageSize' => intval($i_Limit))
+		
+		$rs_Element = CIBlockElement::GetList(array('ID' => 'ASC'), array('IBLOCK_ID' => self::ACTION_IBLOCK_ID, 'ACTIVE' => 'Y'), false, $ar_Nav, array('ID', 'CODE', 'PREVIEW_TEXT'));
 		while($ar_Element = $rs_Element->Fetch())
 		{
 			$ar_Result[] = $ar_Element; 			
@@ -131,7 +135,7 @@ class KlavaIntegrationMain
 		return $ar_Result; 
 	}
 	
-	
+	/*
 	public static function setStartTimeAction($i_ElementID)
 	{
 		$ob_Element = new CIBlockElement; 
@@ -145,7 +149,7 @@ class KlavaIntegrationMain
 		$ob_Element->Update($i_ElementID, array('DATE_ACTIVE_TO' => ConvertTimeStamp(time(), 'FULL'), 'ACTIVE' => 'N'));
 		
 	}
-	
+	*/
 	
 	public static function updateUserField($i_UserID, $ar_Fields)
 	{
@@ -158,4 +162,34 @@ class KlavaIntegrationMain
 		$res = $DB->Query("UPDATE b_user SET ".$DB->PrepareUpdate("b_user", $ar_Fields)." WHERE ID=".$ID, true);
 		return (!$res) ? false : true;
 	}
+
+
+
+
+
+
+	public static function exportReport($i_ElementID, $ar_Report)
+	{
+		if(!is_array($ar_Report) || count($ar_Report) == 0)
+			$b_Error = true;
+		
+		$b_Status 	  = ($b_Error) ? 'false' : $ar_Report['ValueTable']['row']['Value'][2]['@value'];
+		$s_StatusText = ($b_Error) ? 'Критическая ошибка' : $ar_Report['ValueTable']['row']['Value'][3]['@value'];
+		
+		if($b_Status == 'true')
+		{
+			$s_StatusText = 'Успешно';
+			$ob_Element = new CIBlockElement;
+			$ob_Element->Update($i_ElementID, array('ACTIVE' => 'N', 'PROPERTY_VALUES' => array('REPORT' => $s_StatusText)));
+		}
+		else
+		{
+			CIBlockElement::SetPropertyValueCode($i_ElementID, 'REPORT', $s_StatusText);
+		}
+		
+		return array($b_Status, $s_StatusText);
+	}
+
+
+
 }

@@ -209,13 +209,13 @@ class Klava1CExporOrder
 			$s_XML .= '</Value>';
 		$s_XML .= '</Array>';
 		
-		($b_Debug) ? arraytofile(array('data' => $s_XML), $s_LogPatch.'выгрузка.xml', "data") : '';
-		
-		//header('Content-Type: text/xml');
-		//echo $s_XML;
  		
 		$client = new SoapClient('http://88.198.65.46:45454/TestBase/ws/Obmen?wsdl', array('login' => "Obmen", 'password' => "Obmen", 'exceptions' => 1));
 		$data = $client->MainFunc(array('data' => $s_XML, 'type' => 'ДокументСсылка.ЗаказКлиента' ))->return;
+
+		($b_Debug) ? arraytofile(array('data' => $s_XML), $s_LogPatch.'выгрузка.xml') : '';
+		($b_Debug) ? arraytofile(array('data' => $data), $s_LogPatch.'ответ.xml') : '';
+		
 		
 		return $data; 
 	}
@@ -233,13 +233,22 @@ class Klava1CExporOrder
 	
 			if(strlen($s_XML_ID) > 0)
 				CSaleOrder::Update($arFields['ID'], array('XML_ID' => $s_XML_ID));
+			
+			
+			return $ar_XML;
 		}
 	}
 
 	
 	public static function update($arFields)
 	{
-		self::_handler($arFields, 'update');
+		$data = self::_handler($arFields, 'update');
+		
+		if(strlen($data) > 0 && $data !== 'Ошибка десериализации')
+		{
+			require_once( $_SERVER['DOCUMENT_ROOT'].'/system/lib/xml_to_array.php' );
+			return XML2Array::createArray($data);
+		}
 	}
 
 }

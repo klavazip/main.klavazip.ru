@@ -140,6 +140,8 @@ class Klava1CExportUser
 				$USER = new CUser();
 				$USER->Update($arFields['ID'], array('XML_ID' => $s_XML_ID));
 			}
+			
+			return $ar_XML;
 		}
 	}
 
@@ -148,10 +150,17 @@ class Klava1CExportUser
 	{
 		$_ar = CUser::GetByID($arFields['ID'])->Fetch();
 		$arFields['XML_ID'] = $_ar['XML_ID'];
-		self::_handler($arFields, 'update');
+		$data = self::_handler($arFields, 'update');
+		
+		if(strlen($data) > 0 && $data !== 'Ошибка десериализации')
+		{
+			require_once( $_SERVER['DOCUMENT_ROOT'].'/system/lib/xml_to_array.php' );
+			return XML2Array::createArray($data);
+		}
 	}
 
  
+	# не используется, но если нужно то пожалуйста
 	public static function delete($arFields)
 	{	
 		self::_handler($arFields, 'delete'); 

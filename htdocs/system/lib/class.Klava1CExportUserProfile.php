@@ -173,12 +173,20 @@ class Klava1CExportUserProfile
 				# Добавляем в таблицу соответствия
 				KlavaUserProfile::addProfile($s_XML_ID, $arFields['ID']);
 			}
+			
+			return $ar_XML;	
 		}
 	}
 
 
 	public static function update($arFields)
 	{
-		self::_handler($arFields, 'update');
+		$data = self::_handler($arFields, 'update');
+		
+		if(strlen($data) > 0 && $data !== 'Ошибка десериализации')
+		{
+			require_once( $_SERVER['DOCUMENT_ROOT'].'/system/lib/xml_to_array.php' );
+			return XML2Array::createArray($data);
+		}
 	}
 }
