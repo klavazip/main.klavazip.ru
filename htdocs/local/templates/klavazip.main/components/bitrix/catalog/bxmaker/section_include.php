@@ -97,7 +97,7 @@
 					'UF_PROPERTY_SHOW'
 				)
 		);
-		if($ar = $dbr->Fetch())http://klavazip.ru/bitrix/admin/user_edit.php?lang=ru&ID=9364
+		if($ar = $dbr->Fetch()) 
 		{
 	
 			if($arParams['INCLUDE_SUBSECTIONS'] == 'Y' || $arParams['INCLUDE_SUBSECTIONS'] == 'A')
@@ -124,6 +124,18 @@
 				$ar_SectionTitle[] = $ar_Section['NAME']; 
 			}	
 			$s_SectionTitle = implode(' ', $ar_SectionTitle);
+			
+			# Внимание этот грандиозный костыль был согласован с Никитой,
+			switch ($s_SectionTitle)
+			{
+				case 'Аккумуляторы по моделям': $s_SectionTitle = 'Аккумуляторы для ноутбуков'; break;
+				case 'Запчасти': $s_SectionTitle = 'Запчасти для ноутбуков'; break;
+				case 'Микросхемы': $s_SectionTitle = 'Микросхемы для ноутбуков'; break;
+				case 'Блоки питания': $s_SectionTitle = 'Блоки питания для ноутбуков'; break;
+				case 'Клавиатуры': $s_SectionTitle = 'Клавиатуры для ноутбуков'; break;
+				case 'Матрицы': $s_SectionTitle = 'Матрицы для ноутбуков'; break;
+			}
+			
 		}
 		
 		$s_CatalogListView = (isset($_COOKIE['KLAVA_CATALOG_LIST_VIEW'])) ? $_COOKIE['KLAVA_CATALOG_LIST_VIEW'] : 'type1';

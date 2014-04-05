@@ -21,6 +21,17 @@ if($this->StartResultCache(false, ($arParams["CACHE_GROUPS"]==="N"? false: $USER
 	{
 		if( ! in_array($ar_Section['ID'], $delSection) && ! in_array($ar_Section['IBLOCK_SECTION_ID'], $delSection) )
 		{
+			# Внимание этот грандиозный костыль был согласован с Никитой, 
+			switch ($ar_Section['NAME'])
+			{
+				case 'Аккумуляторы по моделям': $ar_Section['NAME'] = 'Аккумуляторы для ноутбуков'; break;
+				case 'Запчасти': $ar_Section['NAME'] = 'Запчасти для ноутбуков'; break;
+				case 'Микросхемы': $ar_Section['NAME'] = 'Микросхемы для ноутбуков'; break;
+				case 'Блоки питания': $ar_Section['NAME'] = 'Блоки питания для ноутбуков'; break;
+				case 'Клавиатуры': $ar_Section['NAME'] = 'Клавиатуры для ноутбуков'; break;
+				case 'Матрицы': $ar_Section['NAME'] = 'Матрицы для ноутбуков'; break;
+			}
+			
 			$ar_SectionList[$ar_Section['ID']] = $ar_Section;
 			$ar_DetchLavel[] = $ar_Section['DEPTH_LEVEL'];
 		}

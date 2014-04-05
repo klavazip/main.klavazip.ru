@@ -910,6 +910,10 @@ if($USER->IsAuthorized())
 
 $this->SetTemplateCachedData($arResult["NAV_CACHED_DATA"]);
 
+
+
+
+
 if(isset($arResult[$arParams["META_KEYWORDS"]]))
 {
 	$val = $arResult[$arParams["META_KEYWORDS"]];
@@ -934,6 +938,7 @@ if(isset($arResult[$arParams["BROWSER_TITLE"]]))
 	$val = $arResult[$arParams["BROWSER_TITLE"]];
 	if(is_array($val))
 		$val = implode(" ", $val);
+	
 	$APPLICATION->SetPageProperty("title", $val, $arTitleOptions); 
 }
 
@@ -942,6 +947,17 @@ if($arParams["ADD_SECTIONS_CHAIN"] && isset($arResult["PATH"]) && is_array($arRe
 	$title="";
 	foreach($arResult["PATH"] as $arPath)
 	{
+		# Внимание этот грандиозный костыль был согласован с Никитой,
+		switch ($arPath["NAME"])
+		{
+			case 'Аккумуляторы по моделям': $arPath["NAME"] = 'Аккумуляторы для ноутбуков'; break;
+			case 'Запчасти': $arPath["NAME"] = 'Запчасти для ноутбуков'; break;
+			case 'Микросхемы': $arPath["NAME"] = 'Микросхемы для ноутбуков'; break;
+			case 'Блоки питания': $arPath["NAME"] = 'Блоки питания для ноутбуков'; break;
+			case 'Клавиатуры': $arPath["NAME"] = 'Клавиатуры для ноутбуков'; break;
+			case 'Матрицы': $arPath["NAME"] = 'Матрицы для ноутбуков'; break;
+		}
+		
 		$title=$title.$arPath["NAME"]." ";
 		$APPLICATION->AddChainItem($arPath["NAME"], $arPath["~SECTION_PAGE_URL"]);
 	}
@@ -962,8 +978,10 @@ if($arParams["ADD_SECTIONS_CHAIN"] && isset($arResult["PATH"]) && is_array($arRe
 	$inf_title=inflect4($title);
 	
 	$title2="Купить ".$inf_title." в Москве по низким ценам. Подобрать ".$inf_title." по модели в интернет-магазине: характеристики, совместимость, отзывы";
+
 	
 	$APPLICATION->SetTitle($title2, $arTitleOptions);
+	
 	$APPLICATION->SetPageProperty("title", $title2, $arTitleOptions); 
 	
 }

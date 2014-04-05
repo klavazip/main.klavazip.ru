@@ -759,6 +759,17 @@ if(isset($arResult["ID"]))
 	{
 		foreach($arResult["SECTION"]["PATH"] as $arPath)
 		{
+			# Внимание этот грандиозный костыль был согласован с Никитой,
+			switch ($arPath["NAME"])
+			{
+				case 'Аккумуляторы по моделям': $arPath["NAME"] = 'Аккумуляторы для ноутбуков'; break;
+				case 'Запчасти': $arPath["NAME"] = 'Запчасти для ноутбуков'; break;
+				case 'Микросхемы': $arPath["NAME"] = 'Микросхемы для ноутбуков'; break;
+				case 'Блоки питания': $arPath["NAME"] = 'Блоки питания для ноутбуков'; break;
+				case 'Клавиатуры': $arPath["NAME"] = 'Клавиатуры для ноутбуков'; break;
+				case 'Матрицы': $arPath["NAME"] = 'Матрицы для ноутбуков'; break;
+			}
+			
 			$APPLICATION->AddChainItem($arPath["NAME"], $arPath["~SECTION_PAGE_URL"]);
 		}
 	}
