@@ -90,6 +90,8 @@ foreach($arParams["PROPERTY_CODE"] as $k=>$v)
 
 if(!is_array($arParams["PRICE_CODE"]))
 	$arParams["PRICE_CODE"] = array();
+	
+	
 $arParams["USE_PRICE_COUNT"] = $arParams["USE_PRICE_COUNT"]=="Y";
 $arParams["SHOW_PRICE_COUNT"] = intval($arParams["SHOW_PRICE_COUNT"]);
 if($arParams["SHOW_PRICE_COUNT"]<=0)
@@ -238,13 +240,18 @@ if(isset($_REQUEST['price-from']) || isset( $_REQUEST['price-to']) || isset($_RE
 }	
 
 
+$ob_KlavaFilter = new KlavaCatalogFilter(true);
 
 /*************************************************************************
 			Work with cache
 *************************************************************************/
-if($this->StartResultCache(false, array($arrFilter, ($arParams["CACHE_GROUPS"]==="N"? false: $USER->GetGroups()), $arNavigation, $s_FilterCacheID)))
+global $APPLICATION;
+
+if($this->StartResultCache(false, array($arrFilter, $APPLICATION->GetCurPageParam(), ($arParams["CACHE_GROUPS"]==="N"? false: $USER->GetGroups()), $arNavigation, $s_FilterCacheID)))
 {
-	if(!CModule::IncludeModule("iblock"))
+	
+
+if(!CModule::IncludeModule("iblock"))
 	{
 		$this->AbortResultCache();
 		ShowError(GetMessage("IBLOCK_MODULE_NOT_INSTALLED"));
@@ -366,6 +373,7 @@ if($this->StartResultCache(false, array($arrFilter, ($arParams["CACHE_GROUPS"]==
 
 	//This function returns array with prices description and access rights
 	//in case catalog module n/a prices get values from element properties
+	
 	$arResult["PRICES"] = CIBlockPriceTools::GetCatalogPrices($arParams["IBLOCK_ID"], $arParams["PRICE_CODE"]);
 
 	$arResult['CONVERT_CURRENCY'] = $arConvertParams;
@@ -463,6 +471,8 @@ if($this->StartResultCache(false, array($arrFilter, ($arParams["CACHE_GROUPS"]==
 	}
 
 	//PRICES
+
+	
 	$arPriceTypeID = array();
 	if(!$arParams["USE_PRICE_COUNT"])
 	{
@@ -491,10 +501,9 @@ if($this->StartResultCache(false, array($arrFilter, ($arParams["CACHE_GROUPS"]==
 
 	$arCurrencyList = array();
 
-	$ob_KlavaFilter = new KlavaCatalogFilter();
 	
 	//EXECUTE
-	
+
 	$rsElements = CIBlockElement::GetList($arSort, array_merge($arrFilter, $arFilter, $ob_KlavaFilter->getFiltetForGetList()), false, $arNavParams, $arSelect);
 	$rsElements->SetUrlTemplates($arParams["DETAIL_URL"]);
 	if($arParams["BY_LINK"]!=="Y" && !$arParams["SHOW_ALL_WO_SECTION"])
@@ -502,6 +511,8 @@ if($this->StartResultCache(false, array($arrFilter, ($arParams["CACHE_GROUPS"]==
 	$arResult["ITEMS"] = array();
 	while($obElement = $rsElements->GetNextElement())
 	{
+
+		
 		$arItem = $obElement->GetFields();
 
 		if($arResult["ID"])
@@ -807,8 +818,6 @@ if($this->StartResultCache(false, array($arrFilter, ($arParams["CACHE_GROUPS"]==
 			$arResult['FILTER_PROPERTY_SHOW']=$arSaveProperty;
 
 	//}
-	
-	
 
 	$this->SetResultCacheKeys(array(
 		"ID",
@@ -835,12 +844,6 @@ if($this->StartResultCache(false, array($arrFilter, ($arParams["CACHE_GROUPS"]==
 	//$APPLICATION->SetPageProperty("title", $title, $arTitleOptions); 
 	
 	$arResult["ADDITIONAL_TITLE"]=$title;
-	
-	
-	
-	
-	
-	
 
 	$this->IncludeComponentTemplate();
 }

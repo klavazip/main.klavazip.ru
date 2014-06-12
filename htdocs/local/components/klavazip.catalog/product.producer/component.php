@@ -6,9 +6,30 @@ $ar_Property = array();
 $ar_PropertyName = array();
 
 
+/*  global $USER;
+if ($USER->GetID()=='7429')
+{
+print_r ($arParams['PROPERTY_SHOW']);
+}  */
 
+$PRODUCERS=array();
+foreach($arParams['PROPERTY_SHOW'] as $Item)
+{
+	if ($Item["CODE"]=="CML2_MANUFACTURER")
+	{
+		$PRODUCERS = $Item["VALUES"];
+	}
+}
 
-if( count($arParams['PROPERTY_SHOW']['manufactur']) > 0 )
+foreach($PRODUCERS as $key=>$PROD)
+{
+	$arResult['ITEMS'][] = array(
+			'URL' 	=> $APPLICATION->GetCurDir().'?filter=CML2_MANUFACTURER:['.$key.']',
+			'NAME' 	=> $PROD['VALUE'] 
+			);			
+}
+
+/* if( count($arParams['PROPERTY_SHOW']['manufactur']) > 0 )
 {
 	$rs_PropertyEnum = CIBlockPropertyEnum::GetList(array(), array("IBLOCK_ID" => KlavaCatalog::IBLOCK_ID, 'ID' => $arParams['PROPERTY_SHOW']['manufactur']));
 	while($ar_PropertyEnum = $rs_PropertyEnum->GetNext())
@@ -18,7 +39,7 @@ if( count($arParams['PROPERTY_SHOW']['manufactur']) > 0 )
 			'NAME' 	=> $ar_PropertyEnum['VALUE'] 	
 		); 
 	}
-}	
+} */	
 
 
 

@@ -8,7 +8,7 @@
 	else
 	{
 		////////////////////////////////////////////////////////////////////////////////
-		/// __ BXmaker ������ ��������� ���������� ������� ��� ���������� �� ��������
+		/// __ BXmaker ?????? ????????? ?????????? ??????? ??? ?????????? ?? ????????
 		$arPageElCount = array(15, 30, 45, 60, 100);
 		if(isset($_COOKIE['PAGE_ELEMENT_COUNT_'.$arParams["IBLOCK_ID"]]) && in_array(intval($_COOKIE['PAGE_ELEMENT_COUNT_'.$arParams["IBLOCK_ID"]]),$arPageElCount))
 		{
@@ -19,7 +19,7 @@
 		
 		
 		///////////////////////////////////////////////////////////////////////////////
-		/// __BXmaker ������ �������� ����������
+		/// __BXmaker ?????? ???????? ??????????
 		
 		$arPageSorting = array(
 			'name'   			    => array('asc', 'desc'),
@@ -142,20 +142,48 @@
 		?>
 
 		<div class="boxMain">	
-			<h1><?=$s_SectionTitle?></h1>	
+			<h1><?$APPLICATION->ShowProperty("page_title");?></h1>
+			
+			
+<?
+$APPLICATION->SetPageProperty("page_title", $s_SectionTitle);
+?>		
 			<div class="border_1"></div>	
 			<div class="blockCont">
 				<div class="contentLeft" style="padding-top: 0; position: relative;">
 					<? 
-					$APPLICATION->IncludeComponent('klavazip.catalog:product.filter', '', array( 
+					/* $APPLICATION->IncludeComponent('klavazip.catalog:product.filter', '', array( 
 							'SECTION_ID' 	 => $ar['ID'],
 							'PROPERTY_SHOW'  => unserialize($ar['UF_PROPERTY_SHOW']),
 							'PRICE_INTERVAL' => array('MAX' => $UF_PARAMS['PRICE_MAX'], 'MIN' => $UF_PARAMS['PRICE_MIN']),
 						)
-					);
+					); */
 					
+
+$BEDROSOVA_FILTER=$APPLICATION->IncludeComponent("bedrosova:catalog.smart.filter", "template2", Array(
+	"IBLOCK_TYPE" => "catalog",	// Тип инфоблока
+	"IBLOCK_ID" => "8",	// Инфоблок
+	"SECTION_ID" => $ar["ID"],	// ID раздела инфоблока
+	"FILTER_NAME" => "arrFilter",	// Имя выходящего массива для фильтрации
+	"CACHE_TYPE" => "A",	// Тип кеширования
+	"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+	"CACHE_GROUPS" => "Y",	// Учитывать права доступа
+	"SAVE_IN_SESSION" => "N",	// Сохранять установки фильтра в сессии пользователя
+	"INSTANT_RELOAD" => "N",	// Мгновенная фильтрация при включенном AJAX
+	"PRICE_CODE" => array(	// Тип цены
+		0 => "Розничная",
+	),
+	"XML_EXPORT" => "N",	// Включить поддержку Яндекс Островов
+	"SECTION_TITLE" => "-",	// Заголовок
+	"SECTION_DESCRIPTION" => "-",	// Описание
+	),
+	false,
+	array(
+	"ACTIVE_COMPONENT" => "Y"
+	)
+);
 					
-					
+
 					
 					
 					
@@ -252,85 +280,84 @@
 						<div class="clear"></div>
 						
 						<?
-						$APPLICATION->IncludeComponent("bedrosova:catalog.section", "",
-							Array(
-								"FILTER_PROPERTY_SHOW"  			=> $ar_ResultExt['FILTER_PROPERTY_SHOW'],
-								
-								"IBLOCK_TYPE" 						=> $arParams["IBLOCK_TYPE"],
-								"IBLOCK_ID" 						=> $arParams["IBLOCK_ID"],
-				
-								"ADD_SECTIONS_CHAIN"				=> 'Y',
-								 
-								'ELEMENT_SORT_FIELD_VARIATION' 		=> $arPageSorting,
-								'ELEMENT_SORT_FIELD_SET' 			=> $arParams['ELEMENT_SORT_FIELD_SET'],
-								"ELEMENT_SORT_FIELD" 				=> $arParams["ELEMENT_SORT_FIELD"],
-								"ELEMENT_SORT_ORDER" 				=> $arParams["ELEMENT_SORT_ORDER"],
-								 
-								"PROPERTY_CODE" 					=> $arParams["LIST_PROPERTY_CODE"],
-								"META_KEYWORDS" 					=> $arParams["LIST_META_KEYWORDS"],
-								"META_DESCRIPTION" 					=> $arParams["LIST_META_DESCRIPTION"],
-								"BROWSER_TITLE" 					=> $arParams["LIST_BROWSER_TITLE"],
-								"INCLUDE_SUBSECTIONS" 				=> $arParams["INCLUDE_SUBSECTIONS"],
-								"BASKET_URL" 						=> $arParams["BASKET_URL"],
-								"ACTION_VARIABLE" 					=> $arParams["ACTION_VARIABLE"],
-								"PRODUCT_ID_VARIABLE" 				=> $arParams["PRODUCT_ID_VARIABLE"],
-								"SECTION_ID_VARIABLE" 				=> $arParams["SECTION_ID_VARIABLE"],
-								"PRODUCT_QUANTITY_VARIABLE" 		=> $arParams["PRODUCT_QUANTITY_VARIABLE"],
-								"FILTER_NAME" 						=> $arParams["FILTER_NAME"],
-								"CACHE_TYPE" 						=> $arParams["CACHE_TYPE"],
-								"CACHE_TIME" 						=> $arParams["CACHE_TIME"],
-								"CACHE_FILTER" 						=> $arParams["CACHE_FILTER"],
-								"CACHE_GROUPS" 						=> $arParams["CACHE_GROUPS"],
-								"SET_TITLE" 						=> $arParams["SET_TITLE"],
-								"SET_STATUS_404" 					=> $arParams["SET_STATUS_404"],
-								"DISPLAY_COMPARE" 					=> $arParams["USE_COMPARE"],
-								 
-								"PAGE_ELEMENT_COUNT_VARIATION" 		=> $arPageElCount,
-								"PAGE_ELEMENT_COUNT" 				=> $arParams["PAGE_ELEMENT_COUNT"],
-								"LINE_ELEMENT_COUNT" 				=> $arParams["LINE_ELEMENT_COUNT"],
-							  
-								"PRICE_CODE" 						=> $arParams["PRICE_CODE"],
-								"USE_PRICE_COUNT" 					=> $arParams["USE_PRICE_COUNT"],
-								"SHOW_PRICE_COUNT" 					=> $arParams["SHOW_PRICE_COUNT"],
-								 
-								"PRICE_VAT_INCLUDE" 				=> $arParams["PRICE_VAT_INCLUDE"],
-								"USE_PRODUCT_QUANTITY" 				=> $arParams['USE_PRODUCT_QUANTITY'],
-								 
-								"DISPLAY_TOP_PAGER" 				=> $arParams["DISPLAY_TOP_PAGER"],
-								"DISPLAY_BOTTOM_PAGER" 				=> $arParams["DISPLAY_BOTTOM_PAGER"],
-								"PAGER_TITLE" 						=> $arParams["PAGER_TITLE"],
-								"PAGER_SHOW_ALWAYS" 				=> $arParams["PAGER_SHOW_ALWAYS"],
-								"PAGER_TEMPLATE" 					=> $arParams["PAGER_TEMPLATE"],
-								"PAGER_DESC_NUMBERING" 				=> $arParams["PAGER_DESC_NUMBERING"],
-								"PAGER_DESC_NUMBERING_CACHE_TIME" 	=> $arParams["PAGER_DESC_NUMBERING_CACHE_TIME"],
-								"PAGER_SHOW_ALL" 					=> $arParams["PAGER_SHOW_ALL"],
-								 
-								"OFFERS_CART_PROPERTIES" 			=> $arParams["OFFERS_CART_PROPERTIES"],
-								"OFFERS_FIELD_CODE" 				=> $arParams["LIST_OFFERS_FIELD_CODE"],
-								"OFFERS_PROPERTY_CODE" 				=> $arParams["LIST_OFFERS_PROPERTY_CODE"],
-								"OFFERS_SORT_FIELD" 				=> $arParams["OFFERS_SORT_FIELD"],
-								"OFFERS_SORT_ORDER" 				=> $arParams["OFFERS_SORT_ORDER"],
-								"OFFERS_LIMIT" 						=> $arParams["LIST_OFFERS_LIMIT"],
-								 
-								"SECTION_ID" 						=> $arResult["VARIABLES"]["SECTION_ID"],
-								"SECTION_CODE" 						=> $arResult["VARIABLES"]["SECTION_CODE"],
-								"SECTION_URL" 						=> $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
-								"DETAIL_URL" 						=> $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["element"],
-								'CONVERT_CURRENCY' 					=> $arParams['CONVERT_CURRENCY'],
-								'CURRENCY_ID' 						=> $arParams['CURRENCY_ID'],
-							),
-							false
-						);
+						$APPLICATION->IncludeComponent("bedrosova:catalog.section", ".default", array(
+	"IBLOCK_TYPE" => "catalog",
+	"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+	"SECTION_ID" => $arResult["VARIABLES"]["SECTION_ID"],
+	"SECTION_CODE" => $arResult["VARIABLES"]["SECTION_CODE"],
+	"SECTION_USER_FIELDS" => array(
+		0 => "",
+		1 => "",
+	),
+	"ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
+	"ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
+	"FILTER_NAME" => $arParams["FILTER_NAME"],
+	"INCLUDE_SUBSECTIONS" => "Y",
+	"SHOW_ALL_WO_SECTION" => "N",
+	"PAGE_ELEMENT_COUNT" => $arParams["PAGE_ELEMENT_COUNT"],
+	"LINE_ELEMENT_COUNT" => $arParams["LINE_ELEMENT_COUNT"],
+	"PROPERTY_CODE" => array(
+		0 => "",
+		1 => $arParams["LIST_PROPERTY_CODE"],
+		2 => "",
+	),
+	"OFFERS_LIMIT" => $arParams["LIST_OFFERS_LIMIT"],
+	"SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
+	"DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["element"],
+	"BASKET_URL" => $arParams["BASKET_URL"],
+	"ACTION_VARIABLE" => $arParams["ACTION_VARIABLE"],
+	"PRODUCT_ID_VARIABLE" => $arParams["PRODUCT_ID_VARIABLE"],
+	"PRODUCT_QUANTITY_VARIABLE" => $arParams["PRODUCT_QUANTITY_VARIABLE"],
+	"PRODUCT_PROPS_VARIABLE" => "prop",
+	"SECTION_ID_VARIABLE" => $arParams["SECTION_ID_VARIABLE"],
+	"AJAX_MODE" => "N",
+	"AJAX_OPTION_JUMP" => "N",
+	"AJAX_OPTION_STYLE" => "Y",
+	"AJAX_OPTION_HISTORY" => "N",
+	"CACHE_TYPE" => "A",
+	"CACHE_TIME" => $arParams["CACHE_TIME"],
+	"CACHE_GROUPS" => "N",
+	"META_KEYWORDS" => $arParams["LIST_META_KEYWORDS"],
+	"META_DESCRIPTION" => $arParams["LIST_META_DESCRIPTION"],
+	"BROWSER_TITLE" => "-",
+	"ADD_SECTIONS_CHAIN" => "Y",
+	"DISPLAY_COMPARE" => "N",
+	"SET_TITLE" => "N",
+	"SET_STATUS_404" => "N",
+	"CACHE_FILTER" => "N",
+	"PRICE_CODE" => $arParams["PRICE_CODE"],
+	"USE_PRICE_COUNT" => "N",
+	"SHOW_PRICE_COUNT" => $arParams["SHOW_PRICE_COUNT"],
+	"PRICE_VAT_INCLUDE" => "N",
+	"PRODUCT_PROPERTIES" => array(
+	),
+	"USE_PRODUCT_QUANTITY" => "N",
+	"CONVERT_CURRENCY" => "N",
+	"PAGER_TEMPLATE" => $arParams["PAGER_TEMPLATE"],
+	"DISPLAY_TOP_PAGER" => "N",
+	"DISPLAY_BOTTOM_PAGER" => "N",
+	"PAGER_TITLE" => $arParams["PAGER_TITLE"],
+	"PAGER_SHOW_ALWAYS" => "N",
+	"PAGER_DESC_NUMBERING" => "N",
+	"PAGER_DESC_NUMBERING_CACHE_TIME" => $arParams["PAGER_DESC_NUMBERING_CACHE_TIME"],
+	"PAGER_SHOW_ALL" => "N",
+	"AJAX_OPTION_ADDITIONAL" => ""
+	),
+	false
+);
 						
 						
 						$APPLICATION->IncludeComponent('klavazip.catalog:product.producer', '', array(
 								'SECTION_ID' 	 => $ar['ID'],
-								'PROPERTY_SHOW'  => unserialize($ar['UF_PROPERTY_SHOW']),
+								//'PROPERTY_SHOW'  => unserialize($ar['UF_PROPERTY_SHOW']),
+								'PROPERTY_SHOW'  =>$BEDROSOVA_FILTER,
 							)
 						);
 						?>
 
 					</div>
+<div style="font: 12px Arial; color: rgb(128, 128, 128);"><?$APPLICATION->ShowProperty("page_description");?></div>
+<?$APPLICATION->SetPageProperty("page_description", "");?>
 				</div>
 				<div class="clear"></div>
 			</div>

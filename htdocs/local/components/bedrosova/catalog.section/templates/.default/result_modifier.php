@@ -1,7 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-
-
 $UF_PARAMS = array(
 	'PRICE_MAX' 			=> '',
 	'PRICE_MIN' 			=> '',

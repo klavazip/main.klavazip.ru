@@ -1,6 +1,7 @@
 <?	if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
-	if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
+	
+if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
 	{
 		?><br /><br /><div class="error-block">Нечего не найдено по указаным параметрам, пожалуйста измените условия поиска.</div><?
 	}	

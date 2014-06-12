@@ -8,6 +8,10 @@
 // �������� ����� ������� ��� �������� � ��������
 $URL_RAW = $_SERVER['REQUEST_URI'];
 if($p = strpos($URL_RAW,'?')) $URL_RAW = substr($URL_RAW,0,$p);
+//BEDROSOVA 23.05.2014 Поддержка ЧПУ фильтра
+//для того, чтобы поддерживать старый механизм, уберем из обработки фильтр...
+//Фильтр будет обработан позже в классе KlavaCatalogFilter
+if($p = strpos($URL_RAW,'filter/')) $URL_RAW = substr($URL_RAW,0,$p);
 $URL = str_replace($arResult['FOLDER'],'',$URL_RAW);
 
 // ���� ���������� �������� ����� �������� �������

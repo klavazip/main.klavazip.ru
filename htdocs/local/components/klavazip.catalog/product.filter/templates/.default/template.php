@@ -13,6 +13,7 @@
 		}
 		
 		$ar_Result[] = array(
+			'ID' => $ar_Value['ID'],
 			'NAME' 		=> $ar_Value['NAME'],
 			'CODE_FORM' => 'arrFilter_pf['.$ar_Value['CODE'].']',
 			'CODE'		=> $ar_Value['CODE'],
@@ -20,7 +21,7 @@
 		);
 	}
 	
-	$ob_FilterLink = new KlavaCatalogFilter();
+	$ob_FilterLink = new KlavaCatalogFilter(true); //BEDROSOVA 23.05.2014 Включена поддержка ЧПУ для фильтра
 	?>
 
 	<script type="text/javascript">

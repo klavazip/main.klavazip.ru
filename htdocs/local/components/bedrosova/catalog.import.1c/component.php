@@ -20,45 +20,105 @@ function AddToHI($tableName='bedrosova_filter_sef',$parent_xml_id,$child_xml_id,
        //found highloadiblock
            
        $HLBlock_entity = \Bitrix\Highloadblock\HighloadBlockTable::compileEntity($HLBlock);
+	   
+	   
+	   if ($child_xml_id!="root"){
         
 
-       //Зададим параметры запроса, любой параметр можно опустить
-       
+			   //Зададим параметры запроса, любой параметр можно опустить
+			   
 
-        $main_query = new \Bitrix\Main\Entity\Query($HLBlock_entity);
-        $main_query->setSelect(array('*'));
-        $main_query->setFilter(array('UF_CATEGORY_XML_ID'=> $parent_xml_id,"UF_VALUE_XML_ID"=>$child_xml_id));
+				$main_query = new \Bitrix\Main\Entity\Query($HLBlock_entity);
+				$main_query->setSelect(array('*'));
+				$main_query->setFilter(array('UF_CATEGORY_XML_ID'=> $parent_xml_id,"UF_SEF"=>$code));
 
-        //Выполним запрос
-        $res_query = $main_query->exec();
+				//Выполним запрос
+				$res_query = $main_query->exec();
 
-        //Получаем результат по привычной схеме
-        $res_query = new CDBResult($res_query);   
-        if (!$row = $res_query->Fetch())
-        {
-         //create record in Highload IBlock
-         $HLBlock_entity_data_class = $HLBlock_entity->getDataClass();
-         $arBxData = array
-         (
-          'UF_CATEGORY_XML_ID' => $parent_xml_id,
-          'UF_VALUE_XML_ID' => $child_xml_id,
-		  'UF_SEF'=> $code,
-         );
-         $res_query = $HLBlock_entity_data_class::add($arBxData);
-        }
-		else{
-		//апдейтим
+				//Получаем результат по привычной схеме
+				$res_query = new CDBResult($res_query);   
+				if (!$row = $res_query->Fetch())
+				{
+				 //create record in Highload IBlock
+				 $HLBlock_entity_data_class = $HLBlock_entity->getDataClass();
+				 $arBxData = array
+				 (
+				  'UF_CATEGORY_XML_ID' => $parent_xml_id,
+				  'UF_VALUE_XML_ID' => $child_xml_id,
+				  'UF_SEF'=> $code,
+				 );
+				 $res_query = $HLBlock_entity_data_class::add($arBxData);
+				}
+				else{
+				//апдейтим
+				
+				 $HLBlock_entity_data_class = $HLBlock_entity->getDataClass();
+				 $arBxData = array
+				 (
+				  'UF_CATEGORY_XML_ID' => $parent_xml_id,
+				  'UF_VALUE_XML_ID' => $child_xml_id,
+				  'UF_SEF'=> $code,
+				 );
+				 $res_query = $HLBlock_entity_data_class::update($row['ID'],$arBxData);
+				
+				}
 		
-		 $HLBlock_entity_data_class = $HLBlock_entity->getDataClass();
-         $arBxData = array
-         (
-          'UF_CATEGORY_XML_ID' => $parent_xml_id,
-          'UF_VALUE_XML_ID' => $child_xml_id,
-		  'UF_SEF'=> $code,
-         );
-         $res_query = $HLBlock_entity_data_class::update($row['ID'],$arBxData);
-		
-		}
+			}
+			else{
+			
+				$main_query2 = new \Bitrix\Main\Entity\Query($HLBlock_entity);
+				$main_query2->setSelect(array('*'));
+				$main_query2->setFilter(array("UF_SEF"=>$code));
+
+				//Выполним запрос
+				$res_query2 = $main_query2->exec();
+
+				//Получаем результат по привычной схеме
+				$res_query2 = new CDBResult($res_query2);   
+				if (!$row2 = $res_query2->Fetch())
+				{
+							
+							$main_query = new \Bitrix\Main\Entity\Query($HLBlock_entity);
+							$main_query->setSelect(array('*'));
+							$main_query->setFilter(array('UF_CATEGORY_XML_ID'=> $parent_xml_id));
+
+							//Выполним запрос
+							$res_query = $main_query->exec();
+
+							//Получаем результат по привычной схеме
+							$res_query = new CDBResult($res_query);   
+							if (!$row = $res_query->Fetch())
+							{
+							 //create record in Highload IBlock
+							 $HLBlock_entity_data_class = $HLBlock_entity->getDataClass();
+							 $arBxData = array
+							 (
+							  'UF_CATEGORY_XML_ID' => $parent_xml_id,
+							  'UF_VALUE_XML_ID' => $child_xml_id,
+							  'UF_SEF'=> $code,
+							 );
+							 $res_query = $HLBlock_entity_data_class::add($arBxData);
+							}
+							else{
+							//апдейтим
+							
+							 $HLBlock_entity_data_class = $HLBlock_entity->getDataClass();
+							 $arBxData = array
+							 (
+							  'UF_CATEGORY_XML_ID' => $parent_xml_id,
+							  'UF_VALUE_XML_ID' => $child_xml_id,
+							  'UF_SEF'=> $code,
+							 );
+							 $res_query = $HLBlock_entity_data_class::update($row['ID'],$arBxData);
+							
+							}
+						
+
+						
+				}
+			
+			
+			}
        
       }
 }
@@ -1054,6 +1114,17 @@ class CIBlockCMLCustomImport1 extends CIBlockCMLImport
 			if(array_key_exists(GetMessage("IBLOCK_XML2_ARTICLE"), $arXMLElement))
 				$arElement["PROPERTY_VALUES"][$this->PROPERTY_MAP["CML2_ARTICLE"]] = $arXMLElement[GetMessage("IBLOCK_XML2_ARTICLE")];
 
+			//BEDROSOVA 10-06-2014
+			if(array_key_exists(GetMessage("IBLOCK_XML2_MANUFACTURER"), $arXMLElement))
+			{
+				$arElement["PROPERTY_VALUES"][$this->PROPERTY_MAP["CML2_MANUFACTURER"]] = array(
+					"n0" => array(
+						"VALUE" => $this->CheckManufacturer($arXMLElement[GetMessage("IBLOCK_XML2_MANUFACTURER")]),
+						"DESCRIPTION" => false,
+					),
+				);
+			}
+
 			if(array_key_exists(GetMessage("IBLOCK_XML2_PICTURE"), $arXMLElement))
 			{
 				$rsFiles = $this->_xml_file->GetList(
@@ -1271,7 +1342,7 @@ class CIBlockCMLCustomImport1 extends CIBlockCMLImport
 				}
 			}
 
-
+			$arElement["CAN_BUY_ZERO"]="D";
 
 			if(isset($arXMLElement[GetMessage("IBLOCK_XML2_AMOUNT")]))
 				$arElement["QUANTITY"] = $this->ToFloat($arXMLElement[GetMessage("IBLOCK_XML2_AMOUNT")]);
@@ -2374,7 +2445,7 @@ else
 		}
 		elseif($NS["STEP"] == 5)
 		{
-			$obCatalog = new CIBlockCMLImport;
+			$obCatalog = new CIBlockCMLCustomImport;
 			$obCatalog->InitEx($NS, array(
 				"files_dir" => $WORK_DIR_NAME,
 				"use_crc" => $arParams["USE_CRC"],
@@ -2393,7 +2464,7 @@ else
 		}
 		elseif($NS["STEP"] == 6)
 		{
-			$obCatalog = new CIBlockCMLImport;
+			$obCatalog = new CIBlockCMLCustomImport;
 			$obCatalog->InitEx($NS, array(
 				"files_dir" => $WORK_DIR_NAME,
 				"use_crc" => $arParams["USE_CRC"],
@@ -2499,6 +2570,24 @@ else
 		{
 			//foreach(GetModuleEvents("catalog", "OnSuccessCatalogImport1C", true) as $arEvent)
 			//ExecuteModuleEventEx($arEvent);
+			
+				//ExecuteModuleEventEx($arEvent);
+			
+			$rs_ec = CIBlockElement::GetList(
+			array(), 
+			array("IBLOCK_ID"=>8, '!%CODE' => '/'), 
+			false, 
+			false, 
+			array('ID', 'NAME', 'CODE', 'PROPERTY_CML2_ARTICLE', 'PROPERTY_CML2_BAR_CODE', 'DATE_CREATE', 'TIMESTAMP_X')
+			);
+			if($rs_ec->SelectedRowsCount() > 0)
+			{
+				while($ar_ec = $rs_ec->GetNext(true, false))
+				{
+					$oElement_ec = new CIBlockElement();
+					$oElement_ec->Update($ar_ec["ID"], array("CODE" => "recalculate"));
+				}
+			}
 
 $potomki=array();
 				$arrSections=$_SESSION['arrSections'];
