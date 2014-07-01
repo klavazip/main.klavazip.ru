@@ -85,14 +85,14 @@ class KlavaCatalogFilter
 				if($param_key==$props["CODE"])
 				{
 					$arr[$props["NAME"]] = array();
+					$arr[$props["NAME"]]["CODE"]=$props["CODE"];
 					foreach($param as $param_val)
 					{
 						foreach($props["VALUES"] as $val)
 						{
-							if($param_val==$val["ID"])$arr[$props["NAME"]][]=$val["VALUE"];
+							if($param_val==$val["ID"])$arr[$props["NAME"]]["VALUES"][]=$val["VALUE"];
 						}
-					}
-					
+					}	
 				}
 			}
 		}

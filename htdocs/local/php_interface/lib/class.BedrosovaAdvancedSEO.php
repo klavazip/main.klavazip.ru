@@ -39,10 +39,19 @@ class BedrosovaAdvancedSEO
 		{
 			if ($el["UF_URL"]==$this->URL_WITHOUT_GET_PART)	$this->_CurrentRow = $el;
 		}
+		//print('TEST');
+		global $USER;
+		if ($USER->GetID()==7429)
+		{
+			print_r ($this->_CurrentRow);
+		}
+		
 		$filter = new KlavaCatalogFilter(true);
 		$this->_filterSEOKeywords = $filter->SEOArray;
 		$this->_filterSEOKeywords = $this->_SortSEOKeywords();
 		$this->_filterSEOKeywords = $this->_RenameSEOKeywords();
+		
+		$this->_CurrentRow = $this->_ParseSEOTemplates();
 		
 		//print_r ($this->_filterSEOKeywords);
 	}
@@ -54,6 +63,40 @@ class BedrosovaAdvancedSEO
 		$this->SetDescription();
 		$this->SetPageHeader();
 		$this->SetPageDesc();
+	}
+	
+	private function _ParseSEOTemplates()
+	{
+		$temp = $this->_CurrentRow;
+		//print_r ($temp);
+		foreach($temp as $key=>$val)
+		{
+ 			while(strpos($val, '##')!==false)
+			{
+				$found=false;
+				$str="";
+				$start_pos = strpos($val, '##');
+				$end_pos=strpos($val, '##',$start_pos+1);
+				
+				$str = substr($val,$start_pos,$end_pos-$start_pos+2);
+				
+ 				foreach ($this->_filterSEOKeywords as $seo_key=>$seo_val)
+				{
+					if ($str=='##'.$seo_val["CODE"].'##')
+					{
+						$val= str_replace($str, $seo_val["VALUES"][0], $val);
+						unset($this->_filterSEOKeywords[$seo_key]);
+						$found=true;
+					}
+				}
+				if (!$found)
+				{
+					$val=str_replace($str, "", $val);
+				}			
+			}
+			$temp[$key]=$val;
+		}
+		return $temp;
 	}
 	
 	private $_SEOKeywordsSorting=array
@@ -137,10 +180,10 @@ class BedrosovaAdvancedSEO
 		{
 			foreach($this->_filterSEOKeywords as $param_key=>$param)
 			{
-				if (count($param)==1)
+				if (count($param["VALUES"])==1)
 				{
 					$generator = $generator." ".strtolower($param_key);
-					foreach($param as $value)
+					foreach($param["VALUES"] as $value)
 					{
 						$generator = $generator." ".strtolower($value);
 					}
@@ -158,7 +201,7 @@ class BedrosovaAdvancedSEO
 		{
 			
 			$val = $this->_CurrentRow["UF_TITLE"];
-			if ($val!="") $APPLICATION->SetTitle($val);
+			if ($val!="") $APPLICATION->SetTitle($val.$this->_getTitleKeyword());
 		}
 		else
 		{
@@ -172,7 +215,7 @@ class BedrosovaAdvancedSEO
 		if (is_array($this->_CurrentRow))
 		{
 			$val = $this->_CurrentRow["UF_KEYWORDS"];
-			if ($val!="") $APPLICATION->SetPageProperty("keywords", $val);
+			if ($val!="") $APPLICATION->SetPageProperty("keywords", $val.$this->_getTitleKeyword());
 		}
 		else
 		{
@@ -186,7 +229,7 @@ class BedrosovaAdvancedSEO
 		if (is_array($this->_CurrentRow))
 		{
 			$val = $this->_CurrentRow["UF_DESCRIPTION"];
-			if ($val!="") $APPLICATION->SetPageProperty("description", $val);
+			if ($val!="") $APPLICATION->SetPageProperty("description", $val.$this->_getTitleKeyword());
 		}
 		else
 		{
@@ -200,7 +243,7 @@ class BedrosovaAdvancedSEO
 		if (is_array($this->_CurrentRow))
 		{
 			$val = $this->_CurrentRow["UF_HEADER"];
-			if ($val!="") $APPLICATION->SetPageProperty("page_title", $val);
+			if ($val!="") $APPLICATION->SetPageProperty("page_title", $val.$this->_getTitleKeyword());
 		}
 		else
 		{
@@ -214,7 +257,7 @@ class BedrosovaAdvancedSEO
 		if (is_array($this->_CurrentRow))
 		{
 			$val = $this->_CurrentRow["UF_DESC"];
-			if ($val!="") $APPLICATION->SetPageProperty("page_description", $val);
+			if ($val!="") $APPLICATION->SetPageProperty("page_description", $val.$this->_getTitleKeyword());
 		}
 	}
 		

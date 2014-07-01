@@ -6,12 +6,23 @@ CModule::IncludeModule('highloadblock');
 
 function AddToHI($tableName='bedrosova_filter_sef',$parent_xml_id,$child_xml_id, $code){
 
-	if (strlen($code)<1){
+$fp = fopen($_SERVER['DOCUMENT_ROOT'].'/upload/bedrosova.log', 'a');
+fwrite($fp, print_r('----------------- '.date("F j, Y, g:i a").". Поступившие данные:".PHP_EOL, true));
+fwrite($fp, print_r(array('parent_xml_id'=>$parent_xml_id, 'child_xml_id'=>$child_xml_id, 'code'=>$code,), true));
+
+
+	if (strlen($code)<1)
+	{
+		fwrite($fp, print_r("Не передан символьный код!".PHP_EOL, true));
+		fclose($fp);
 		return false;
 	}
 	
-	if (!preg_match("#^[aA-zZ0-9_]+$#",$code)) {
-			return false;
+	if (!preg_match("#^[aA-zZ0-9_]+$#",$code)) 
+	{
+		fwrite($fp, print_r("Символьный код содержит недопустимые символы!".PHP_EOL, true));
+		fclose($fp);
+		return false;
 	} 
 
 	$HLData = \Bitrix\Highloadblock\HighloadBlockTable::getList(array('filter'=>array('TABLE_NAME'=>$tableName)));
@@ -121,6 +132,7 @@ function AddToHI($tableName='bedrosova_filter_sef',$parent_xml_id,$child_xml_id,
 			}
        
       }
+fclose($fp);
 }
 
 class CIBlockCMLCustomImport extends CIBlockCMLImport
@@ -1123,6 +1135,10 @@ class CIBlockCMLCustomImport1 extends CIBlockCMLImport
 						"DESCRIPTION" => false,
 					),
 				);
+
+
+				$bedrosova_symb_code = $arXMLElement[GetMessage("IBLOCK_XML2_MANUFACTURER")]["СимвольныйКод"];
+				AddToHI('bedrosova_filter_sef',"CML2_MANUFACTURER",$arXMLElement[GetMessage("IBLOCK_XML2_MANUFACTURER")]["Ид"], $bedrosova_symb_code);
 			}
 
 			if(array_key_exists(GetMessage("IBLOCK_XML2_PICTURE"), $arXMLElement))

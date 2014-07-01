@@ -21,8 +21,9 @@ if(!CModule::IncludeModule("iblock"))
 
 $FILTER_NAME = (string)$arParams["FILTER_NAME"];
 
-if($this->StartResultCache(false, ($arParams["CACHE_GROUPS"]? $USER->GetGroups(): false)))
+if($this->StartResultCache(false,($arParams["CACHE_GROUPS"]==="N"? false: $USER->GetGroups())))
 {
+
 	$arResult["COMBO"] = array();
 	$arResult["PRICES"] = CIBlockPriceTools::GetCatalogPrices($arParams["IBLOCK_ID"], $arParams["PRICE_CODE"]);
 	$arResult["ITEMS"] = $this->getResultItems();
@@ -96,11 +97,11 @@ if($this->StartResultCache(false, ($arParams["CACHE_GROUPS"]? $USER->GetGroups()
 					$propertyValues[$PID][$key] = $arResult["ITEMS"][$PID]["VALUES"][$key]["VALUE"];
 				}
 			}
-
-			$propertyValuesCombination = array();
+			//BEDROSOVA 19-06-2014 OPTIMIZATION
+			/*$propertyValuesCombination = array();
 			$this->ArrayMultiply($propertyValuesCombination, $propertyValues);
 			foreach($propertyValuesCombination as $propertyValues)
-				$arResult["COMBO"][md5(serialize($propertyValues))] = $propertyValues;
+				$arResult["COMBO"][md5(serialize($propertyValues))] = $propertyValues;*/
 		}
 
 		$arSelect = array("ID", "IBLOCK_ID");
@@ -165,6 +166,9 @@ if($this->StartResultCache(false, ($arParams["CACHE_GROUPS"]? $USER->GetGroups()
 	}
 
 	$this->EndResultCache();
+}
+else {
+
 }
 /*Handle checked for checkboxes and html control value for numbers*/
 if(isset($_REQUEST["ajax"]) && $_REQUEST["ajax"] === "y")

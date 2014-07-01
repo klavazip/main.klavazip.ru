@@ -1,5 +1,7 @@
 <?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?><?
 
+$ob_FilterLink = new KlavaCatalogFilter(true); //BEDROSOVA 23.05.2014 Включена поддержка ЧПУ для фильтра
+
 $i_SectionID = intval($arParams['SECTION_ID']); 
 
 $ar_Property = array();
@@ -24,7 +26,8 @@ foreach($arParams['PROPERTY_SHOW'] as $Item)
 foreach($PRODUCERS as $key=>$PROD)
 {
 	$arResult['ITEMS'][] = array(
-			'URL' 	=> $APPLICATION->GetCurDir().'?filter=CML2_MANUFACTURER:['.$key.']',
+			'URL' 	=> //$APPLICATION->GetCurDir().'?filter=CML2_MANUFACTURER:['.$key.']',
+			$ob_FilterLink->getUniqueUrlAction("CML2_MANUFACTURER", $key),
 			'NAME' 	=> $PROD['VALUE'] 
 			);			
 }

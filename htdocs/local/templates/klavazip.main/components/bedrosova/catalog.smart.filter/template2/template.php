@@ -18,7 +18,19 @@ foreach($arResult["ITEMS"] as $arItem)
 }
 $arResult["ITEMS"]=$ar+$ar2;
 ?>
-
+<script type="text/javascript">
+function ToogleCheckBox(cbx)
+{
+	if (cbx.className.indexOf('checked') > -1)
+	{
+		cbx.className = cbx.className.replace(' checked', '');
+	}
+	else
+	{
+		cbx.className = cbx.className+' checked';
+	}
+}
+</script>
 
 <form name="<?echo $arResult["FILTER_NAME"]."_form"?>" action="<?echo $arResult["FORM_ACTION"]?>" method="get">
 	<?foreach($arResult["HIDDEN"] as $arItem):?>
@@ -30,8 +42,10 @@ $arResult["ITEMS"]=$ar+$ar2;
 		/>
 	<?endforeach;?>
 	<div>
+	<? $counter=0;?>
 		<?foreach($arResult["ITEMS"] as $arItem):?>
 		<?if (count($arItem["VALUES"])>0):?>
+		<?$counter++;?>
 		<?$b_FilterControlVisible = (count($arItem['VALUES']) <= 3); ?>
 		<div class="oneBlockFilter" >
 			<?if($arItem["PROPERTY_TYPE"] == "N" || isset($arItem["PRICE"])):?>
@@ -84,7 +98,7 @@ if (isset($_GET['price-to'])) $current_max = intval($_GET['price-to']);
 					<?$b_Cheked = $ob_FilterLink->isValue($arItem['CODE'], $val);?>
 					<a href="<?=$ob_FilterLink->getFilterUrlAction($arItem["CODE"], $val);?>" style="cursor:pointer;">
 					<div class="lineCheckbox" style="cursor:pointer !important;">
-						<span style="display:inline-block" class="checkbox <?=($b_Cheked) ? 'checked' : ''?>"></span> 	
+						<span style="display:inline-block" class="checkbox <?=($b_Cheked) ? 'checked' : ''?>" onclick="ToogleCheckBox(this);"></span> 	
 						<label style="cursor:pointer;" title="<?=TruncateText($ar['VALUE'], 20)?>" <?=($b_Cheked) ? 'class="active"' : ''?> for="filter-check_<?=$i?>"><?=TruncateText($ar['VALUE'], 20)?> <?/* ?><span>105</span><? */ ?>  </label>
 						<div class="clear"></div>
 					</div>
