@@ -415,9 +415,9 @@ class CSubsections
          
 
 		 
-		 $oElement = new CIBlockElement();
-		 $arFields["CODE"]="recalculate";
-         $oElement->Update($arFields["ID"], /*array("CODE" => "recalculate")*/ $arFields);
+		 //$oElement = new CIBlockElement();
+		 //$arFields["CODE"]="recalculate";
+         //$oElement->Update($arFields["ID"], /*array("CODE" => "recalculate")*/ $arFields);
 		
 
       }
@@ -426,7 +426,7 @@ class CSubsections
 function ElementUpdateHandler($arFields)//Эта готова
    {
       
-	 arraytofile($arFields,$_SERVER['DOCUMENT_ROOT']."/upload/logupdate.txt", "arFields"); 
+	 //arraytofile($arFields,$_SERVER['DOCUMENT_ROOT']."/upload/logupdate.txt", "arFields"); 
 	  
 	  
 	  if($arFields["IBLOCK_ID"] == '8' || $arFields["IBLOCK_ID"] == '23')
@@ -437,12 +437,12 @@ function ElementUpdateHandler($arFields)//Эта готова
             if($ar = $rs->Fetch())
             {
 
-				$arFields["CODE"] = CSubsections::GetCode(
+				/*$arFields["CODE"] = CSubsections::GetCode(
                   $arFields["IBLOCK_ID"],
                  // $ar["IBLOCK_SECTION_ID"],
 				 $arFields['IBLOCK_SECTION'][0],
                   $ar["NAME"]
-               );
+               );*/
 
 			    //Вот тут и проверим только что полученный код на уникальность. Бедросова	
 				// проверим наличие товаров с таким же кодом, в случае если найдены товары  одни и теже но разных цветов например
@@ -596,8 +596,8 @@ function SectionAddHandler($arFields)
 
 AddEventHandler("iblock", "OnAfterIBlockElementAdd", array("CSubsections", "ElementAddHandler"));
 AddEventHandler("iblock", "OnBeforeIBlockElementUpdate", array("CSubsections", "ElementUpdateHandler"));
-AddEventHandler("iblock", "OnAfterIBlockSectionAdd", array("CSubsections", "SectionAddHandler"));
-AddEventHandler("iblock", "OnBeforeIBlockSectionUpdate", array("CSubsections", "SectionUpdateHandler"));
+//AddEventHandler("iblock", "OnAfterIBlockSectionAdd", array("CSubsections", "SectionAddHandler"));
+//AddEventHandler("iblock", "OnBeforeIBlockSectionUpdate", array("CSubsections", "SectionUpdateHandler"));
 
 
 
