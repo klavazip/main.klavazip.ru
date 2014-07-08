@@ -902,6 +902,24 @@ $APPLICATION->SetPageProperty("title",$arDeclenAllTitle." ".$arDeclenAllDlaNout.
 		}
 		
 		
+	$metaKeywords = \Bitrix\Main\Type\Collection::firstNotEmpty(
+    $arResult["PROPERTIES"], array($arParams["META_KEYWORDS"], "VALUE")
+    ,$arResult["IPROPERTY_VALUES"], "ELEMENT_META_KEYWORDS"
+	);
+	if (is_array($metaKeywords))
+		$APPLICATION->SetPageProperty("keywords", implode(" ", $metaKeywords), $arTitleOptions);
+	elseif ($metaKeywords != "")
+		$APPLICATION->SetPageProperty("keywords", $metaKeywords, $arTitleOptions);
+
+	$metaDescription = \Bitrix\Main\Type\Collection::firstNotEmpty(
+		$arResult["PROPERTIES"], array($arParams["META_DESCRIPTION"], "VALUE")
+		,$arResult["IPROPERTY_VALUES"], "ELEMENT_META_DESCRIPTION"
+	);
+	if (is_array($metaDescription))
+		$APPLICATION->SetPageProperty("description", implode(" ", $metaDescription), $arTitleOptions);
+	elseif ($metaDescription != "")
+		$APPLICATION->SetPageProperty("description", $metaDescription, $arTitleOptions);
+		
 		
 		
 	return $arResult["ID"];
