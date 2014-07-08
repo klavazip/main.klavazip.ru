@@ -22,6 +22,13 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/system/sale.1c.integration/include.init
 		$ar_Data = $rs_Data->Fetch();
 		LocalRedirect($ar_Data['UF_NEW_LINK'], false, '301 Moved Permanently');
 	}
+	
+	$old_url=$APPLICATION->GetCurDir();
+	if (strpos($old_url,"/ujitsu")){
+		$new_url=str_replace ("/ujitsu", "/fujitsu", $old_url);
+		LocalRedirect($new_url, false, '301 Moved Permanently');
+	
+	}
 # END 301 REDIRECT
 
 
