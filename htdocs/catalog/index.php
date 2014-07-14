@@ -540,7 +540,7 @@ $APPLICATION->SetTitle("Каталог");
 	),
 	"DETAIL_META_KEYWORDS" => "-",
 	"DETAIL_META_DESCRIPTION" => "-",
-	"DETAIL_BROWSER_TITLE" => "NAME",
+	"DETAIL_BROWSER_TITLE" => "-",
 	"LINK_IBLOCK_TYPE" => "catalog",
 	"LINK_IBLOCK_ID" => "3",
 	"LINK_PROPERTY_SID" => "RECOMMEND",
@@ -580,6 +580,7 @@ $APPLICATION->SetTitle("Каталог");
 );?> </div>
  </div>
  <?
+ 
 //BEDROSOVA SEO
 $BedrosovaSEO = new BedrosovaAdvancedSEO();
 $BedrosovaSEO->SetAll();

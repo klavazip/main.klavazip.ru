@@ -252,8 +252,10 @@ else
 }
 */
 
+
+
 	
-$APPLICATION->IncludeComponent("yenisite:catalog.detail_meta", ".default", array( 
+/*$APPLICATION->IncludeComponent("yenisite:catalog.detail_meta", ".default", array( 
 	"IBLOCK_TYPE" => "catalog", 
 	"IBLOCK_ID" => "8", 
 	"ELEMENT_ID" => $arResult["VARIABLES"]["ELEMENT_CODE"], 
@@ -270,7 +272,8 @@ $APPLICATION->IncludeComponent("yenisite:catalog.detail_meta", ".default", array
 	"CACHE_TIME" => "3600" 
 	), 
 	false 
-	); 
+	); */
+	
 }
 
 

@@ -360,6 +360,11 @@ if($this->StartResultCache(false, ($arParams["CACHE_GROUPS"]==="N"? false: $USER
 			$arResult['CONVERT_CURRENCY'] = $arConvertParams;
 
 			$arResult["CAT_PRICES"] = $arResultPrices;
+			
+			$ipropValues = new \Bitrix\Iblock\InheritedProperty\ElementValues($arResult["IBLOCK_ID"], $arResult["ID"]);
+$arResult["IPROPERTY_VALUES"] = $ipropValues->getValues();
+
+
 
 			$arResult["PREVIEW_PICTURE"] = CFile::GetFileArray($arResult["PREVIEW_PICTURE"]);
 			$arResult["DETAIL_PICTURE"] = CFile::GetFileArray($arResult["DETAIL_PICTURE"]);
@@ -627,7 +632,8 @@ if($this->StartResultCache(false, ($arParams["CACHE_GROUPS"]==="N"? false: $USER
 				"LIST_PAGE_URL",
 				"PROPERTIES",
 				"SECTION",
-				"ANALOGS"
+				"ANALOGS",
+				"IPROPERTY_VALUES",
 			));
 
 			$this->IncludeComponentTemplate();
@@ -851,6 +857,8 @@ $arDeclenAllDlaNout = $arDeclenDlaNout[$arResult['SECTION']['PATH'][0]['NAME']];
 
 $APPLICATION->SetTitle($arDeclenAllTitle." ".$arDeclenAllDlaNout." ".$arResult['PROPERTIES']['manufactur']['VALUE']." ".$arResult['NAME']." : купить в интернет-магазине в Москве и доставкой по России - цены, характеристики, отзывы, совместимость и подбор аналога", $arTitleOptions);
 
+	
+
 $APPLICATION->SetPageProperty("title",$arDeclenAllTitle." ".$arDeclenAllDlaNout." ".$arResult['PROPERTIES']['manufactur']['VALUE']." ".$arResult['NAME']." : купить в интернет-магазине в Москве и доставкой по России - цены, характеристики, отзывы, совместимость и подбор аналога", $arTitleOptions);
 
 	
@@ -875,7 +883,45 @@ $APPLICATION->SetPageProperty("title",$arDeclenAllTitle." ".$arDeclenAllDlaNout.
 	}
 	*/
 	
-	
+	$browserTitle = \Bitrix\Main\Type\Collection::firstNotEmpty(
+		$arResult["PROPERTIES"], array($arParams["BROWSER_TITLE"], "VALUE")
+		,$arResult, $arParams["BROWSER_TITLE"]
+		,$arResult["IPROPERTY_VALUES"], "ELEMENT_META_TITLE"
+	);
+
+		
+	if (is_array($browserTitle)){
+		$APPLICATION->SetPageProperty("title", implode(" ", $browserTitle), $arTitleOptions);
+		$APPLICATION->SetTitle(implode(" ", $browserTitle), $arTitleOptions);
+		}
+	elseif ($browserTitle != ""){
+		$APPLICATION->SetPageProperty("title", $browserTitle, $arTitleOptions);
+		$APPLICATION->SetTitle($browserTitle, $arTitleOptions);
+		
+		
+		}
+		
+		
+	$metaKeywords = \Bitrix\Main\Type\Collection::firstNotEmpty(
+    $arResult["PROPERTIES"], array($arParams["META_KEYWORDS"], "VALUE")
+    ,$arResult["IPROPERTY_VALUES"], "ELEMENT_META_KEYWORDS"
+	);
+	if (is_array($metaKeywords))
+		$APPLICATION->SetPageProperty("keywords", implode(" ", $metaKeywords), $arTitleOptions);
+	elseif ($metaKeywords != "")
+		$APPLICATION->SetPageProperty("keywords", $metaKeywords, $arTitleOptions);
+
+	$metaDescription = \Bitrix\Main\Type\Collection::firstNotEmpty(
+		$arResult["PROPERTIES"], array($arParams["META_DESCRIPTION"], "VALUE")
+		,$arResult["IPROPERTY_VALUES"], "ELEMENT_META_DESCRIPTION"
+	);
+	if (is_array($metaDescription))
+		$APPLICATION->SetPageProperty("description", implode(" ", $metaDescription), $arTitleOptions);
+	elseif ($metaDescription != "")
+		$APPLICATION->SetPageProperty("description", $metaDescription, $arTitleOptions);
+		
+		
+		
 	return $arResult["ID"];
 }
 else
