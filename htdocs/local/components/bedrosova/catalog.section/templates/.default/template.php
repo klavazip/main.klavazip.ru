@@ -65,7 +65,7 @@ if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
 											}	
 											else
 											{
-												?><p class="present">Нет в наличии</p><? 
+												?><p class="present" style="color:red;">Нет в наличии</p><? 
 											}
 										}	
 										?>
@@ -103,14 +103,14 @@ if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
 					<?
 					echo $arResult["NAV_STRING"];
 				
-					if(($p = strpos($arResult['DESCRIPTION'], '###')) !== false) 
-					{
-						?><div class="text-desc"><?=substr( $arResult['DESCRIPTION'], 0, $p); ?></div><?
-					}
-					else
-					{	 
-						?><div class="text-desc"><?=$arResult['DESCRIPTION'];?></div><? 
-					}
+						if(($p = strpos($arResult['DESCRIPTION'], '###')) !== false) 
+						{
+							$arResult['DESCRIPTION']=substr( $arResult['DESCRIPTION'], 0, $p);
+						}
+						if(!isset($_GET['PAGEN_1']))
+						{	 
+							?><div class="text-desc"><?=$arResult['DESCRIPTION'];?></div><? 
+						}
 					?>
 									
 				</div>
@@ -202,7 +202,7 @@ if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
 											}	
 											else
 											{
-												?><p class="present st_1">Нет в наличии</p><? 
+												?><p class="present st_1" style="color:red;">Нет в наличии</p><? 
 											}
 										}
 										?>
@@ -247,9 +247,9 @@ if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
 						
 						if(($p = strpos($arResult['DESCRIPTION'], '###')) !== false) 
 						{
-							?><div class="text-desc"><?=substr( $arResult['DESCRIPTION'], 0, $p); ?></div><?
+							$arResult['DESCRIPTION']=substr( $arResult['DESCRIPTION'], 0, $p);
 						}
-						else
+						if(!isset($_GET['PAGEN_1']))
 						{	 
 							?><div class="text-desc"><?=$arResult['DESCRIPTION'];?></div><? 
 						}
@@ -341,7 +341,7 @@ if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
 													}	
 													else
 													{
-														?>Нет в наличии<? 
+														?><span style="color:red;">Нет в наличии</span><? 
 													}
 												}
 												?>
@@ -372,9 +372,9 @@ if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
 						
 						if(($p = strpos($arResult['DESCRIPTION'], '###')) !== false) 
 						{
-							?><div class="text-desc"><?=substr( $arResult['DESCRIPTION'], 0, $p); ?></div><?
+							$arResult['DESCRIPTION']=substr( $arResult['DESCRIPTION'], 0, $p);
 						}
-						else
+						if(!isset($_GET['PAGEN_1']))
 						{	 
 							?><div class="text-desc"><?=$arResult['DESCRIPTION'];?></div><? 
 						}

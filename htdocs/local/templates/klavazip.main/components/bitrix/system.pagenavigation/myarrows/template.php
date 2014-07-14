@@ -3,7 +3,14 @@
 	function _getUrlPagen($i_Page)
 	{
 		global $APPLICATION;
-		return $APPLICATION->GetCurPageParam('PAGEN_1='.$i_Page, array('PAGEN_1'));
+		if ($i_Page!==1)
+		{
+			return $APPLICATION->GetCurPageParam('PAGEN_1='.$i_Page, array('PAGEN_1'));
+		}
+		else
+		{
+			return $APPLICATION->GetCurPageParam('', array('PAGEN_1'));
+		}
 	}
 	
 
