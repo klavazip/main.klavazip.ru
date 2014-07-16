@@ -1,7 +1,19 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог");
-?> <?$APPLICATION->IncludeComponent("bitrix:catalog", "bxmaker", array(
+?> 
+
+<?$APPLICATION->IncludeComponent( 
+"bedrosova:sitemap.filter", 
+"", 
+Array( 
+"FILENAME" => "sitemap_filter.xml", 
+"PRIORITY" => "0.5" 
+), 
+false 
+);?> 
+
+<?$APPLICATION->IncludeComponent("bitrix:catalog", "bxmaker", array(
 	"IBLOCK_TYPE" => "catalog",
 	"IBLOCK_ID" => "8",
 	"HIDE_NOT_AVAILABLE" => "N",
