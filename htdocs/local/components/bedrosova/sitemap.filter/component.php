@@ -9,7 +9,7 @@ if (!$USER->IsAuthorized() && !strpos($_SERVER['REQUEST_URI'], "upload/") && !st
 		$arrexpl=explode("filter",$requr_without_get);
 		$arrexpl2=explode("/",$arrexpl[1]);
 		
-		if (count($arrexpl2)<5){
+		if (count($arrexpl2)==3){
 		
 
 	
