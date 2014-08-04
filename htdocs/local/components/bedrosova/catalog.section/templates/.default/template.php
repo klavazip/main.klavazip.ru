@@ -1,5 +1,8 @@
 <?	if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
+global $APPLICATION;
+$CurPage=$APPLICATION->GetCurPage();
+
 	
 if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
 	{
@@ -107,9 +110,11 @@ if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
 						{
 							$arResult['DESCRIPTION']=substr( $arResult['DESCRIPTION'], 0, $p);
 						}
-						if(!isset($_GET['PAGEN_1']))
+						if(!isset($_GET['PAGEN_1']) && !isset($_GET['filter']))
 						{	 
-							?><div class="text-desc"><?=$arResult['DESCRIPTION'];?></div><? 
+							if ($CurPage==$arResult['SECTION_PAGE_URL']){
+								?><div class="text-desc"><?=$arResult['DESCRIPTION'];?></div><? 
+							}
 						}
 					?>
 									
@@ -249,9 +254,11 @@ if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
 						{
 							$arResult['DESCRIPTION']=substr( $arResult['DESCRIPTION'], 0, $p);
 						}
-						if(!isset($_GET['PAGEN_1']))
+						if(!isset($_GET['PAGEN_1']) && !isset($_GET['filter']))
 						{	 
+							if ($CurPage==$arResult['SECTION_PAGE_URL']){
 							?><div class="text-desc"><?=$arResult['DESCRIPTION'];?></div><? 
+							}
 						}
 						?>
 						
@@ -370,13 +377,25 @@ if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
 						
 						echo $arResult["NAV_STRING"];
 						
+						
+						
 						if(($p = strpos($arResult['DESCRIPTION'], '###')) !== false) 
 						{
 							$arResult['DESCRIPTION']=substr( $arResult['DESCRIPTION'], 0, $p);
 						}
-						if(!isset($_GET['PAGEN_1']))
-						{	 
-							?><div class="text-desc"><?=$arResult['DESCRIPTION'];?></div><? 
+						if(!isset($_GET['PAGEN_1']) && !isset($_GET['filter']) )
+						{	
+							
+							
+							
+							
+							if ($CurPage==$arResult['SECTION_PAGE_URL']){
+							?><div class="text-desc">
+							
+
+							
+							<?=$arResult['DESCRIPTION'];?></div><? 
+							}
 						}
 						?>
 					</div>
@@ -385,3 +404,7 @@ if( count($_GET['filter']) > 0 && count($arResult["ITEMS"]) == 0 )
 		</div>
 		<? 
 	}	
+	
+								
+						
+							?>

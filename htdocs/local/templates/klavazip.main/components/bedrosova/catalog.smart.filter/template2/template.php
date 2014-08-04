@@ -1,5 +1,5 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
-
+<noindex>
 <?$ob_FilterLink = new KlavaCatalogFilter(true); //BEDROSOVA 23.05.2014 Включена поддержка ЧПУ для фильтра?>
 
 <?
@@ -131,3 +131,4 @@ if (isset($_GET['price-to'])) $current_max = intval($_GET['price-to']);
 <script>
 	var smartFilter = new JCSmartFilter('<?echo CUtil::JSEscape($arResult["FORM_ACTION"])?>');
 </script>
+</noindex>
