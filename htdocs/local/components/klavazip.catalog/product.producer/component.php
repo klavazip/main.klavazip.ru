@@ -25,9 +25,30 @@ foreach($arParams['PROPERTY_SHOW'] as $Item)
 
 foreach($PRODUCERS as $key=>$PROD)
 {
+	$url = $ob_FilterLink->getUniqueUrlAction("CML2_MANUFACTURER", $key);
+	
+	
+		if (ereg('\?PAGEN_([0-9]+)=([0-9]+)&',$url,$reg)){
+			//print $reg[0]."<br/>";
+			$url=str_replace($reg[0],'?',$url);
+		}
+		
+		if (ereg('\?PAGEN_([0-9]+)=([0-9]+)',$url,$reg)){
+			//print $reg[0]."<br/>";
+			$url=str_replace($reg[0],'',$url);
+		}
+		
+		if (ereg('&PAGEN_([0-9]+)=([0-9]+)',$url,$reg)){
+			//print $reg[0]."<br/>";
+			$url=str_replace($reg[0],'',$url);
+		}
+		
+
+	
+	
+	
 	$arResult['ITEMS'][] = array(
-			'URL' 	=> //$APPLICATION->GetCurDir().'?filter=CML2_MANUFACTURER:['.$key.']',
-			$ob_FilterLink->getUniqueUrlAction("CML2_MANUFACTURER", $key),
+			'URL' 	=> $url,
 			'NAME' 	=> $PROD['VALUE'] 
 			);			
 }
