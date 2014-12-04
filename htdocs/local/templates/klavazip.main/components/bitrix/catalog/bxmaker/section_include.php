@@ -409,21 +409,20 @@ $BEDROSOVA_FILTER=$APPLICATION->IncludeComponent("bedrosova:catalog.smart.filter
 }
 
 
-$APPLICATION->IncludeComponent("yenisite:catalog.section_meta", ".default", array( 
-	"IBLOCK_TYPE" => "catalog", 
-	"IBLOCK_ID" => "8", 
-	"SECTION_ID" => $arResult["VARIABLES"]["SECTION_CODE"], 
-	"META_SPLITTER" => ",", 
-	//"META_TITLE" => "h1 #NAME#", 
-	//"META_TITLE_FORCE" => "", 
-	//"META_TITLE_PROP" => "title #NAME#", 
-	//"META_TITLE_PROP_FORCE" => "", 
-	"META_KEYWORDS" => "#NAV_CHAIN#, купить", 
-	"META_KEYWORDS_FORCE" => "", 
-	"META_DESCRIPTION" => "Купить #NAV_CHAIN# по низкой цене", 
-	"META_DESCRIPTION_FORCE" => "", 
-	"CACHE_TYPE" => "A", 
-	"CACHE_TIME" => "86400" 
-	), 
-	false 
+$APPLICATION->IncludeComponent("yenisite:catalog.section_meta", ".default", array(
+	"IBLOCK_TYPE" => "catalog",
+	"IBLOCK_ID" => "8",
+	"SECTION_ID" => $arResult["VARIABLES"]["SECTION_CODE"],
+	"META_SPLITTER" => ",",
+	"META_KEYWORDS" => "#NAV_CHAIN#, купить",
+	"META_KEYWORDS_FORCE" => "",
+	"META_DESCRIPTION" => "Купить #NAV_CHAIN# по низкой цене",
+	"META_DESCRIPTION_FORCE" => "",
+	"CACHE_TYPE" => "A",
+	"CACHE_TIME" => "86400"
+	),
+	false,
+	array(
+	"ACTIVE_COMPONENT" => "N"
+	)
 );

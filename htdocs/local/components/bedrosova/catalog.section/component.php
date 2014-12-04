@@ -381,6 +381,13 @@ if(!CModule::IncludeModule("iblock"))
 //	$arResult["PICTURE"] = CFile::GetFileArray($arResult["PICTURE"]);
 //	$arResult["DETAIL_PICTURE"] = CFile::GetFileArray($arResult["DETAIL_PICTURE"]);
 	$arResult["DETAIL_PICTURE"] = CFile::ResizeImageGet($arResult["DETAIL_PICTURE"],array("width"=>"157","height"=>"87"),BX_RESIZE_IMAGE_PROPORTIONAL_ALT,false);
+	
+	
+$ipropValues = new \Bitrix\Iblock\InheritedProperty\SectionValues($arResult["IBLOCK_ID"], $arResult["ID"]);
+$arResult["IPROPERTY_VALUES"] = $ipropValues->getValues();
+
+
+
 
 	// list of the element fields that will be used in selection
 	$arSelect = array(
@@ -829,7 +836,8 @@ if(!CModule::IncludeModule("iblock"))
 		"PATH",
 		"IBLOCK_SECTION_ID",
 		"ITEMS_ANALOGS",
-		"ANALOGS"
+		"ANALOGS",
+		"IPROPERTY_VALUES",
 	));
 	
 	
@@ -913,7 +921,7 @@ if($USER->IsAuthorized())
 
 $this->SetTemplateCachedData($arResult["NAV_CACHED_DATA"]);
 
-
+/*
 
 
 
@@ -943,7 +951,49 @@ if(isset($arResult[$arParams["BROWSER_TITLE"]]))
 		$val = implode(" ", $val);
 	
 	$APPLICATION->SetPageProperty("title", $val, $arTitleOptions); 
-}
+}*/
+
+
+
+
+
+
+//if($arParams["SET_TITLE"])
+//{
+
+	if ($arResult["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"] != "")
+		$APPLICATION->SetTitle($arResult["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"], $arTitleOptions);
+	elseif(isset($arResult["NAME"]))
+		$APPLICATION->SetTitle($arResult["NAME"], $arTitleOptions);
+//}
+
+$browserTitle = \Bitrix\Main\Type\Collection::firstNotEmpty(
+	$arResult["PROPERTIES"], array($arParams["BROWSER_TITLE"], "VALUE")
+	,$arResult["IPROPERTY_VALUES"], "SECTION_META_TITLE"
+);
+if (is_array($browserTitle))
+	$APPLICATION->SetPageProperty("title", implode(" ", $browserTitle), $arTitleOptions);
+elseif ($browserTitle != "")
+	$APPLICATION->SetPageProperty("title", $browserTitle, $arTitleOptions);
+
+$metaKeywords = \Bitrix\Main\Type\Collection::firstNotEmpty(
+	$arResult["PROPERTIES"], array($arParams["META_KEYWORDS"], "VALUE")
+	,$arResult["IPROPERTY_VALUES"], "SECTION_META_KEYWORDS"
+);
+if (is_array($metaKeywords))
+	$APPLICATION->SetPageProperty("keywords", implode(" ", $metaKeywords), $arTitleOptions);
+elseif ($metaKeywords != "")
+	$APPLICATION->SetPageProperty("keywords", $metaKeywords, $arTitleOptions);
+
+$metaDescription = \Bitrix\Main\Type\Collection::firstNotEmpty(
+	$arResult["PROPERTIES"], array($arParams["META_DESCRIPTION"], "VALUE")
+	,$arResult["IPROPERTY_VALUES"], "SECTION_META_DESCRIPTION"
+);
+if (is_array($metaDescription))
+	$APPLICATION->SetPageProperty("description", implode(" ", $metaDescription), $arTitleOptions);
+elseif ($metaDescription != "")
+	$APPLICATION->SetPageProperty("description", $metaDescription, $arTitleOptions);
+	
 
 if($arParams["ADD_SECTIONS_CHAIN"] && isset($arResult["PATH"]) && is_array($arResult["PATH"]))
 {
@@ -966,11 +1016,8 @@ if($arParams["ADD_SECTIONS_CHAIN"] && isset($arResult["PATH"]) && is_array($arRe
 	}
 	
 	
-	//echo '<pre>', print_r($title).'</pre>';
-	
-	//$dla="";
-	//if ($title=='Клавиатуры' || $title=='Матрицы' || $title=='Аккумуляторы' || $title=='Системы охлаждения' || $title=='Корпусные детали')
-	
+
+	/*
 	$title=str_replace( 'Клавиатуры' , 'Клавиатуры для ноутбука' , $title);
 	$title=str_replace( 'Матрицы' , 'Матрицы для ноутбука' , $title);
 	$title=str_replace( 'Аккумуляторы по моделям' , 'Аккумуляторы для ноутбука' , $title);
@@ -985,7 +1032,7 @@ if($arParams["ADD_SECTIONS_CHAIN"] && isset($arResult["PATH"]) && is_array($arRe
 	
 	$APPLICATION->SetTitle($title2, $arTitleOptions);
 	
-	$APPLICATION->SetPageProperty("title", $title2, $arTitleOptions); 
+	$APPLICATION->SetPageProperty("title", $title2, $arTitleOptions); */
 	
 }
 

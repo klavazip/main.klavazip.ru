@@ -1,13 +1,14 @@
 <?	if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); 
 
-
- 
+/*print "<pre>";
+print_r($arResult);
+print "</pre>";*/
 
 __IncludeLang(dirname(__FILE__) . '/lang/' . LANGUAGE_ID . '/' . basename(__FILE__));
 
 $curPage = $GLOBALS['APPLICATION']->GetCurPage($get_index_page = false);
 
-if ($curPage != SITE_DIR && count($arResult)<2) {
+if ($curPage != SITE_DIR && count($arResult)<2 && !strpos($curPage,"filter")) {
 	if (empty($arResult) || $curPage != $arResult[count($arResult) - 1]['LINK'])
 		$arResult[] = array('TITLE' => htmlspecialcharsback($GLOBALS['APPLICATION']->GetTitle(false, true)), 'LINK' => $curPage);
 }
