@@ -175,7 +175,7 @@
 							<span class="placeholder" style="display: <?=(strlen($arResult['USER']['NAME']) > 0) ? 'none' : 'block'?>">Введите свое имя</span>						
 						</div>
 						<div class="clear"></div>
-						<label>Отчетсво*</label>
+						<label>Отчество*</label>
 						<a name="error-user-second-name"></a>
 						<div id="js-field-block-SECOND_NAME" style="position: relative;" class="blockInputform">							
 							<input 
