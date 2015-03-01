@@ -67,7 +67,7 @@ $APPLICATION->IncludeComponent("klavazip:aut.win", "", array());?>
 			<div class="phone">
 				<div>Москва +7 (495) 666-29-17</div>
 				<div>Санкт-Петербург  +7 (812) 339-25-45</div>
-				<div>Регионы 8 800 555 62 65</div>
+				<div><?/*Регионы 8 800 555 62 65*/?></div>
 			</div>
 			<div class="contact">
 				<div class="mail"><i></i> <a href="mailto:info@klavazip.ru">info@klavazip.ru</a> </div>  	

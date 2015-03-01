@@ -429,8 +429,8 @@
 								else
 								{
 									?>
-									<div class="iconNoPresent">Уточните возможность заказа</div>
-									<input type="button" class="buttonBuy" onclick="klava.catalog.showWindowNoticAddProduct('<?=$arResult['ID']?>')" value="Под заказ">
+									<div class="iconNoPresent">Нажмите на "Уведомить" и когда мы получим эту деталь, сообщим вам. Цена может отличаться от текущей цены. При транзите детали прийдет уведомление с датой поступления товара и его точной ценой на момент поступления. Сроки поступления  детали в данный момент не известны.</div>
+									<input type="button" class="buttonBuy" onclick="klava.catalog.showWindowNoticAddProduct('<?=$arResult['ID']?>')" value="Уведомить">
 									<? 
 								}	
 							}
