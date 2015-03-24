@@ -19,7 +19,7 @@ if( $i_CityID > 0 )
 				// Этот фиерический пиздец пока так работает
 				$s_ShowAdres = (strpos($ar_Delivery['DESCRIPTION'], 'Самовывоз') === false) ? 'Y': 'N';
 				$s_Prodoplata = ( strpos($ar_Delivery['NAME'], '(C предоплатой)') !== false ) ? 'Y' : 'N';
-				$s_Prodoplata = (( strpos($ar_Delivery['NAME'], '(C предоплатой)' ) !== false ) || ( strpos($ar_Delivery['NAME'], 'Без наложенного платежа' ) ) ) ? 'Y' : 'N';
+				$s_Prodoplata = (( strpos($ar_Delivery['NAME'], '(C предоплатой)' ) !== false ) || ( strpos($ar_Delivery['NAME'], 'без наложенного платежа' ) ) ) ? 'Y' : 'N';
 				?>
 				<label> 
 					<input 

@@ -44,6 +44,6 @@ if($i_PaymentSystem > 0)
 		
 		$html = ob_get_contents();
 	ob_end_clean();
-	
+	//arraytofile(array($html),$_SERVER['DOCUMENT_ROOT']."/upload/logpayment.txt", "html");
 	echo CUtil::PhpToJSObject(array('st' => 'ok', 'html' => $html ));
 }

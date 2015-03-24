@@ -983,6 +983,7 @@
 						<label>Способ оплаты*</label>
 						<div style="position: relative;" class="blockInputform">
 							<div class="delevery-list" id="order_payment_list">
+							
 								<? 
 								foreach ($arResult['PAYMENT'] as $i => $ar_Value)
 								{
