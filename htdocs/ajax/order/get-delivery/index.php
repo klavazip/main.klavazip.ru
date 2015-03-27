@@ -54,9 +54,9 @@ else
 	?>
 	<label> 
 		<input type="radio" onchange="klava.order.selectDelivery(this)" value="4" name="DELEVERY" data-price="250" data-pred="Y" data-address="Y"> 
-		250 руб. от 3 до 7 дн. 
+		300 руб. от 3 до 7 дн. 
 		<span class="desc">
-		Почта России 1-ый класс Без наложенного платежа<br>
+		Почта без наложенного платежа<br>
 		</span>
 	</label>
 				
@@ -64,7 +64,7 @@ else
 		<input type="radio" onchange="klava.order.selectDelivery(this)" value="7" name="DELEVERY" data-price="800" data-pred="N" data-address="Y"> 
 		800 руб. от 7 до 12 дн. 
 		<span class="desc">
-			Почта России 1-ый класс C наложенным платежом<br>
+			Почта с наложенным платежом<br>
 		</span>
 	</label>
 	<?
