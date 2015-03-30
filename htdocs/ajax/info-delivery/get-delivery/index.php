@@ -37,7 +37,7 @@ $rs_Delivery = CSaleDelivery::GetList(
 			// Этот фиерический пиздец пока так работает
 			$s_ShowAdres = (strpos($ar_Delivery['DESCRIPTION'], 'Самовывоз') === false) ? 'Y': 'N';
 			$s_Prodoplata = ( strpos($ar_Delivery['NAME'], '(C предоплатой)') !== false ) ? 'Y' : 'N';
-			$s_Prodoplata = (( strpos($ar_Delivery['NAME'], '(C предоплатой)' ) !== false ) || ( strpos($ar_Delivery['NAME'], 'Без наложенного платежа' ) ) ) ? 'Y' : 'N';
+			$s_Prodoplata = (( strpos($ar_Delivery['NAME'], '(C предоплатой)' ) !== false ) || ( strpos($ar_Delivery['NAME'], 'без наложенного платежа' ) ) ) ? 'Y' : 'N';
 			?>
 			<div 
 				class="item-delivery" 
@@ -73,12 +73,12 @@ $rs_Delivery = CSaleDelivery::GetList(
 				<tr>
 					<td class="company">
 						<div class="name">
-							<img alt="" src="/upload/sale/delivery/logotip/87b/logo_pochta.png">Почта России 1-ый класс Без наложенного платежа
+							<img alt="" src="/upload/sale/delivery/logotip/87b/logo_pochta.png">Почта России без наложенного платежа
 						</div>
 						<div class="desc-delivery"></div> 
 					</td>
 					<td class="day">от 3 до 7 дн.</td>
-					<td class="price">250 руб.</td>
+					<td class="price">300 руб.</td>
 				</tr>
 			</table>	
 		</div>
@@ -87,7 +87,7 @@ $rs_Delivery = CSaleDelivery::GetList(
 				<tr>
 					<td class="company">
 						<div class="name">
-							<img alt="" src="/upload/sale/delivery/logotip/87b/logo_pochta.png">Почта России 1-ый класс C наложенным платежом										
+							<img alt="" src="/upload/sale/delivery/logotip/87b/logo_pochta.png">Почта России с наложенным платежом										
 						</div>
 						<div class="desc-delivery"></div> 
 					</td>
