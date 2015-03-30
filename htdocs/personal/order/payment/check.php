@@ -244,7 +244,7 @@ ob_start();
 			<td class="w515">Товары (работы, услуги)</td>
 			<td colspan="2" class="w105">Количество</td> 
 			<td class="w80">Цена</td> 
-			<td class="w80">Ставка НДС</td> 
+		<td class="w80">Ставка НДС</td> 
 			<td class="w80">Сумма НДС</td> 
 			<td class="w80">Скидка</td> 
 			<td class="w80 br2">Сумма</td>
@@ -267,7 +267,7 @@ ob_start();
 
 			$i_Price = $prices[$pid];
 			
-			$i_SummNds = ($i_Price / 100) * 18;
+			$i_SummNds = ($i_Price / 100) * 0;
 			$i_Summ = $i_Price - $i_SummNds;
 			$i_AllSumm = $basketItems["PRICE"];
 				
@@ -279,7 +279,8 @@ ob_start();
 				<td><?=$basketItems["NAME"]?></td>
 				<td class="tar"><?=number_format($basketItems["QUANTITY"],0,"","")?></td> <td>шт.</td>
 				<td class="tar"><?=number_format($i_Summ, 2, ",", " ")?></td>
-				<td class="tar">18%</td>
+				
+				<td class="tar">Без НДС</td>
 				<td class="tar"><?=number_format($i_SummNds, 2, ",", " ")?></td>
 				
 				<td class="tar"><?=number_format($basketItems["PRICE"]-$prices[$pid],2,","," ")?></td>
@@ -288,7 +289,7 @@ ob_start();
 			<?
 		} 
 		
-		$i_SummDeliveryNds = ($thisOrder["PRICE_DELIVERY"] / 100) * 18;
+		$i_SummDeliveryNds = ($thisOrder["PRICE_DELIVERY"] / 100) * 0;
 		$i_SummDelivery = $thisOrder["PRICE_DELIVERY"] - $i_SummDeliveryNds;
 		$i_AllSummDelivery =  $thisOrder["PRICE_DELIVERY"];
 		
@@ -300,7 +301,7 @@ ob_start();
 			<td>Доставка</td>
 			<td class="tar">1</td> <td>шт.</td>
 			<td class="tar"><?=number_format($i_SummDelivery, 2, ",", " ")?></td>
-			<td class="tar">18%</td>
+			<td class="tar">Без НДС</td>
 			<td class="tar"><?=number_format($i_SummDeliveryNds,2,","," ")?></td>
 			<td class="tar">0.00</td>
 			<td class="tar br2"><?=number_format($i_AllSummDelivery, 2, ",", " ")?></td>
@@ -321,18 +322,18 @@ ob_start();
 		</tr>
 		
 		
-		<tr class="tar b fs13"> 
-			<td colspan="9" class="w700 nbb nbr">В т.ч. НДС (18%):</td> 
+		<?/*<tr class="tar b fs13"> 
+			<td colspan="9" class="w700 nbb nbr">Без НДС:</td> 
 			<td class="nbb nbr">
-				<?=($tovPriceSum / 100) * 18?>
+				<?=($tovPriceSum / 100) * 0?>
 			</td> 
 		</tr>
 		
 		
 		<tr class="tar b fs13">
-			<td colspan="9" class="w700 nbb nbr">Итого c НДС:</td> 
+			<td colspan="9" class="w700 nbb nbr">Итого:</td> 
 			<td class="nbb nbr"><?=number_format($tovPriceSum, 2, ",", " ")?></td>
-		</tr>
+		</tr>*/?>
 		
 		<tr class="fs13"> 
 			<td colspan="8" class="nb pt5">
@@ -340,7 +341,7 @@ ob_start();
 			</td>
 		</tr>
 		<tr class="b fs13"> 
-			<td colspan="8" class="nb"><?=num2str(number_format($tovPriceSum,0,"",""))?> 00 копеек</td> 
+			<td colspan="8" class="nb"><?=num2str(number_format($tovPriceSum,0,"",""))?> 00 копеек, НДС не облагается</td> 
 		</tr>
 	</table>
 
